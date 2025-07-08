@@ -8,7 +8,9 @@
     <div class="login-body" id="login-body">
       <div class="login-panel" id="login-panel">
         <p class="body-title" id="body-title" dir="rtl">ورود به سامانه کشوری برون سپاری</p>
-        <RoleSelect/>
+        <div class="body-inputs" id="body-inputs">
+          <RoleSelect/>
+        </div>
         <div class="body-desc" id="body-desc"></div>
         <div class="body-buttons" id="body-buttons"></div>
       </div>
