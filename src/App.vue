@@ -85,4 +85,24 @@ h1 {
   position: relative;
   font-family: "B Nazanin", cursive;
 }
+
+.login-panel {
+  width: 500px;
+  height: 500px;
+  background-color: var(--body-bg);
+  display: flex;
+  justify-content: center;
+}
+
+.body-title {
+  font-size: 15px;
+  padding: 0.5rem 2rem;
+  color: white;
+  background-color: var(--title-bg);
+  width: 90%;
+  box-sizing: border-box;
+  margin-top: 1.3rem;
+  height: fit-content;
+  border-radius: 6px;
+}
 </style>
