@@ -21,6 +21,7 @@ import RoleSelect from "@/components/RoleSelect.vue";
 
 export default {
   components: {
+    RoleSelect
   }
 }
 </script>
