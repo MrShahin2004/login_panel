@@ -55,7 +55,7 @@ img {
 }
 
 h1 {
-  transform: translate(0, 140px);
+  transform: translate(0, 130px);
   font-family: "B Titr", cursive;
   font-size: 16px;
 }
