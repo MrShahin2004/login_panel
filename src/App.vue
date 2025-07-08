@@ -28,6 +28,7 @@ export default {
 
 <style>
 :root {
+  --main-title: #dcb417;
   --body-bg: #e5e7eb;
   --title-bg: #48b3bd;
   --input-bg: #dbeafe;
