@@ -71,6 +71,8 @@ h1 {
   transform: translate(0, 130px);
   font-family: "B Titr", cursive;
   font-size: 16px;
+  color: var(--main-title);
+  text-shadow: 0 4px 10px black;
 }
 
 .login-body {
