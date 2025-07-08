@@ -5,7 +5,9 @@
       <img class="img-2" src="@/assets/images/education_logo.png" alt="education_ministry">
     </div>
 
-    <div class="login-body" id="login-body"></div>
+    <div class="login-body" id="login-body">
+
+    </div>
   </div>
 </template>
 
