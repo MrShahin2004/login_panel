@@ -21,4 +21,18 @@ export default {
   height: 100%;
   font-family: "JetBrains Mono", monospace;
 }
+
+.login-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.login-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+img {
+  width: 160px;
+}
 </style>
