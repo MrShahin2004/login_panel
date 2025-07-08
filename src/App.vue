@@ -109,4 +109,12 @@ h1 {
   height: fit-content;
   border-radius: 6px;
 }
+
+.body-inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 </style>
