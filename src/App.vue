@@ -56,9 +56,8 @@ h1 {
 
 .login-body {
   width: 100%;
-  height: 480px;
-  background-color: black;
-  transform: translate(0, -10%);
+  height: 500px;
+  transform: translate(0, -5%);
   display: flex;
   justify-content: center;
   align-items: center;
