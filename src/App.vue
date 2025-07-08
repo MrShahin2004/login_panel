@@ -91,7 +91,9 @@ h1 {
   height: 500px;
   background-color: var(--body-bg);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .body-title {
