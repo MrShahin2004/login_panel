@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import RoleSelect from "@/components/RoleSelect.vue";
+
 export default {
   components: {
   }
