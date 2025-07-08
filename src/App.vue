@@ -44,6 +44,10 @@ export default {
 #body {
   width: 100%;
   height: 100%;
+  background: #0059E7;
+  background: radial-gradient(circle,
+  rgba(0, 89, 231, 1) 0%,
+  rgba(43, 16, 88, 1) 100%);
 }
 
 .login-container {
