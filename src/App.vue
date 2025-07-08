@@ -25,7 +25,7 @@ import PassWord from "@/components/PassWord.vue";
 
 export default {
   components: {
-    RoleSelect
+    RoleSelect, UserName, PassWord
   }
 }
 </script>
