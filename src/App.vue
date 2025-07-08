@@ -1,15 +1,10 @@
 <template>
-  <div id="panel-container">
-    <MrShahin/>
-  </div>
+  <div></div>
 </template>
 
 <script>
-import MrShahin from "@/components/MrShahin.vue";
-
 export default {
   components: {
-    MrShahin
   }
 }
 </script>
