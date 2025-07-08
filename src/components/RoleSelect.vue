@@ -1,6 +1,6 @@
 <template>
-  <div class="body-inputs" title="body-inputs">
-    <select id="select-input">
+  <div class="select-box" title="select-box">
+    <select id="select-input" dir="rtl">
       <option value="Choose">انتخاب کنید</option>
       <option value="Choose">کاربر ثبات</option>
       <option value="Choose">کاربر اداره کل</option>
