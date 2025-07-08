@@ -20,6 +20,8 @@
 
 <script>
 import RoleSelect from "@/components/RoleSelect.vue";
+import UserName from "@/components/UserName.vue";
+import PassWord from "@/components/PassWord.vue";
 
 export default {
   components: {
