@@ -41,4 +41,9 @@ export default {
 img {
   width: 160px;
 }
+
+h1 {
+  transform: translate(0, 140px);
+  font-size: 16px;
+}
 </style>
