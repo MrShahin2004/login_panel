@@ -1,7 +1,5 @@
 <template>
   <div id="panel-container">
-    <h1>"App.vue" section</h1>
-    <hr>
     <MrShahin/>
   </div>
 </template>
