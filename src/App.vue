@@ -6,7 +6,12 @@
       <img src="@/assets/images/education_logo.png" alt="education_image">
     </div>
     <div class="login-body" id="login-body">
-      <div class="login-panel" id="login-panel"></div>
+      <div class="login-panel" id="login-panel">
+        <p class="body-title" id="body-title" dir="rtl">ورود به سامانه کشوری برون سپاری</p>
+        <RoleSelect/>
+        <div class="body-desc" id="body-desc"></div>
+        <div class="body-buttons" id="body-buttons"></div>
+      </div>
     </div>
   </div>
 </template>
