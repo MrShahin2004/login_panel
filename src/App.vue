@@ -19,6 +19,13 @@ export default {
 </script>
 
 <style>
+:root {
+  --body-bg: #e5e7eb;
+  --title-bg: #48b3bd;
+  --input-bg: #dbeafe;
+  --btn-bg: #293da3;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
