@@ -17,6 +17,8 @@ export default {
 }
 
 #body {
+  width: 100%;
+  height: 100%;
   font-family: "JetBrains Mono", monospace;
 }
 </style>
