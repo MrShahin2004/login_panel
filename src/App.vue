@@ -2,6 +2,7 @@
   <div class="login-container" id="login-container">
     <div class="login-header" id="login-header">
       <img src="@/assets/images/khamenei.png" alt="khamenei_image">
+      <h1>پایگاه اطلاعات قراردادهای اداره کل آموزش و پرورش استان خراسان رضوی</h1>
       <img src="@/assets/images/education_logo.png" alt="education_image">
     </div>
     <div class="login-body" id="login-body"></div>
