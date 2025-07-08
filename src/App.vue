@@ -5,7 +5,9 @@
       <h1>پایگاه اطلاعات قراردادهای اداره کل آموزش و پرورش استان خراسان رضوی</h1>
       <img src="@/assets/images/education_logo.png" alt="education_image">
     </div>
-    <div class="login-body" id="login-body"></div>
+    <div class="login-body" id="login-body">
+      <div class="login-panel" id="login-panel"></div>
+    </div>
   </div>
 </template>
 
@@ -32,6 +34,9 @@ export default {
 .login-container {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .login-header {
@@ -47,5 +52,15 @@ h1 {
   transform: translate(0, 140px);
   font-family: "B Titr", cursive;
   font-size: 16px;
+}
+
+.login-body {
+  width: 100%;
+  height: 480px;
+  background-color: black;
+  transform: translate(0, -10%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
