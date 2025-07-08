@@ -10,6 +10,8 @@
         <p class="body-title" id="body-title" dir="rtl">ورود به سامانه کشوری برون سپاری</p>
         <div class="body-inputs" id="body-inputs">
           <RoleSelect/>
+          <UserName/>
+          <PassWord/>
         </div>
         <div class="body-desc" id="body-desc"></div>
         <div class="body-buttons" id="body-buttons"></div>
