@@ -1,20 +1,20 @@
 <template>
-  <div class="login-container" id="login-container">
-    <div class="login-header" id="login-header">
+  <div class="login-container h-screen">
+    <div class="login-header">
       <img id="img-1" src="@/assets/images/khamenei.png" alt="khamenei_image">
       <h1>پایگاه اطلاعات قراردادهای اداره کل آموزش و پرورش استان خراسان رضوی</h1>
       <img id="img-2" src="@/assets/images/education_logo.png" alt="education_image">
     </div>
-    <div class="login-body" id="login-body">
-      <div class="login-panel" id="login-panel">
-        <p class="body-title" id="body-title" dir="rtl">ورود به سامانه کشوری برون سپاری</p>
-        <div class="body-inputs" id="body-inputs">
+    <div class="login-body">
+      <div class="login-panel">
+        <p class="body-title" dir="rtl">ورود به سامانه کشوری برون سپاری</p>
+        <div class="body-inputs">
           <RoleSelect/>
           <UserName/>
           <PassWord/>
         </div>
-        <div class="body-desc" id="body-desc"></div>
-        <div class="body-buttons" id="body-buttons"></div>
+        <div class="body-desc"></div>
+        <div class="body-buttons"></div>
       </div>
     </div>
   </div>
@@ -58,7 +58,6 @@ export default {
 
 .login-container {
   width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
