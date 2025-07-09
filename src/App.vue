@@ -61,7 +61,6 @@ h1 {
 }
 
 .login-body {
-  width: 100%;
   height: 500px;
   transform: translate(0, -5%);
   display: flex;
