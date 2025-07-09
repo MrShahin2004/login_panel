@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen w-screen flex flex-col justify-between">
-    <div class="login-header">
+    <div class="flex justify-between">
       <img id="img-1" src="@/assets/images/khamenei.png" alt="khamenei_image">
       <h1>پایگاه اطلاعات قراردادهای اداره کل آموزش و پرورش استان خراسان رضوی</h1>
       <img id="img-2" src="@/assets/images/education_logo.png" alt="education_image">
