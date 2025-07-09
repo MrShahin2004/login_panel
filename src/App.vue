@@ -6,7 +6,7 @@
                  text-shadow-[0_4px_10px_black]">پایگاه اطلاعات قراردادهای اداره کل آموزش و پرورش استان خراسان رضوی</h1>
       <img class="w-[160px]" src="@/assets/images/education_logo.png" alt="education_image">
     </div>
-    <div class="login-body">
+    <div class="login-body w-full">
       <div class="login-panel">
         <p class="body-title" dir="rtl">ورود به سامانه کشوری برون سپاری</p>
         <div class="body-inputs">
