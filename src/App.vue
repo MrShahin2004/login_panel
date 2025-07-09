@@ -1,5 +1,5 @@
 <template>
-  <div class="login-container h-screen">
+  <div class="login-container h-screen w-screen">
     <div class="login-header">
       <img id="img-1" src="@/assets/images/khamenei.png" alt="khamenei_image">
       <h1>پایگاه اطلاعات قراردادهای اداره کل آموزش و پرورش استان خراسان رضوی</h1>
@@ -55,7 +55,6 @@ export default {
 }
 
 .login-container {
-  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
