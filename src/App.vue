@@ -8,7 +8,7 @@
     </div>
     <div class="login-body w-full h-[500px] translate-x-[0] translate-y-[-5%]
                 flex justify-center items-center relative">
-      <div class="login-panel w-[500px] h-[500px] bg-[var(--body-bg)]
+      <div class="w-[500px] h-[500px] bg-[var(--body-bg)]
                   flex flex-col justify-between items-center rounded-[10px]">
         <p class="body-title" dir="rtl">ورود به سامانه کشوری برون سپاری</p>
         <div class="body-inputs">
