@@ -2,7 +2,8 @@
   <div class="h-screen w-screen flex flex-col justify-between">
     <div class="flex justify-between">
       <img class="w-[160px]" src="@/assets/images/khamenei.png" alt="khamenei_image">
-      <h1 class="translate-x-[0] translate-y-[150px] text-[16px]">پایگاه اطلاعات قراردادهای اداره کل آموزش و پرورش استان خراسان رضوی</h1>
+      <h1 class="translate-x-[0] translate-y-[150px] text-[16px]
+                 text-shadow-[0_4px_10px_black]">پایگاه اطلاعات قراردادهای اداره کل آموزش و پرورش استان خراسان رضوی</h1>
       <img class="w-[160px]" src="@/assets/images/education_logo.png" alt="education_image">
     </div>
     <div class="login-body">
