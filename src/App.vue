@@ -70,8 +70,6 @@ h1 {
   padding: 0.5rem 2rem;
   color: white;
   margin-top: 1.3rem;
-  height: fit-content;
-  border-radius: 6px;
 }
 
 .body-inputs {
