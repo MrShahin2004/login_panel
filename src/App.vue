@@ -54,10 +54,6 @@ export default {
   rgba(43, 16, 88, 1) 100%);
 }
 
-.login-container {
-  display: flex;
-}
-
 .login-header {
   display: flex;
   justify-content: space-between;
