@@ -65,16 +65,6 @@ h1 {
   font-family: "B Nazanin", cursive;
 }
 
-.login-panel {
-  width: 500px;
-  height: 500px;
-  background-color: var(--body-bg);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .body-title {
   font-size: 15px;
   padding: 0.5rem 2rem;
