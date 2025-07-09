@@ -54,10 +54,6 @@ export default {
   rgba(43, 16, 88, 1) 100%);
 }
 
-img {
-  width: 160px;
-}
-
 h1 {
   transform: translate(0, 130px);
   font-family: "B Titr", cursive;
