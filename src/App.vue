@@ -69,9 +69,6 @@ h1 {
 .body-title {
   padding: 0.5rem 2rem;
   color: white;
-  background-color: var(--title-bg);
-  width: 90%;
-  box-sizing: border-box;
   margin-top: 1.3rem;
   height: fit-content;
   border-radius: 6px;
