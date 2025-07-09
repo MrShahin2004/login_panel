@@ -57,7 +57,6 @@ export default {
 h1 {
   font-family: "B Titr", cursive;
   color: var(--main-title);
-  text-shadow: 0 4px 10px black;
 }
 
 .login-body {
