@@ -61,12 +61,6 @@ h1 {
 }
 
 .login-body {
-  height: 500px;
-  transform: translate(0, -5%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
   font-family: "B Nazanin", cursive;
 }
 
