@@ -10,7 +10,8 @@
                 flex justify-center items-center relative">
       <div class="w-[500px] h-[500px] bg-[var(--body-bg)]
                   flex flex-col justify-between items-center rounded-[10px]">
-        <p class="body-title" dir="rtl">ورود به سامانه کشوری برون سپاری</p>
+        <p class="body-title text-[15px] bg-[var(--title-bg)]
+                  w-[90%] box-border h-fit rounded-[6px]" dir="rtl">ورود به سامانه کشوری برون سپاری</p>
         <div class="body-inputs">
           <RoleSelect/>
           <UserName/>
