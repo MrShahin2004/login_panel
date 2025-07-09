@@ -67,7 +67,6 @@ h1 {
 }
 
 .body-title {
-  font-size: 15px;
   padding: 0.5rem 2rem;
   color: white;
   background-color: var(--title-bg);
