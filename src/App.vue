@@ -33,18 +33,18 @@ export default {
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --main-title: #dcb417;
   --body-bg: #e5e7eb;
   --title-bg: #48b3bd;
   --input-bg: #dbeafe;
   --btn-bg: #293da3;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 #body {
