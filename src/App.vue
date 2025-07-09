@@ -54,11 +54,6 @@ export default {
   rgba(43, 16, 88, 1) 100%);
 }
 
-.login-header {
-  display: flex;
-  justify-content: space-between;
-}
-
 img {
   width: 160px;
 }
