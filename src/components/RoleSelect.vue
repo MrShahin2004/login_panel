@@ -1,5 +1,5 @@
 <template>
-  <div class="select-box" title="select-box">
+  <div class="select-box">
     <select class="select-input" id="select-input" dir="rtl">
       <option value="Choose">انتخاب کنید</option>
       <option value="Choose">کاربر ثبات</option>
