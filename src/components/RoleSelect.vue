@@ -16,12 +16,6 @@
 <style scoped>
 .select-box {
   padding: 0.5rem;
-  height: fit-content;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  width: 90%;
-  border-top-right-radius: 6px;
-  border-top-left-radius: 6px;
 }
 
 .label-section {
