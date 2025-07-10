@@ -22,10 +22,4 @@ select {
   font-family: "B Nazanin", sans-serif;
   padding: 0.5rem;
 }
-
-option {
-  background-color: white;
-  border: 0;
-  border-radius: 4px;
-}
 </style>
