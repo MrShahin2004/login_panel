@@ -23,10 +23,6 @@ select {
   padding: 0.5rem;
 }
 
-select:focus {
-  outline: none;
-}
-
 option {
   background-color: white;
   border: 0;
