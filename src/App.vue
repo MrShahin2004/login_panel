@@ -70,6 +70,6 @@ h1 {
 .body-title {
   padding: 0.5rem 2rem;
   color: white;
-  margin-top: 1.3rem;
+  margin-top: 2.5rem;
 }
 </style>
