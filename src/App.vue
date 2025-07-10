@@ -72,12 +72,4 @@ h1 {
   color: white;
   margin-top: 1.3rem;
 }
-
-.body-inputs {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 </style>
