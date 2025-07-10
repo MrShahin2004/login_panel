@@ -21,7 +21,6 @@
 select {
   font-family: "B Nazanin", sans-serif;
   padding: 0.5rem;
-  font-size: 16px;
 }
 
 select:focus {
