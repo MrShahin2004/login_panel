@@ -5,7 +5,7 @@
       <option value="Choose">کاربر ثبات</option>
       <option value="Choose">کاربر اداره کل</option>
     </select>
-    <div class="label-section">
+    <div class="label-section flex justify-center items-center">
       <label for="select-input">انتخاب نقش</label>
     </div>
   </div>
