@@ -19,9 +19,5 @@ input {
   font-family: "B Nazanin", sans-serif;
   padding: 0.5rem;
 }
-
-input:focus {
-  outline: none;
-}
 </style>
 
