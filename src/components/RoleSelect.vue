@@ -20,9 +20,6 @@
 
 select {
   font-family: "B Nazanin", sans-serif;
-  background-color: #dbeafe;
-  border: 0;
-  border-radius: 6px;
   padding: 0.5rem;
   font-size: 16px;
 }
