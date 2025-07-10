@@ -18,11 +18,6 @@
   padding: 0.5rem;
 }
 
-label {
-  text-align: center;
-  font-size: 16px;
-}
-
 select {
   font-family: "B Nazanin", sans-serif;
   background-color: #dbeafe;
