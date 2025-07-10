@@ -1,7 +1,7 @@
 <template>
   <div class="username-input bg-[#f3f4f6] h-fit grid grid-cols-[3fr_1fr] w-[90%]" id="username-input">
     <input dir="rtl" id="text-input" type="text">
-    <div class="label-section" id="label-section">
+    <div class="label-section flex justify-center items-center" id="label-section">
       <label for="text-input">نام کاربری</label>
     </div>
   </div>
