@@ -18,12 +18,6 @@
   padding: 0.5rem;
 }
 
-.label-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 label {
   text-align: center;
   font-size: 16px;
