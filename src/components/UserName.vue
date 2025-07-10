@@ -12,7 +12,6 @@
 
 <style scoped>
 .username-input {
-  background-color: #f3f4f6;
   padding: 0.5rem;
   height: fit-content;
   display: grid;
