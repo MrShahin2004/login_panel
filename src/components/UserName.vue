@@ -13,10 +13,6 @@
 <style scoped>
 .username-input {
   padding: 0.5rem;
-  height: fit-content;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  width: 90%;
 }
 
 .label-section {
