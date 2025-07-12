@@ -1,6 +1,7 @@
 <template>
   <div class="select-box bg-[#f3f4f6] h-fit grid grid-cols-[3fr_1fr] w-[90%] rounded-t-[6px_6px]">
-    <select class="select-input bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0" dir="rtl">
+    <select class="select-input bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0"
+            id="select-input" dir="rtl">
       <option class="bg-[white] border-0" value="Choose">انتخاب کنید</option>
       <option class="bg-[white] border-0" value="Choose">کاربر ثبات</option>
       <option class="bg-[white] border-0" value="Choose">کاربر اداره کل</option>
