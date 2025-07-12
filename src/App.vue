@@ -18,7 +18,12 @@
           <PassWord/>
           <SecurityCode/>
         </div>
-        <div class="body-desc"></div>
+        <div class="body-desc text-[16px] flex flex-col justify-center items-center">
+          <p>فیلد گذر واژه به کوچکی و بزرگی حروف حساس است</p>
+          <p>گذر واژه باید ترکیبی از عدد و حروف باشد</p>
+          <p>فیلد کد امنیتی به کوچکی و بزرگی حروف حساس نیست</p>
+          <p>به زبان صفحه کلید خود دقت کنید تا روی زبان درست تنظیم شده باشد</p>
+        </div>
         <div class="body-buttons"></div>
       </div>
     </div>
