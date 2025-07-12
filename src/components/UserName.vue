@@ -2,7 +2,7 @@
   <div class="username-input bg-[#f3f4f6] h-fit grid grid-cols-[3fr_1fr] w-[90%]" id="username-input">
     <input class="bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0" dir="rtl"
            id="text-input" type="text">
-    <div class="label-section flex justify-center items-center" id="label-section">
+    <div class="flex justify-center items-center" id="label-section">
       <label class="text-center text-[16px]" for="text-input">نام کاربری</label>
     </div>
   </div>

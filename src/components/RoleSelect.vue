@@ -6,7 +6,7 @@
       <option class="bg-[white] border-0" value="Choose">کاربر ثبات</option>
       <option class="bg-[white] border-0" value="Choose">کاربر اداره کل</option>
     </select>
-    <div class="label-section flex justify-center items-center">
+    <div class="flex justify-center items-center">
       <label class="text-center text-[16px]" for="select-input">انتخاب نقش</label>
     </div>
   </div>
