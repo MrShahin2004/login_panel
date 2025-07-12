@@ -42,7 +42,7 @@
         <a class="text-white transition hover:cursor-pointer" href="#">صفحه اصلی</a>
       </div>
       <div class="footer-desc flex justify-center items-center">
-        <p>© کلیه حقوق این پایگاه به سپهر داده تعلق دارد</p>
+        <p class="text-[white]">© کلیه حقوق این پایگاه به سپهر داده تعلق دارد</p>
       </div>
     </div>
   </div>
