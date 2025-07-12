@@ -29,6 +29,7 @@
 import RoleSelect from "@/components/RoleSelect.vue";
 import UserName from "@/components/UserName.vue";
 import PassWord from "@/components/PassWord.vue";
+import SecurityCode from "@/components/SecurityCode.vue";
 
 export default {
   components: {
