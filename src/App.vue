@@ -33,8 +33,8 @@ import SecurityCode from "@/components/SecurityCode.vue";
 
 export default {
   components: {
-    RoleSelect, UserName, PassWord
-  }
+    RoleSelect, UserName, PassWord, SecurityCode
+  },
 }
 </script>
 
