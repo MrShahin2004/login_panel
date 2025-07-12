@@ -1,5 +1,5 @@
 <template>
-  <div class="code-input bg-[#f3f4f6] w-[90%] h-fit grid grid-cols-[3fr_1fr_1.3fr]">
+  <div class="code-input bg-[#f3f4f6] w-[90%] h-fit grid grid-cols-[3fr_1fr_1.3fr] rounded-b-[6px_6px]">
     <input class="bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0" id="code-input" type="text">
     <p class="flex justify-center items-center">{{ SomeNumber }}</p>
     <label class="flex justify-center items-center" for="code-input">کد امنیتی</label>
