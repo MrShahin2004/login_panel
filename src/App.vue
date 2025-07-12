@@ -16,6 +16,7 @@
           <RoleSelect/>
           <UserName/>
           <PassWord/>
+          <SecurityCode/>
         </div>
         <div class="body-desc"></div>
         <div class="body-buttons"></div>
