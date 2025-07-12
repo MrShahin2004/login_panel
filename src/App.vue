@@ -1,13 +1,12 @@
 <template>
   <div class="h-screen w-screen flex flex-col justify-between">
-    <div class="flex justify-between">
+    <div class="flex justify-between relative">
       <img class="w-[160px]" src="@/assets/images/khamenei.png" alt="khamenei_image">
-      <h1 class="translate-x-[0] translate-y-[150px] text-[16px]
+      <h1 class="text-[16px] absolute left-[50%] top-[90px] translate-x-[-50%] translate-y-[-100%]
                  text-shadow-[0_4px_10px_black]">پایگاه اطلاعات قراردادهای اداره کل آموزش و پرورش استان خراسان رضوی</h1>
       <img class="w-[160px]" src="@/assets/images/education_logo.png" alt="education_image">
     </div>
-    <div class="login-body w-full h-[500px] translate-x-[0] translate-y-[-5%]
-                flex justify-center items-center relative">
+    <div class="login-body w-full h-full flex justify-center items-center">
       <div class="w-[500px] h-[500px] bg-[var(--body-bg)]
                   flex flex-col justify-between items-center rounded-[10px]">
         <p class="body-title text-[15px] bg-[var(--title-bg)]
@@ -82,6 +81,8 @@ export default {
   background: radial-gradient(circle,
   rgba(0, 89, 231, 1) 0%,
   rgba(43, 16, 88, 1) 100%);
+  height: 100dvh;
+  overflow: hidden;
 }
 
 h1 {
@@ -91,11 +92,32 @@ h1 {
 
 .login-body {
   font-family: "B Nazanin", cursive;
+  margin-bottom: 1rem;
 }
 
 .body-title {
   padding: 0.5rem 2rem;
   color: white;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+button {
+  margin-bottom: 1.5rem;
+}
+
+hr {
+  color: white;
+}
+
+.footer-links {
+  margin-bottom: 1rem;
+}
+
+a:hover {
+  color: blue;
+}
+
+.footer-desc {
+  margin-bottom: 1rem;
 }
 </style>
