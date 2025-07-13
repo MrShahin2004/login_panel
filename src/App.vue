@@ -28,9 +28,8 @@
           w-[150px] h-[50px] rounded-[10px] hover:cursor-pointer">ورود به سامانه
           </button>
           <button class="bg-[var(--btn-bg)] text-[white]
-           w-[150px] h-[50px] rounded-[10px] hover:cursor-pointer">ورود به سامانه</button>
-          <button class="bg-[var(--btn-bg)] text-[white]
-           w-[150px] h-[50px] rounded-[10px] hover:cursor-pointer">فراموشی گذر واژه</button>
+           w-[150px] h-[50px] rounded-[10px] hover:cursor-pointer">فراموشی گذر واژه
+          </button>
         </div>
       </div>
     </div>
