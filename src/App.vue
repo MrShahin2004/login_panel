@@ -83,8 +83,6 @@ export default {
   background: radial-gradient(circle,
   rgba(0, 89, 231, 1) 0%,
   rgba(43, 16, 88, 1) 100%);
-  height: 100dvh;
-  overflow: hidden;
 }
 
 h1 {
