@@ -24,7 +24,7 @@
           <p>به زبان صفحه کلید خود دقت کنید تا روی زبان درست تنظیم شده باشد</p>
         </div>
         <div class="flex flex-col md:flex-row justify-center items-center gap-4">
-          <button class="bg-[var(--btn-bg)] text-[white]
+          <button @click="PostData" class="bg-[var(--btn-bg)] text-[white]
           w-[150px] h-[50px] rounded-[10px] hover:cursor-pointer">ورود به سامانه
           </button>
           <button class="bg-[var(--btn-bg)] text-[white]
