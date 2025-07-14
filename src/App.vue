@@ -60,6 +60,46 @@ export default {
   components: {
     RoleSelect, UserName, PassWord, SecurityCode
   },
+  data() {
+    return {
+      ReceivedRole: "",
+      ReceivedUser: "",
+      ReceivedPass: ""
+    };
+  },
+  methods: {
+    AssignRole(role) {
+      this.ReceivedRole = role;
+    },
+    AssignUser(user) {
+      this.ReceivedUser = user;
+    },
+    AssignPass(pass) {
+      this.ReceivedPass = pass;
+    },
+    PostData() {
+      fetch("http://localhost:3000/api/data", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          role: this.ReceivedRole,
+          user: this.ReceivedUser,
+          pass: this.ReceivedPass
+        })
+      })
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((error) => {
+            console.log("Failed to fetch. Error log: ", error);
+          });
+    }
+  }
 }
 </script>
 
