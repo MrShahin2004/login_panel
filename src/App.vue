@@ -12,9 +12,9 @@
         <p class="body-title text-[15px] bg-[var(--title-bg)]
                   w-[90%] box-border h-fit rounded-[6px]" dir="rtl">ورود به سامانه کشوری برون سپاری</p>
         <div class="body-inputs w-full flex flex-col justify-center items-center">
-          <RoleSelect/>
-          <UserName/>
-          <PassWord/>
+          <RoleSelect @SendRole="AssignRole($event)"/>
+          <UserName @SendUser="AssignUser($event)"/>
+          <PassWord @SendPass="AssignPass($event)"/>
           <SecurityCode/>
         </div>
         <div class="body-desc text-[16px] flex flex-col justify-center items-center">
