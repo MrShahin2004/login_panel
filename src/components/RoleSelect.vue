@@ -1,10 +1,11 @@
 <template>
   <div class="select-box bg-[#f3f4f6] h-fit grid grid-cols-[3fr_1fr] w-[90%] rounded-t-[6px_6px]">
-    <select class="select-input bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0"
+    <select @change="SendRole" v-model="SelectedRole"
+            class="select-input bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0"
             id="select-input" dir="rtl">
-      <option class="bg-[white] border-0" value="Choose">انتخاب کنید</option>
-      <option class="bg-[white] border-0" value="Choose">کاربر ثبات</option>
-      <option class="bg-[white] border-0" value="Choose">کاربر اداره کل</option>
+      <option class="bg-[white] border-0" value="انتخاب کنید">انتخاب کنید</option>
+      <option class="bg-[white] border-0" value="کاربر ثبات">کاربر ثبات</option>
+      <option class="bg-[white] border-0" value="کاربر اداره کل">کاربر اداره کل</option>
     </select>
     <div class="flex justify-center items-center">
       <label class="text-center text-[16px]" for="select-input">انتخاب نقش</label>
@@ -12,7 +13,20 @@
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      SelectedRole: ""
+    };
+  },
+  methods: {
+    SendRole() {
+      this.$emit("SendRole", this.SelectedRole);
+    }
+  }
+}
+</script>
 
 <style scoped>
 .select-box {
