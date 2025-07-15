@@ -78,7 +78,7 @@ export default {
       this.ReceivedPass = pass;
     },
     PostData() {
-      fetch("http://localhost:3000/api/data", {
+      fetch("http://localhost:3000/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
