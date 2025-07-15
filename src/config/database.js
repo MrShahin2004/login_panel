@@ -18,7 +18,7 @@ let Pool = MariaDB.createPool({
     port: 3306,
     user: "root",
     password: "mrshahin2004",
-    database: "sepeher_dad",
+    database: "sepehr_dad",
     connectionLimit: 10
 });
 
