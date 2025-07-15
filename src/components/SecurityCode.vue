@@ -8,25 +8,7 @@
 <script>
 export default {
   data() {
-    return {
-      SomeNumber: null
-    };
-  },
-  mounted() {
-    console.log("🧠 Vue mounted");
-
-    fetch("/api/number?" + Date.now())
-        .then((res) => {
-          console.log("🛰️ Got response:", res);
-          return res.json();
-        })
-        .then((data) => {
-          console.log("✅ JSON parsed:", data);
-          this.SomeNumber = data.number;
-        })
-        .catch((err) => {
-          console.error("❌ Fetch error:", err);
-        });
+    return {};
   }
 }
 </script>
