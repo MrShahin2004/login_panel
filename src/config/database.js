@@ -50,7 +50,7 @@ App.get("/api/number", (req, res) => {
 });
 
 // POST method
-App.post("/api/data", async (req,
+App.post("/api/auth/register", async (req,
                              res) => {
     let RequestData = req.body;
     if (!RequestData.role || !RequestData.user || !RequestData.pass) {
