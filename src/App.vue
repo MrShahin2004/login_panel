@@ -15,7 +15,7 @@
           <RoleSelect @SendRole="AssignRole($event)"/>
           <UserName @SendUser="AssignUser($event)"/>
           <PassWord @SendPass="AssignPass($event)"/>
-          <SecurityCode/>
+          <SecurityCode @SendCode="AssignCode($event)"/>
         </div>
         <div class="body-desc text-[16px] flex flex-col justify-center items-center">
           <p>فیلد گذر واژه به کوچکی و بزرگی حروف حساس است</p>
