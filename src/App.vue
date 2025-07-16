@@ -48,6 +48,7 @@
       </div>
     </div>
   </div>
+  <button class="bg-[white]" @click="AnalyzeCode">Check Code</button>
 </template>
 
 <script>
