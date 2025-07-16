@@ -13,7 +13,21 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      CaptchaLink: "",
+      InsertedCode: ""
+    };
+  },
+  methods: {
+    GetCaptcha() {
+      this.CaptchaLink = "http://localhost:3000/api/captcha/get?t" + Date.now();
+    },
+    SendCode() {
+      this.$emit("SendCode", this.InsertedCode);
+    }
+  },
+  mounted() {
+    this.GetCaptcha();
   }
 }
 </script>
