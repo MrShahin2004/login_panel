@@ -79,6 +79,9 @@ export default {
     AssignPass(pass) {
       this.ReceivedPass = pass;
     },
+    AssignCode(code) {
+      this.ReceivedCode = code;
+    },
     PostData() {
       fetch("http://localhost:3000/api/auth/register", {
         method: "POST",
