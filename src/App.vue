@@ -65,7 +65,8 @@ export default {
     return {
       ReceivedRole: "",
       ReceivedUser: "",
-      ReceivedPass: ""
+      ReceivedPass: "",
+      ReceivedCode: ""
     };
   },
   methods: {
