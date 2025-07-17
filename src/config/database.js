@@ -54,7 +54,9 @@ async function StoreData(role, user, pass) {
         console.log(error);
     } finally {
         if (Conn) {
-            Conn.release();
+            Conn.release().then((response) => {
+                return response;
+            });
         }
     }
 }
