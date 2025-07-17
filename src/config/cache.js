@@ -101,6 +101,6 @@ App.post("/api/redis/check-exist", async (req,
     res.json({isFine: true});
 });
 
-App.listen(3000, () => {
-    console.log("Server is running with the URL http://localhost:3000");
+App.listen(Port, () => {
+    console.log(`Server is running on the URL http://${Host}:${Port}`);
 });
