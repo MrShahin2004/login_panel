@@ -103,34 +103,6 @@ export default {
           .catch((error) => {
             console.log("Failed to fetch. Error log: ", error);
           });
-    },
-    AnalyzeCode() {
-      if (+this.ReceivedCode.length === 0) {
-        console.log("Please insert a value.");
-      } else if (isNaN(+this.ReceivedCode)) {
-        console.log("Security code must be only a number.");
-      } else if (+this.ReceivedCode.length > 5 || +this.ReceivedCode.length < 5) {
-        console.log("Security code must be exactly 5 digits.");
-      } else {
-        fetch("http://localhost:3000/api/redis/check-exist", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            code: this.ReceivedCode
-          })
-        })
-            .then((response) => {
-              return response.json();
-            })
-            .then((data) => {
-              console.log(data);
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-      }
     }
   }
 }
