@@ -31,7 +31,7 @@ export default {
         console.log("Security code must be exactly 5 digits.");
       } else {
         console.log("Security code meets the condition.");
-        this.$emit("SendCode", this.InsertedCode);
+        this.$emit("SendCode", +this.InsertedCode);
       }
     }
   },
