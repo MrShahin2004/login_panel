@@ -83,7 +83,7 @@ export default {
       this.ReceivedCode = code;
     },
     PostData() {
-      fetch("http://localhost:3000/api/auth/register", {
+      fetch("http://localhost:3000/api/mariadb/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
