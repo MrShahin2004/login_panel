@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     GetCaptcha() {
-      this.CaptchaLink = "http://localhost:3000/api/captcha/get?t" + Date.now();
+      this.CaptchaLink = "http://localhost:4000/api/captcha/get?t" + Date.now();
     },
     SendCode() {
       this.$emit("SendCode", this.InsertedCode);
