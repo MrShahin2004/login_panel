@@ -22,6 +22,25 @@ let Pool = MariaDB.createPool({
     connectionLimit: 10
 });
 
+// A function to get all rows from the "users" table in MariaDB
+async function GetData() {
+    let Conn;
+    try {
+        Conn = await Pool.getConnection();
+        let Query = await Conn.query("select * from users");
+        console.log(Query);
+    } catch (error) {
+        console.log(error);
+    } finally {
+        if (Conn) {
+            Conn.release().then((response) => {
+                return response;
+            });
+        }
+    }
+}
+
+// A function to store a new user in MariaDB
 async function StoreData(role, user, pass) {
     let Conn;
     try {
