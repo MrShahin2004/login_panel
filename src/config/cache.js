@@ -15,6 +15,10 @@ let Noise = "";
 const App = Express();
 App.use(Express.json());
 App.use(CORS());
+
+let Host = "localhost";
+let Port = 4000;
+
 // Setting the data in Redis
 App.get("/api/redis/get", async (req,
                                  res) => {
