@@ -91,7 +91,8 @@ export default {
         body: JSON.stringify({
           role: this.ReceivedRole,
           user: this.ReceivedUser,
-          pass: this.ReceivedPass
+          pass: this.ReceivedPass,
+          code: this.ReceivedCode
         })
       })
           .then((response) => {
