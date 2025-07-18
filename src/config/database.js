@@ -73,8 +73,65 @@ App.post("/api/mariadb/register", async (req,
     let {role: ExtractedRole, user: ExtractedUser, pass: ExtractedPass, code: ExtractedCode} = ReceivedData;
 
     try {
-        await StoreData(RequestData.role, RequestData.user, RequestData.pass);
-        res.status(200).json({message: "Data stored successfully in MariaDB."});
+        // Receiving the table from database
+        let Query = await GetRows()
+            .then((response) => {
+                return response;
+            })
+            .then((data) => {
+                return data;
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+        // Checking if the received username is not already existing in the database
+        let DuplicateUser = Query.find((row) => {
+            return ExtractedUser === row.username;
+        });
+
+        // Setting an interval
+        let CheckInterval = setInterval(async () => {
+            // Getting the status values of CAPTCHA from Redis
+            let IsExisting = await Redis.exists("captcha");
+            let ExistingCaptcha = await Redis.get("captcha");
+
+            if (!ExtractedRole || !ExtractedUser || !ExtractedPass || !ExtractedCode) {
+                console.log("Some field is missing at the client.");
+                res.json({message: "Some field is missing, please fill all fields."});
+            } else {
+                if (IsExisting === 1) {
+                    if (+ExtractedCode === +ExistingCaptcha && DuplicateUser === undefined) {
+                        await StoreUser(ExtractedRole, ExtractedUser, ExtractedPass)
+                            .then((response) => {
+                                return response;
+                            })
+                            .then((data) => {
+                                console.log(data);
+                            })
+                            .catch((error) => {
+                                console.log(error);
+                            });
+
+                        await Redis.del("captcha");
+                        console.log("Stored the data in MariaDB.");
+                        res.json({message: "New user was added to MariaDB."});
+                        clearInterval(CheckInterval);
+                    } else {
+                        console.log("Something went wrong. It's either username or CAPTCHA.");
+                        res.json({
+                            message: "Something went wrong. Either the username is duplicate or the CAPTCHA is wrong."
+                        });
+                    }
+                } else {
+                    console.log("The CAPTCHA is expired.");
+                    res.json({
+                        message: "The CAPTCHA is expired, click on the CAPTCHA image or reload the page to get a new one."
+                    });
+                    clearInterval(CheckInterval);
+                }
+            }
+        }, 1000);
     } catch (error) {
         console.log(error);
     }
