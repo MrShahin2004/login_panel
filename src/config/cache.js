@@ -62,7 +62,7 @@ App.get("/api/captcha/get", async (req,
     `;
 
     // Setting the CAPTCHA number in Redis
-    await Redis.set("captcha", `${CaptchaNumber}`, "EX", 30);
+    await Redis.set("captcha", `${CaptchaNumber}`, "EX", 120);
 
     res.type("svg");
     res.send(FinalSVG);
