@@ -76,8 +76,7 @@ App.post("/api/mariadb/register", async (req,
         await StoreData(RequestData.role, RequestData.user, RequestData.pass);
         res.status(200).json({message: "Data stored successfully in MariaDB."});
     } catch (error) {
-        console.error("Failed to store data:", error);
-        res.status(500).json({error: "Failed to store data in MariaDB."});
+        console.log(error);
     }
 });
 
