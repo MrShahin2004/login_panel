@@ -27,7 +27,7 @@ let Pool = MariaDB.createPool({
 });
 
 // A function to get all rows from the "users" table in MariaDB
-async function GetData() {
+async function GetRows() {
     let Conn;
     try {
         Conn = await Pool.getConnection();
