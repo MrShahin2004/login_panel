@@ -61,15 +61,6 @@ async function StoreData(role, user, pass) {
     }
 }
 
-// GET method
-App.get("/api/number", (req, res) => {
-    let JsonContainer = {
-        "number": 123
-    };
-
-    res.send(JsonContainer);
-});
-
 // POST method
 App.post("/api/mariadb/register", async (req,
                                          res) => {
