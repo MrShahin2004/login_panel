@@ -8,7 +8,7 @@ let Redis = new RedisCLI();
 
 // Creating a server
 let App = Express();
-App.use(Cors());
+App.use(CORS());
 App.use(Express.json());
 
 // Defining the host and port
