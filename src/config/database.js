@@ -2,7 +2,11 @@
 
 // Initializing the libraries of Express.js, CORS and Redis
 let Express = require("express");
-let Cors = require("cors");
+let CORS = require("cors");
+let RedisCLI = require("ioredis");
+let Redis = new RedisCLI();
+
+// Creating a server
 let App = Express();
 App.use(Cors());
 App.use(Express.json());
