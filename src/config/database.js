@@ -1,6 +1,6 @@
 "use strict";
 
-// Initializing the libraries of Express.js and CORS
+// Initializing the libraries of Express.js, CORS and Redis
 let Express = require("express");
 let Cors = require("cors");
 let App = Express();
