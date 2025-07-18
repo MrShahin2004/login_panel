@@ -45,7 +45,7 @@ async function GetData() {
 }
 
 // A function to store a new user in MariaDB
-async function StoreData(role, user, pass) {
+async function StoreUser(role, user, pass) {
     let Conn;
     try {
         Conn = await Pool.getConnection();
