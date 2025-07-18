@@ -68,11 +68,9 @@ async function StoreUser(role, user, pass) {
 // POST method
 App.post("/api/mariadb/register", async (req,
                                          res) => {
-    let RequestData = req.body;
-    if (!RequestData.role || !RequestData.user || !RequestData.pass) {
-        return res.status(400).json({error: "Missing required fields"});
-    }
-    console.log("Received data:", RequestData);
+    // Extracting the received data from client
+    let ReceivedData = req.body;
+    let {role: ExtractedRole, user: ExtractedUser, pass: ExtractedPass, code: ExtractedCode} = ReceivedData;
 
     try {
         await StoreData(RequestData.role, RequestData.user, RequestData.pass);
