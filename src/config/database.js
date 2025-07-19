@@ -101,7 +101,15 @@ App.post("/api/mariadb/register", async (req,
                 res.json({message: "Some field is missing, please fill all fields."});
             } else {
                 if (IsExisting === 1) {
-                    if (+ExtractedCode === +ExistingCaptcha && DuplicateUser === undefined) {
+                    if (+ExtractedCode !== +ExistingCaptcha) {
+                        console.log("Wrong CAPTCHA from the client");
+                        res.json({message: "Wrong CAPTCHA, try again."});
+                        clearInterval(CheckInterval);
+                    } else if (DuplicateUser !== undefined) {
+                        console.log("Duplicate username from the client");
+                        res.json({message: "The username is already taken, try another one."});
+                        clearInterval(CheckInterval);
+                    } else {
                         await StoreUser(ExtractedRole, ExtractedUser, ExtractedPass)
                             .then((response) => {
                                 return response;
@@ -112,16 +120,10 @@ App.post("/api/mariadb/register", async (req,
                             .catch((error) => {
                                 console.log(error);
                             });
-
                         await Redis.del("captcha");
+
                         console.log("Stored the data in MariaDB.");
                         res.json({message: "New user was added to MariaDB."});
-                        clearInterval(CheckInterval);
-                    } else {
-                        console.log("Something went wrong. It's either username or CAPTCHA.");
-                        res.json({
-                            message: "Something went wrong. Either the username is duplicate or the CAPTCHA is wrong."
-                        });
                         clearInterval(CheckInterval);
                     }
                 } else {
