@@ -19,13 +19,6 @@ App.use(CORS());
 let Host = "localhost";
 let Port = 4000;
 
-// Setting the data in Redis
-App.get("/api/redis/get", async (req,
-                                 res) => {
-    let AllKeys = await Redis.keys("*");
-    res.json({exists: AllKeys});
-});
-
 // Generating the 5-digit CAPTCHA code
 App.get("/api/captcha/get", async (req,
                                    res) => {
