@@ -122,6 +122,7 @@ App.post("/api/mariadb/register", async (req,
                         res.json({
                             message: "Something went wrong. Either the username is duplicate or the CAPTCHA is wrong."
                         });
+                        clearInterval(CheckInterval);
                     }
                 } else {
                     console.log("The CAPTCHA is expired.");
