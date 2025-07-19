@@ -129,7 +129,7 @@ App.post("/api/mariadb/register", async (req,
                 } else {
                     console.log("The CAPTCHA is expired.");
                     res.json({
-                        message: "The CAPTCHA is expired, click on the CAPTCHA image or reload the page to get a new one."
+                        message: "The CAPTCHA is expired, click on the CAPTCHA image or reload the page for a new one."
                     });
                     clearInterval(CheckInterval);
                 }
