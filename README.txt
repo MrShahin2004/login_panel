@@ -10,3 +10,7 @@ Refactoring will be implemented if needed in some places.
 
 Step 1: Writing HTML & CSS templates in "App.vue" file, setting
 the proper styles and refactoring the templates with Tailwind and daisyUI
+
+Step 2: Adding two database named Redis and MariaDB
+Redis for storing a CAPTCHA code while a user tries to sign in and
+MariaDB for storing the information of the user
