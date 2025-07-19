@@ -136,7 +136,7 @@ App.post("/api/mariadb/register", async (req,
             }
         }, 1000);
     } catch (error) {
-        console.log(error);
+        console.error(error);
         res.json({message: "Something went wrong."});
     }
 });
