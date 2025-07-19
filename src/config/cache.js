@@ -70,37 +70,6 @@ App.get("/api/captcha/get", async (req,
     Noise = "";
 });
 
-App.post("/api/redis/check-exist", async (req,
-                                          res) => {
-    let ReceivedData = req.body;
-    let ExtractedCode = ReceivedData.code;
-
-    let SanitizedCode = (ExtractedCode || "").trim();
-
-    let CheckInterval = setInterval(async () => {
-        let ExistingCaptcha = await Redis.get("captcha");
-        let IsExisting = await Redis.exists("captcha");
-
-        let SanitizedCaptcha = (ExistingCaptcha || "").trim();
-
-        if (IsExisting === 1) {
-            if (SanitizedCode === SanitizedCaptcha) {
-                console.log("Yay! The inserted security code matches the CAPTCHA in Redis :D");
-                console.log("CAPTCHA is now deleted from Redis.");
-                await Redis.del("captcha");
-                clearInterval(CheckInterval);
-            } else {
-                console.log("Oops! The inserted code isn't equal to the CAPTCHA in Redis :(");
-            }
-        } else {
-            console.log("The CAPTCHA is terminated in Redis. Click on the image or reload the page.");
-            clearInterval(CheckInterval);
-        }
-    }, 1000);
-
-    res.json({isFine: true});
-});
-
 App.listen(Port, () => {
     console.log(`Server is running on the URL http://${Host}:${Port}`);
 });
