@@ -28,10 +28,6 @@ App.get("/api/jwt/get", async (req,
     res.json({token: Token});
 });
 
-App.get("/test", (req, res) => {
-    res.json({status: "Server is live!"});
-});
-
 App.listen(Port, () => {
     console.log(`Server is running on the URL http://${Host}:${Port}`);
 });
