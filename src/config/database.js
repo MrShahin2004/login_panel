@@ -143,4 +143,4 @@ App.post("/api/mariadb/register", async (req,
 
 App.listen(Port, () => {
     console.log(`Server is running on port: http://${Host}:${Port}`);
-})
+});
