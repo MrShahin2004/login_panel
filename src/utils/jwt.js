@@ -9,7 +9,7 @@ let JwtSecret = process.env.JWT_KEY;
 
 let App = Express();
 App.use(Express.json());
-App.use(CORS);
+App.use(CORS());
 
 let Host = "localhost";
 let Port = 3100;
