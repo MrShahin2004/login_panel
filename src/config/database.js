@@ -78,7 +78,7 @@ async function ExportUser(obj) {
         body: JSON.stringify({obj})
     });
     let Data = await Response.json();
-    console.log(Data);
+    return Data.token;
 }
 
 // POST method
