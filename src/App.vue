@@ -98,6 +98,23 @@ export default {
             return response.json();
           })
           .then((data) => {
+            fetch("http://localhost:3100/api/jwt/verify", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(data)
+            })
+                .then((response) => {
+                  return response.json();
+                })
+                .then((Data) => {
+                  console.log(Data);
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+
             console.log(data);
           })
           .catch((error) => {
