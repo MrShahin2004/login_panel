@@ -82,19 +82,6 @@ async function ExportUser(obj) {
     return Data.token;
 }
 
-// A function to check the token validity
-async function VerifyToken(token, secret) {
-    return new Promise((resolve, reject) => {
-        JWT.verify(token, secret, (error, decoded) => {
-            if (error) {
-                reject(error);
-            } else {
-                resolve(decoded);
-            }
-        });
-    });
-}
-
 // POST method
 App.post("/api/mariadb/register", async (req,
                                          res) => {
