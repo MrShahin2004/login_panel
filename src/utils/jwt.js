@@ -31,7 +31,7 @@ App.post("/api/jwt/verify", async (req,
     let ReceivedData = req.body;
     let GeneratedToken = ReceivedData.token;
 
-    res.json({isFine: true});
+    console.log(GeneratedToken);
 });
 
 App.listen(Port, () => {
