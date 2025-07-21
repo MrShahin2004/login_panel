@@ -26,6 +26,14 @@ App.post("/api/jwt/post", async (req,
     res.json({token: Token});
 });
 
+App.post("/api/jwt/verify", async (req,
+                                   res) => {
+    let ReceivedData = req.body;
+    console.log(ReceivedData);
+
+    res.json({isFine: true});
+});
+
 App.listen(Port, () => {
     console.log(`Server is running on the URL http://${Host}:${Port}`);
 });
