@@ -136,6 +136,21 @@ App.post("/api/mariadb/register", async (req,
                             .catch((error) => {
                                 console.log(error);
                             });
+
+                        TestObject.role = ExtractedRole;
+                        TestObject.user = ExtractedUser;
+                        TestObject.pass = ExtractedPass;
+
+                        await ExportUser(TestObject)
+                            .then((response) => {
+                                return response;
+                            })
+                            .then((data) => {
+                                console.log(data);
+                            })
+                            .catch((error) => {
+                                console.log(error);
+                            });
                         await Redis.del("captcha");
 
                         console.log("Stored the data in MariaDB.");
