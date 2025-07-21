@@ -7,10 +7,6 @@ let CORS = require("cors");
 let RedisCLI = require("ioredis");
 let Redis = new RedisCLI();
 
-// Initializing JWT
-let JWT = require("jsonwebtoken");
-let JwtSecret = process.env.JWT_KEY;
-
 // Creating a server
 let App = Express();
 App.use(CORS());
