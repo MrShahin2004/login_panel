@@ -163,7 +163,10 @@ App.post("/api/mariadb/register", async (req,
                         await Redis.del("captcha");
 
                         console.log("Stored the data in MariaDB.");
-                        res.json({message: "New user was added to MariaDB."});
+                        res.json({
+                            message: "New user was added to MariaDB.",
+                            token: TokenFromJWT,
+                        });
                         clearInterval(CheckInterval);
                     }
                 } else {
