@@ -1,6 +1,7 @@
 "use strict";
 
-// Initializing the libraries of Express.js, CORS and Redis
+// Initializing the libraries of Express.js, CORS, Redis and "dotenv"
+require("dotenv").config({path: "../../.env"});
 let Express = require("express");
 let CORS = require("cors");
 let RedisCLI = require("ioredis");
