@@ -20,7 +20,7 @@ App.post("/api/jwt/post", async (req,
     let ReceivedData = req.body;
     let UserObject = ReceivedData.obj;
 
-    let Token = await JWT.sign({UserObject}, JwtSecret, {expiresIn: "1h"});
+    let Token = await JWT.sign({UserObject}, JwtSecret, {expiresIn: "30s"});
     res.json({token: Token});
 });
 
