@@ -68,6 +68,19 @@ async function StoreUser(role, user, pass) {
     }
 }
 
+// A function to send the data to another server
+async function ExportUser(obj) {
+    let Response = await fetch("http://localhost:3100/api/jwt/post", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({obj})
+    });
+    let Data = await Response.json();
+    console.log(Data);
+}
+
 // POST method
 App.post("/api/mariadb/register", async (req,
                                          res) => {
