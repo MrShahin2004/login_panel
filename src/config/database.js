@@ -15,6 +15,9 @@ App.use(Express.json());
 let Port = 3000;
 let Host = "localhost";
 
+// Some test object
+let TestObject = {};
+
 // Importing the libraries of MariaDB and initialization
 let MariaDB = require("mariadb");
 let Pool = MariaDB.createPool({
