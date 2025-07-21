@@ -160,6 +160,21 @@ App.post("/api/mariadb/register", async (req,
                         TestObject.pass = ExtractedPass;
                         let TokenFromJWT = await ExportUser(TestObject);
 
+                        let CheckInterval = setInterval(async () => {
+                            try {
+                                await VerifyToken(TokenFromJWT, JwtSecret);
+                                console.log("Token is valid.");
+                            } catch (error) {
+                                if (error.name === "TokenExpiredError") {
+                                    console.log("Token is expired.");
+                                    clearInterval(CheckInterval);
+                                } else {
+                                    console.log("Token is invalid.");
+                                    clearInterval(CheckInterval);
+                                }
+                            }
+                        }, 1000);
+
                         await Redis.del("captcha");
 
                         console.log("Stored the data in MariaDB.");
