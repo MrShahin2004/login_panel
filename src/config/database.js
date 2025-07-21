@@ -93,6 +93,17 @@ App.post("/api/mariadb/register", async (req,
     TestObject.pass = ExtractedPass;
     console.log(TestObject);
 
+    await ExportUser(TestObject)
+        .then((response) => {
+            return response;
+        })
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
     try {
         // Receiving the table from database
         let Query = await GetRows()
