@@ -14,18 +14,16 @@ App.use(CORS());
 let Host = "localhost";
 let Port = 3100;
 
-let User = {
-    id: 1,
-    name: "Shahin",
-    age: 20,
-    city: "Mashhad"
-};
+// POST method
+App.post("/api/jwt/post", async (req,
+                                 res) => {
+    let ReceivedData = req.body;
+    let UserObject = ReceivedData.obj;
 
-App.get("/api/jwt/get", async (req,
-                               res) => {
-    let Token = await JWT.sign({id: User.id, username: User.name, age: User.age, city: User.city},
-        JwtSecret, {expiresIn: "1h"});
-    res.json({token: Token});
+    let Token = await JWT.sign({UserObject}, JwtSecret, {expiresIn: "1h"});
+    console.log(`Generated token: ${Token}`);
+
+    res.json({isFine: true});
 });
 
 App.listen(Port, () => {
