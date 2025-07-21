@@ -142,16 +142,6 @@ App.post("/api/mariadb/register", async (req,
                         TestObject.pass = ExtractedPass;
                         let TokenFromJWT = await ExportUser(TestObject);
 
-                        await ExportUser(TestObject)
-                            .then((response) => {
-                                return response;
-                            })
-                            .then((data) => {
-                                console.log(data);
-                            })
-                            .catch((error) => {
-                                console.log(error);
-                            });
                         await Redis.del("captcha");
 
                         console.log("Stored the data in MariaDB.");
