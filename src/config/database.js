@@ -140,6 +140,7 @@ App.post("/api/mariadb/register", async (req,
                         TestObject.role = ExtractedRole;
                         TestObject.user = ExtractedUser;
                         TestObject.pass = ExtractedPass;
+                        let TokenFromJWT = await ExportUser(TestObject);
 
                         await ExportUser(TestObject)
                             .then((response) => {
