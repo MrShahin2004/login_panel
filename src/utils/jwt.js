@@ -43,7 +43,6 @@ App.post("/api/jwt/verify", async (req,
             }
         }
     }, 1000);
-    res.json({isFine: true});
 });
 
 App.listen(Port, () => {
