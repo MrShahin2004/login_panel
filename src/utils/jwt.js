@@ -29,7 +29,7 @@ App.post("/api/jwt/post", async (req,
 App.post("/api/jwt/verify", async (req,
                                    res) => {
     let ReceivedData = req.body;
-    console.log(ReceivedData);
+    let GeneratedToken = ReceivedData.token;
 
     res.json({isFine: true});
 });
