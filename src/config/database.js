@@ -75,6 +75,11 @@ App.post("/api/mariadb/register", async (req,
     let ReceivedData = req.body;
     let {role: ExtractedRole, user: ExtractedUser, pass: ExtractedPass, code: ExtractedCode} = ReceivedData;
 
+    TestObject.role = ExtractedRole;
+    TestObject.user = ExtractedUser;
+    TestObject.pass = ExtractedPass;
+    console.log(TestObject);
+
     try {
         // Receiving the table from database
         let Query = await GetRows()
