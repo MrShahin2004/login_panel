@@ -104,8 +104,6 @@ export default {
             let ParsedToken = jwtDecode(Token);
             let CreatedTime = ParsedToken.iat;
             let ExpireTime = ParsedToken.exp;
-
-            console.log(data);
           })
           .catch((error) => {
             console.log("Failed to fetch. Error log: ", error);
