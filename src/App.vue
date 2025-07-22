@@ -66,7 +66,6 @@ export default {
       ReceivedUser: "",
       ReceivedPass: "",
       ReceivedCode: "",
-      Lifetime: null,
       RemainingTime: 0
     };
   },
