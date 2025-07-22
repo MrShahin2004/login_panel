@@ -6,7 +6,7 @@ import UserProfile from "../UserProfile.vue";
 
 const Routes = [
     {path: "/", component: App, name: "Home"},
-    {path: "/new", component: UserProfile, name: "New"}
+    {path: "/profile", component: UserProfile, name: "New"}
 ];
 
 const Router = createRouter({
