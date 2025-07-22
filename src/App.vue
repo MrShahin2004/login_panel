@@ -101,9 +101,29 @@ export default {
           })
           .then((data) => {
             let Token = data.token;
-            let ParsedToken = jwtDecode(Token);
-            let CreatedTime = ParsedToken.iat;
-            let ExpireTime = ParsedToken.exp;
+
+            if (!Token || typeof Token !== "string") {
+              console.error("Invalid or missing token: ", data.message || "No token provided.");
+              return;
+            } else {
+              try {
+                let ParsedToken = jwtDecode(Token);
+                let ExpireTime = ParsedToken.exp;
+
+                let CheckInterval = setInterval(() => {
+                  let Now = Date.now() / 1000; // Convert to seconds
+                  this.RemainingTime = ExpireTime - Math.floor(Now);
+                  console.log("Remaining time: ", this.RemainingTime);
+
+                  if (this.RemainingTime <= 0) {
+                    clearInterval(CheckInterval);
+                    console.log("Token is expired");
+                  }
+                }, 1000);
+              } catch (error) {
+                console.error("Token decode error: ", error.message);
+              }
+            }
           })
           .catch((error) => {
             console.log("Failed to fetch. Error log: ", error);
