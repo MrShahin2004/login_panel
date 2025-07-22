@@ -66,7 +66,7 @@ export default {
       ReceivedUser: "",
       ReceivedPass: "",
       ReceivedCode: "",
-      RemainingTime: 0
+      RemainingTime: null
     };
   },
   methods: {
