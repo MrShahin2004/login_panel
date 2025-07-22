@@ -24,27 +24,6 @@ App.post("/api/jwt/post", async (req,
     res.json({token: Token});
 });
 
-App.post("/api/jwt/verify", async (req,
-                                   res) => {
-    let ReceivedData = req.body;
-    let GeneratedToken = ReceivedData.token;
-
-    let CheckInterval = setInterval(async () => {
-        try {
-            await JWT.verify(GeneratedToken, JwtSecret);
-            console.log("The token is still valid.", new Date().toLocaleTimeString());
-        } catch (error) {
-            if (error.name === "TokenExpiredError") {
-                console.log("Token expired at: ", new Date().toLocaleTimeString());
-                clearInterval(CheckInterval);
-            } else {
-                console.log("Token is invalid.");
-                clearInterval(CheckInterval);
-            }
-        }
-    }, 1000);
-});
-
 App.listen(Port, () => {
     console.log(`Server is running on the URL http://${Host}:${Port}`);
 });
