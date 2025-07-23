@@ -118,7 +118,6 @@ export default {
         });
       } catch (error) {
         console.error("Failed to fetch. Error: ", error);
-        alert("خطا در ثبت‌نام. لطفاً دوباره تلاش کنید.");
       }
     },
   },
