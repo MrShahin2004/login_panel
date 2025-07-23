@@ -14,3 +14,8 @@ the proper styles and refactoring the templates with Tailwind and daisyUI
 Step 2: Adding two database named Redis and MariaDB
 Redis for storing a CAPTCHA code while a user tries to sign in and
 MariaDB for storing the information of the user
+
+Step 3: Generating a JSON Web Token (JWT) for the user when logged in
+
+Step 4: Redirecting to another page while the token is still valid. If the token expires,
+the user will be redirected to the login page.
