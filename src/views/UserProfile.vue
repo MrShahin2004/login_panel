@@ -1,7 +1,7 @@
 <template>
   <div class="profile">
     <h1>داشبورد</h1>
-    <p>خوش آمدید، {{ user }}! جلسه شما در {{ remainingTime }} ثانیه منقضی می‌شود.</p>
+    <p class="text-[white]">خوش آمدید {{ user }}! جلسه شما در {{ remainingTime }} ثانیه منقضی می‌شود.</p>
     <button @click="logout">خروج</button>
   </div>
 </template>
