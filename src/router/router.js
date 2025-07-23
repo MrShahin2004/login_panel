@@ -1,17 +1,24 @@
-"use strict";
-
 import {createRouter, createWebHistory} from 'vue-router';
-import App from "../App.vue";
-import UserProfile from "../UserProfile.vue";
+import LogIn from '../views/LogIn.vue';
+import UserProfile from '../views/UserProfile.vue';
 
-const Routes = [
-    {path: "/", component: App, name: "Home"},
-    {path: "/profile", component: UserProfile, name: "Profile"}
+const routes = [
+    {path: '/', component: LogIn, name: 'Home'},
+    {path: '/profile', component: UserProfile, name: 'Profile', props: true},
 ];
 
-const Router = createRouter({
+const router = createRouter({
     history: createWebHistory(),
-    Routes
+    routes,
 });
 
-export default Router;
+router.beforeEach((to, from, next) => {
+    const token = localStorage.getItem('token');
+    if (to.name === 'Profile' && !token) {
+        next({name: 'Home'});
+    } else {
+        next();
+    }
+});
+
+export default router;
