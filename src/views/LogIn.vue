@@ -104,7 +104,6 @@ export default {
 
         if (!data.token || typeof data.token !== "string") {
           console.error("Invalid or missing token: ", data.message || "No token provided.");
-          alert(data.message || "خطا: توکن ارائه نشده است.");
           return;
         }
 
