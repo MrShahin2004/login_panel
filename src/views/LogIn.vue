@@ -106,6 +106,8 @@ export default {
           console.error("Invalid or missing token: ", data.message || "No token provided.");
           return;
         }
+
+        localStorage.setItem("token", data.token);
         this.$router.push({
           name: 'Profile',
           params: {
