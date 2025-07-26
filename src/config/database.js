@@ -197,13 +197,30 @@ App.post("/api/mariadb/register", async (req,
     }
 });
 
-App.get("/api/mariadb/save", async (req,
-                                    res) => {
-    try {
-        let Queried = await SaveUser(UserObject);
-        console.log(Queried);
+App.post("/api/mariadb/check", async (req,
+                                      res) => {
+    let ReceivedData = req.body;
+    console.log(ReceivedData);
+    let {username: ExtractedUser} = ReceivedData;
 
-        res.json({message: "Saved successfully."});
+    try {
+        let AllRows = await GetRows();
+        let FoundUser = AllRows.find((row) => {
+            return row.username === ExtractedUser;
+        });
+
+        if (FoundUser === undefined) {
+            console.log("Username not found.");
+        } else {
+            if (FoundUser.role === "Admin") {
+                console.log("Admin is logged in.");
+            }
+
+            if (FoundUser.role === "User") {
+                console.log("User is logged in.");
+            }
+        }
+        res.json({message: "Saved successfully.", rows: AllRows});
     } catch (error) {
         console.log(error);
         res.json({message: "Something went wrong."});

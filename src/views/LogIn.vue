@@ -88,15 +88,15 @@ export default {
     },
     async PostData() {
       try {
-        const response = await fetch("http://localhost:3000/api/mariadb/register", {
+        const response = await fetch("http://localhost:3000/api/mariadb/check", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            role: this.ReceivedRole,
-            user: this.ReceivedUser,
-            pass: this.ReceivedPass,
+            type: this.ReceivedRole,
+            username: this.ReceivedUser,
+            password: this.ReceivedPass,
             code: this.ReceivedCode,
           }),
         });
