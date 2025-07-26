@@ -6,6 +6,7 @@ let Express = require("express");
 let CORS = require("cors");
 let RedisCLI = require("ioredis");
 let Redis = new RedisCLI();
+let Bcrypt = require("bcrypt");
 
 // Creating a server
 let App = Express();
