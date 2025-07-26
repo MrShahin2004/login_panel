@@ -11,10 +11,6 @@ import {jwtDecode} from 'jwt-decode';
 
 export default {
   name: "UserProfile",
-  props: {
-    user: String,
-    token: String,
-  },
   data() {
     return {
       remainingTime: null,
