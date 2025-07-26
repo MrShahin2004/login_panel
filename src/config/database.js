@@ -17,7 +17,7 @@ App.use(Express.json());
 let Port = 3000;
 let Host = "localhost";
 
-// Some test object
+// Server objects
 let TokenObject = {};
 
 // Importing the libraries of MariaDB and initialization
