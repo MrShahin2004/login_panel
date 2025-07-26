@@ -1,6 +1,6 @@
 "use strict";
 
-// Initializing the libraries of Express.js, CORS, Redis and "dotenv"
+// Initializing the libraries of Express.js, CORS, Redis, bcrypt and "dotenv"
 require("dotenv").config({path: "../../.env"});
 let Express = require("express");
 let CORS = require("cors");
