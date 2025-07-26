@@ -59,7 +59,7 @@ async function StoreUser(role, user, pass) {
         Conn = await Pool.getConnection();
         let Query = await Conn.query(
             "insert into users (role, username, password) values (?, ?, ?)",
-            [role, user, pass]
+            [role, user, HashedPass]
         );
         console.log(Query);
     } catch (error) {
