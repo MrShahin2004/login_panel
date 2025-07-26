@@ -87,6 +87,31 @@ async function ExportUser(obj) {
     return Data.token;
 }
 
+// Function to the new table
+async function SaveUser(obj) {
+    let Conn;
+    let HashedPassword = await Bcrypt.hash(obj.pass, 10);
+
+    try {
+        Conn = await Pool.getConnection();
+        let Query = await Conn.query(`insert into users
+                                      (username, password, firstName, lastName, firm, nationalId, email, role, type,
+                                       status)
+                                      values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`,
+            [obj.user, HashedPassword, obj.first, obj.last, obj.firm, obj.national,
+                obj.email, obj.role, obj.type, obj.status]);
+        return Query;
+    } catch (error) {
+        console.log(error);
+    } finally {
+        if (Conn) {
+            Conn.release().then((response) => {
+                return response;
+            });
+        }
+    }
+}
+
 // POST method
 App.post("/api/mariadb/register", async (req,
                                          res) => {
