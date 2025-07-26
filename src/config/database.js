@@ -142,10 +142,10 @@ App.post("/api/mariadb/register", async (req,
                                 console.log(error);
                             });
 
-                        TestObject.role = ExtractedRole;
-                        TestObject.user = ExtractedUser;
-                        TestObject.pass = ExtractedPass;
-                        let TokenFromJWT = await ExportUser(TestObject);
+                        TokenObject.role = ExtractedRole;
+                        TokenObject.user = ExtractedUser;
+                        TokenObject.pass = ExtractedPass;
+                        let TokenFromJWT = await ExportUser(TokenObject);
 
                         await Redis.del("captcha");
 
