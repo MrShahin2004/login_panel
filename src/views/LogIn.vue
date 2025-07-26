@@ -109,11 +109,7 @@ export default {
 
         localStorage.setItem('token', data.token);
         this.$router.push({
-          name: 'Profile',
-          params: {
-            user: this.ReceivedUser,
-            token: data.token,
-          },
+          name: 'Profile'
         });
       } catch (error) {
         console.error("Failed to fetch. Error: ", error);
