@@ -18,7 +18,7 @@ let Port = 3000;
 let Host = "localhost";
 
 // Some test object
-let TestObject = {};
+let TokenObject = {};
 
 // Importing the libraries of MariaDB and initialization
 let MariaDB = require("mariadb");
