@@ -19,8 +19,6 @@ export default {
     return {
       remainingTime: null,
       checkInterval: null,
-      user: localStorage.getItem("user"),
-      token: localStorage.getItem("token")
     };
   },
   mounted() {
