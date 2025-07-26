@@ -107,7 +107,11 @@ export default {
           return;
         }
         this.$router.push({
-          name: 'Profile'
+          name: 'Profile',
+          params: {
+            user: this.ReceivedUser,
+            token: data.token
+          }
         });
       } catch (error) {
         console.error("Failed to fetch. Error: ", error);
