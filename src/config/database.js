@@ -54,7 +54,7 @@ async function StoreUser(role, user, pass) {
     let Conn;
     try {
         let SaltRounds = 10;
-        let HashedPass = Bcrypt.hash(pass, SaltRounds);
+        let HashedPass = await Bcrypt.hash(pass, SaltRounds);
 
         Conn = await Pool.getConnection();
         let Query = await Conn.query(
