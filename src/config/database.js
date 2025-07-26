@@ -197,6 +197,19 @@ App.post("/api/mariadb/register", async (req,
     }
 });
 
+App.get("/api/mariadb/save", async (req,
+                                    res) => {
+    try {
+        let Queried = await SaveUser(UserObject);
+        console.log(Queried);
+
+        res.json({message: "Saved successfully."});
+    } catch (error) {
+        console.log(error);
+        res.json({message: "Something went wrong."});
+    }
+});
+
 App.listen(Port, () => {
     console.log(`Server is running on port: http://${Host}:${Port}`);
 });
