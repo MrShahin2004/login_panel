@@ -108,6 +108,7 @@ export default {
         }
 
         localStorage.setItem('token', data.token);
+        localStorage.setItem("user", this.ReceivedUser);
         this.$router.push({
           name: 'Profile'
         });
