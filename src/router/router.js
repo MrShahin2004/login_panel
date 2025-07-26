@@ -4,7 +4,7 @@ import UserProfile from '../views/UserProfile.vue';
 
 const routes = [
     {path: '/', component: LogIn, name: 'Home'},
-    {path: '/profile', component: UserProfile, name: 'Profile', props: true},
+    {path: '/profile/:user/:token', component: UserProfile, name: 'Profile', props: true},
 ];
 
 const router = createRouter({
