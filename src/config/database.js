@@ -213,6 +213,11 @@ App.post("/api/mariadb/check", async (req,
             // Getting the status values of CAPTCHA from Redis
             let IsExisting = await Redis.exists("captcha");
             let ExistingCaptcha = await Redis.get("captcha");
+
+            if (!ExtractedUser) {
+                console.log("Some field is missing at the client.");
+                res.json({message: "Some field is missing, please fill all fields."});
+            }
         }, 1000);
 
         if (FoundUser === undefined) {
