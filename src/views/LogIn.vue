@@ -117,7 +117,7 @@ export default {
         //   }
         // });
       } catch (error) {
-        console.error("Failed to fetch. Error: ", error);
+        console.error("Failed to fetch.", error);
       }
     },
   },
