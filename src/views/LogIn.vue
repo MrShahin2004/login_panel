@@ -101,21 +101,37 @@ export default {
           }),
         });
         const Data = await Response.json();
+        let Token = Data.token;
+        let ParsedToken = jwtDecode(Token);
+        let UserObject = ParsedToken.UserObject;
+        let RoleFromServer = UserObject.role;
 
-        if (!Data.token || typeof Data.token !== "string") {
+        if (!Token || typeof Token !== "string") {
           console.error("Invalid or missing token: ", Data.message || "No token provided.");
           return;
         }
 
+        localStorage.setItem("token", Token);
 
-        // localStorage.setItem("token", data.token);
-        // this.$router.push({
-        //   name: 'Profile',
-        //   params: {
-        //     user: this.ReceivedUser,
-        //     token: data.token
-        //   }
-        // });
+        if (RoleFromServer === "Admin") {
+          this.$router.push({
+            name: 'AdminProfile',
+            params: {
+              username: this.ReceivedUser,
+              token: Token
+            }
+          });
+        }
+
+        if (RoleFromServer === "User") {
+          this.$router.push({
+            name: 'UserProfile',
+            params: {
+              username: this.ReceivedUser,
+              token: Token
+            }
+          });
+        }
       } catch (error) {
         console.error("Failed to fetch.", error);
       }
