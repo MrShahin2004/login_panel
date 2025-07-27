@@ -201,7 +201,7 @@ App.post("/api/mariadb/check", async (req,
                                       res) => {
     // Receiving the data from the client
     let ReceivedData = req.body;
-    let {username: ExtractedUser} = ReceivedData;
+    let {type: ExtractedType, username: ExtractedUser, password: ExtractedPass, code: ExtractedCode} = ReceivedData;
 
     try {
         let AllRows = await GetRows();
