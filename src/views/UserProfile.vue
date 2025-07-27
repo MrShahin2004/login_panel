@@ -1,7 +1,8 @@
 <template>
-  <div class="profile">
+  <div class="user-profile">
     <h1>داشبورد</h1>
-    <p class="text-[white]">خوش آمدید {{ user }}! جلسه شما در {{ remainingTime }} ثانیه منقضی می‌شود.</p>
+    <p class="text-[white]">خوش آمدید {{ username }}! جلسه شما در {{ remainingTime }} ثانیه منقضی می‌شود.</p>
+    <p class="text-white">نوع کاربری شما: کاربر عادی</p>
     <button @click="logout">خروج</button>
   </div>
 </template>
@@ -12,7 +13,7 @@ import {jwtDecode} from 'jwt-decode';
 export default {
   name: "UserProfile",
   props: {
-    user: String,
+    username: String,
     token: String
   },
   data() {
@@ -65,7 +66,7 @@ export default {
 </script>
 
 <style scoped>
-.profile {
+.user-profile {
   font-family: 'B Nazanin', cursive;
   text-align: center;
   margin-top: 60px;
