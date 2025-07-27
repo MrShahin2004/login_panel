@@ -88,7 +88,7 @@ export default {
     },
     async PostData() {
       try {
-        const response = await fetch("http://localhost:3000/api/mariadb/check", {
+        const Response = await fetch("http://localhost:3000/api/mariadb/check", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -100,21 +100,22 @@ export default {
             code: this.ReceivedCode,
           }),
         });
-        const data = await response.json();
+        const Data = await Response.json();
 
-        if (!data.token || typeof data.token !== "string") {
-          console.error("Invalid or missing token: ", data.message || "No token provided.");
+        if (!Data.token || typeof Data.token !== "string") {
+          console.error("Invalid or missing token: ", Data.message || "No token provided.");
           return;
         }
 
-        localStorage.setItem("token", data.token);
-        this.$router.push({
-          name: 'Profile',
-          params: {
-            user: this.ReceivedUser,
-            token: data.token
-          }
-        });
+
+        // localStorage.setItem("token", data.token);
+        // this.$router.push({
+        //   name: 'Profile',
+        //   params: {
+        //     user: this.ReceivedUser,
+        //     token: data.token
+        //   }
+        // });
       } catch (error) {
         console.error("Failed to fetch. Error: ", error);
       }

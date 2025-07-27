@@ -209,26 +209,50 @@ App.post("/api/mariadb/check", async (req,
             return row.username === ExtractedUser;
         });
 
-        let CheckInterval = setInterval(async () => {
-            // Getting the status values of CAPTCHA from Redis
-            let IsExisting = await Redis.exists("captcha");
-            let ExistingCaptcha = await Redis.get("captcha");
+        // Getting the status values of CAPTCHA from Redis
+        let IsExisting = await Redis.exists("captcha");
+        let ExistingCaptcha = await Redis.get("captcha");
 
-            if (!ExtractedType || !ExtractedUser || !ExtractedPass || !ExtractedCode) {
-                console.log("Some field is missing at the client.");
-                res.json({message: "Some field is missing, please fill all fields."});
-            } else {
-                if (FoundUser === undefined) {
-                    console.log("Username not found.");
+        if (!ExtractedType || !ExtractedUser || !ExtractedPass || !ExtractedCode) {
+            console.log("Some field is missing at the client.");
+        } else {
+            if (IsExisting === 1) {
+                if (+ExtractedCode !== +ExistingCaptcha) {
+                    console.log("Wrong CAPTCHA from the client");
+                    res.json({message: "Wrong CAPTCHA, try again."});
                 } else {
-                    if (FoundUser.role === "Admin") {
-                        console.log("Admin is logged in.");
-                    }
+                    if (FoundUser === undefined) {
+                        console.log("Username not found.");
+                        res.status(404).send({message: "Username not found, try again."});
+                    } else {
+                        if (FoundUser.role === "Admin") {
+                            TokenObject.role = "Admin";
+                            TokenObject.user = ExtractedUser;
+                            let TokenFromJWT = await ExportUser(TokenObject);
 
-                    if (FoundUser.role === "User") {
-                        console.log("User is logged in.");
+                            await Redis.del("captcha");
+
+                            console.log("Admin is logged in.");
+                            res.json({token: TokenFromJWT, message: "You are logged in as an admin."});
+                        }
+
+                        if (FoundUser.role === "User") {
+                            TokenObject.role = "User";
+                            TokenObject.user = ExtractedUser;
+                            let TokenFromJWT = await ExportUser(TokenObject);
+
+                            await Redis.del("captcha");
+
+                            console.log("User is logged in.");
+                            res.json({token: TokenFromJWT, message: "You are logged in as a user."});
+                        }
                     }
                 }
+            } else {
+                console.log("The CAPTCHA is expired.");
+                res.json({
+                    message: "The CAPTCHA is expired, click on the CAPTCHA image or reload the page for a new one."
+                });
             }
         }
     } catch (error) {
