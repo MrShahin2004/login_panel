@@ -4,7 +4,7 @@ import UserProfile from '@/views/UserProfile.vue';
 import AdminProfile from "@/views/AdminProfile.vue";
 
 const routes = [
-    {path: "/login", component: LogIn, name: "Home"},
+    {path: "/", component: LogIn, name: "Home"},
     {path: "/user/profile/:user/:token", component: UserProfile, name: "UserProfile", props: true},
     {path: "/admin/profile/:user/:token", component: AdminProfile, name: "AdminProfile", props: true}
 ];
