@@ -208,6 +208,7 @@ App.post("/api/mariadb/check", async (req,
         let FoundUser = AllRows.find((row) => {
             return row.username === ExtractedUser;
         });
+        let IsMatch = await Bcrypt.compare(ExtractedPass, FoundUser.password);
 
         // Getting the status values of CAPTCHA from Redis
         let IsExisting = await Redis.exists("captcha");
