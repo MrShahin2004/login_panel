@@ -217,6 +217,18 @@ App.post("/api/mariadb/check", async (req,
             if (!ExtractedUser) {
                 console.log("Some field is missing at the client.");
                 res.json({message: "Some field is missing, please fill all fields."});
+            } else {
+                if (FoundUser === undefined) {
+                    console.log("Username not found.");
+                } else {
+                    if (FoundUser.role === "Admin") {
+                        console.log("Admin is logged in.");
+                    }
+
+                    if (FoundUser.role === "User") {
+                        console.log("User is logged in.");
+                    }
+                }
             }
         }, 1000);
         res.json({message: "Saved successfully.", rows: AllRows});
