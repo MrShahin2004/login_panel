@@ -209,6 +209,12 @@ App.post("/api/mariadb/check", async (req,
             return row.username === ExtractedUser;
         });
 
+        let CheckInterval = setInterval(async () => {
+            // Getting the status values of CAPTCHA from Redis
+            let IsExisting = await Redis.exists("captcha");
+            let ExistingCaptcha = await Redis.get("captcha");
+        }, 1000);
+
         if (FoundUser === undefined) {
             console.log("Username not found.");
         } else {
