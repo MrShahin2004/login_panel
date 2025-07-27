@@ -200,7 +200,6 @@ App.post("/api/mariadb/register", async (req,
 App.post("/api/mariadb/check", async (req,
                                       res) => {
     let ReceivedData = req.body;
-    console.log(ReceivedData);
     let {username: ExtractedUser} = ReceivedData;
 
     try {
