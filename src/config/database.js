@@ -214,7 +214,7 @@ App.post("/api/mariadb/check", async (req,
             let IsExisting = await Redis.exists("captcha");
             let ExistingCaptcha = await Redis.get("captcha");
 
-            if (!ExtractedUser) {
+            if (!ExtractedType || !ExtractedUser || !ExtractedPass || !ExtractedCode) {
                 console.log("Some field is missing at the client.");
                 res.json({message: "Some field is missing, please fill all fields."});
             } else {
