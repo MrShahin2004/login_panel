@@ -230,8 +230,7 @@ App.post("/api/mariadb/check", async (req,
                     }
                 }
             }
-        }, 1000);
-        res.json({message: "Saved successfully.", rows: AllRows});
+        }
     } catch (error) {
         console.log(error);
         res.json({message: "Something went wrong."});
