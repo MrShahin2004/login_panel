@@ -115,86 +115,7 @@ async function SaveUser(obj) {
 // POST method
 App.post("/api/mariadb/register", async (req,
                                          res) => {
-    // Extracting the received data from client
-    let ReceivedData = req.body;
-    let {role: ExtractedRole, user: ExtractedUser, pass: ExtractedPass, code: ExtractedCode} = ReceivedData;
-
-    try {
-        // Receiving the table from database
-        let Query = await GetRows()
-            .then((response) => {
-                return response;
-            })
-            .then((data) => {
-                return data;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-
-        // Checking if the received username is not already existing in the database
-        let DuplicateUser = Query.find((row) => {
-            return ExtractedUser === row.username;
-        });
-
-        // Setting an interval
-        let CheckInterval = setInterval(async () => {
-            // Getting the status values of CAPTCHA from Redis
-            let IsExisting = await Redis.exists("captcha");
-            let ExistingCaptcha = await Redis.get("captcha");
-
-            if (!ExtractedRole || !ExtractedUser || !ExtractedPass || !ExtractedCode) {
-                console.log("Some field is missing at the client.");
-                res.json({message: "Some field is missing, please fill all fields."});
-            } else {
-                if (IsExisting === 1) {
-                    if (+ExtractedCode !== +ExistingCaptcha) {
-                        console.log("Wrong CAPTCHA from the client");
-                        res.json({message: "Wrong CAPTCHA, try again."});
-                        clearInterval(CheckInterval);
-                    } else if (DuplicateUser !== undefined) {
-                        console.log("Duplicate username from the client");
-                        res.json({message: "The username is already taken, try another one."});
-                        clearInterval(CheckInterval);
-                    } else {
-                        await StoreUser(ExtractedRole, ExtractedUser, ExtractedPass)
-                            .then((response) => {
-                                return response;
-                            })
-                            .then((data) => {
-                                console.log(data);
-                            })
-                            .catch((error) => {
-                                console.log(error);
-                            });
-
-                        TokenObject.role = ExtractedRole;
-                        TokenObject.user = ExtractedUser;
-                        TokenObject.pass = ExtractedPass;
-                        let TokenFromJWT = await ExportUser(TokenObject);
-
-                        await Redis.del("captcha");
-
-                        console.log("Stored the data in MariaDB.");
-                        res.json({
-                            message: "New user was added to MariaDB.",
-                            token: TokenFromJWT,
-                        });
-                        clearInterval(CheckInterval);
-                    }
-                } else {
-                    console.log("The CAPTCHA is expired.");
-                    res.json({
-                        message: "The CAPTCHA is expired, click on the CAPTCHA image or reload the page for a new one."
-                    });
-                    clearInterval(CheckInterval);
-                }
-            }
-        }, 1000);
-    } catch (error) {
-        console.error(error);
-        res.json({message: "Something went wrong."});
-    }
+    // Will be used later.
 });
 
 App.post("/api/mariadb/check", async (req,
@@ -216,46 +137,44 @@ App.post("/api/mariadb/check", async (req,
 
         if (!ExtractedType || !ExtractedUser || !ExtractedPass || !ExtractedCode) {
             console.log("Some field is missing at the client.");
-        } else {
-            if (IsExisting === 1) {
-                if (+ExtractedCode !== +ExistingCaptcha) {
-                    console.log("Wrong CAPTCHA from the client");
-                    res.json({message: "Wrong CAPTCHA, try again."});
-                } else {
-                    if (FoundUser === undefined) {
-                        console.log("Username not found.");
-                        res.status(404).send({message: "Username not found, try again."});
-                    } else {
-                        if (FoundUser.role === "Admin") {
-                            TokenObject.role = "Admin";
-                            TokenObject.user = ExtractedUser;
-                            let TokenFromJWT = await ExportUser(TokenObject);
-
-                            await Redis.del("captcha");
-
-                            console.log("Admin is logged in.");
-                            res.json({token: TokenFromJWT, message: "You are logged in as an admin."});
-                        }
-
-                        if (FoundUser.role === "User") {
-                            TokenObject.role = "User";
-                            TokenObject.user = ExtractedUser;
-                            let TokenFromJWT = await ExportUser(TokenObject);
-
-                            await Redis.del("captcha");
-
-                            console.log("User is logged in.");
-                            res.json({token: TokenFromJWT, message: "You are logged in as a user."});
-                        }
-                    }
-                }
-            } else {
-                console.log("The CAPTCHA is expired.");
-                res.json({
-                    message: "The CAPTCHA is expired, click on the CAPTCHA image or reload the page for a new one."
-                });
-            }
         }
+
+        if (IsExisting !== 1) {
+            console.log("The CAPTCHA is expired.");
+            res.json({
+                message: "The CAPTCHA is expired, click on the CAPTCHA image or reload the page for a new one."
+            });
+        }
+
+        if (+ExtractedCode !== +ExistingCaptcha) {
+            console.log("Wrong CAPTCHA from the client");
+            res.json({message: "Wrong CAPTCHA, try again."});
+        }
+
+        if (FoundUser === undefined || !IsMatch) {
+            console.log("Either username or password is incorrect.");
+            res.status(404).send({message: "Either username or password is incorrect."});
+        }
+
+        if (FoundUser.role === "Admin") {
+            TokenObject.role = "Admin";
+            TokenObject.user = ExtractedUser;
+            let TokenFromJWT = await ExportUser(TokenObject);
+
+            console.log("Admin is logged in.");
+            res.json({token: TokenFromJWT, message: "You are logged in as an admin."});
+        }
+
+        if (FoundUser.role === "User") {
+            TokenObject.role = "User";
+            TokenObject.user = ExtractedUser;
+            let TokenFromJWT = await ExportUser(TokenObject);
+
+            console.log("User is logged in.");
+            res.json({token: TokenFromJWT, message: "You are logged in as a user."});
+        }
+
+        await Redis.del("captcha");
     } catch (error) {
         console.log(error);
         res.json({message: "Something went wrong."});
