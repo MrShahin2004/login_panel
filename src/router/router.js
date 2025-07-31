@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router';
 import LogIn from '@/views/LogIn.vue';
 import UserProfile from '@/views/UserProfile.vue';
 import AdminProfile from "@/views/AdminProfile.vue";
+import SignIn from "@/views/SignIn.vue";
 
 const routes = [
     {path: "/", component: LogIn, name: "Home"},
