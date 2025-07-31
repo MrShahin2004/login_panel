@@ -50,30 +50,6 @@ async function GetRows() {
     }
 }
 
-// A function to store a new user in MariaDB
-async function StoreUser(role, user, pass) {
-    let Conn;
-    try {
-        let SaltRounds = 10;
-        let HashedPass = await Bcrypt.hash(pass, SaltRounds);
-
-        Conn = await Pool.getConnection();
-        let Query = await Conn.query(
-            "insert into users (role, username, password) values (?, ?, ?)",
-            [role, user, HashedPass]
-        );
-        console.log(Query);
-    } catch (error) {
-        console.log(error);
-    } finally {
-        if (Conn) {
-            Conn.release().then((response) => {
-                return response;
-            });
-        }
-    }
-}
-
 // A function to send the data to another server
 async function ExportUser(obj) {
     let Response = await fetch("http://localhost:3100/api/jwt/post", {
