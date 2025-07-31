@@ -6,7 +6,8 @@ import AdminProfile from "@/views/AdminProfile.vue";
 const routes = [
     {path: "/", component: LogIn, name: "Home"},
     {path: "/user/profile/:username/:token", component: UserProfile, name: "UserProfile", props: true},
-    {path: "/admin/profile/:username/:token", component: AdminProfile, name: "AdminProfile", props: true}
+    {path: "/admin/profile/:username/:token", component: AdminProfile, name: "AdminProfile", props: true},
+    {path: "/register", component: SignIn, name: "SignIn", props: true}
 ];
 
 const router = createRouter({
