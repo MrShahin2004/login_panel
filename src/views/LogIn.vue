@@ -70,7 +70,7 @@ export default {
       ReceivedRole: "",
       ReceivedUser: "",
       ReceivedPass: "",
-      ReceivedCode: "",
+      ReceivedCode: ""
     };
   },
   methods: {
