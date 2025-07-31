@@ -139,6 +139,11 @@ export default {
         console.error(error);
       }
     },
+    OpenSignIn() {
+      this.$router.push({
+        name: "SignIn"
+      });
+    }
   },
 };
 </script>
