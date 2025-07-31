@@ -133,7 +133,7 @@ export default {
           });
         }
       } catch (error) {
-        console.error("Failed to fetch.", error);
+        console.error(error);
       }
     },
   },
