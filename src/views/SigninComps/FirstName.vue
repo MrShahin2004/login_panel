@@ -12,6 +12,19 @@
 </template>
 
 <script>
+import {ref} from "vue";
+
+export default {
+  setup(props, context) {
+    let InsertedFirstName = ref("");
+
+    function FirstSender() {
+      context.emit("FirstSent", InsertedFirstName.value);
+    }
+
+    return {InsertedFirstName, FirstSender};
+  }
+}
 </script>
 
 <style scoped>
