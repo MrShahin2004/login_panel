@@ -20,6 +20,9 @@ import {useRouter} from "vue-router";
 
 export default {
   name: "SignIn",
+  components: {
+    EmailAddress, FirmName, FirstName, LastName, NationalID, PassWord, TypeSelect, UserName
+  },
   setup() {
     let Router = useRouter();
 
