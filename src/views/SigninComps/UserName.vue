@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center items-center">
-    <div class="first-input select-box bg-[#f3f4f6] h-fit grid grid-cols-[3fr_1fr] w-[70%]">
-      <input class="bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0"
+    <div class="user-input select-box bg-[#f3f4f6] h-fit grid grid-cols-[3fr_1fr] w-[70%]">
+      <input @input="UserSender" v-model="InsertedUser" class="bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0"
              dir="rtl" type="text" id="user-input">
       <div class="flex justify-center items-center">
         <label for="user-input">نام کاربری</label>
@@ -11,10 +11,23 @@
 </template>
 
 <script>
+import {ref} from "vue";
+
+export default {
+  setup(props, context) {
+    let InsertedUser = ref("");
+
+    function UserSender() {
+      context.emit("UserSent", InsertedUser.value);
+    }
+
+    return {InsertedUser, UserSender};
+  }
+}
 </script>
 
 <style scoped>
-.first-input {
+.user-input {
   padding: 0.5rem;
 }
 

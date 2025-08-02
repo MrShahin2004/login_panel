@@ -1,7 +1,8 @@
 <template>
   <div class="flex justify-center items-center">
-    <div class="first-input select-box bg-[#f3f4f6] h-fit grid grid-cols-[3fr_1fr] w-[70%]">
-      <input class="bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0"
+    <div class="email-input select-box bg-[#f3f4f6] h-fit grid grid-cols-[3fr_1fr] w-[70%]">
+      <input @input="EmailSender" v-model="InsertedEmail"
+             class="bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0"
              dir="rtl" type="text" id="user-input">
       <div class="flex justify-center items-center">
         <label for="user-input">آدرس ایمیل</label>
@@ -10,10 +11,24 @@
   </div>
 </template>
 
-<script></script>
+<script>
+import {ref} from "vue";
+
+export default {
+  setup(props, context) {
+    let InsertedEmail = ref("");
+
+    function EmailSender() {
+      context.emit("EmailSent", InsertedEmail.value);
+    }
+
+    return {InsertedEmail, EmailSender};
+  }
+}
+</script>
 
 <style scoped>
-.first-input {
+.email-input {
   padding: 0.5rem;
 }
 
