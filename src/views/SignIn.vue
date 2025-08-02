@@ -42,6 +42,12 @@ export default {
   },
   setup() {
     let Router = useRouter();
+    let ReceivedFirst = ref("");
+
+    function FirstAssign(first) {
+      ReceivedFirst.value = first;
+      console.log(ReceivedFirst.value);
+    }
 
     function ReturnLogIn() {
       Router.push("/");
