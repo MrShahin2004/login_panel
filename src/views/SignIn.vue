@@ -50,4 +50,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+button {
+  font-family: "B Nazanin", cursive;
+}
+</style>
