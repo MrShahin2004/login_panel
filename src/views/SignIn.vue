@@ -11,7 +11,16 @@
 import {useRouter} from "vue-router";
 
 export default {
-  name: "SignIn"
+  name: "SignIn",
+  setup() {
+    let Router = useRouter();
+
+    function ReturnLogIn() {
+      Router.push("/");
+    }
+
+    return {ReturnLogIn, Router}
+  }
 }
 </script>
 
