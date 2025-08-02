@@ -208,4 +208,8 @@ a:hover {
 .footer-desc {
   margin-bottom: 1rem;
 }
+
+.register-link {
+  margin-bottom: 1rem;
+}
 </style>
