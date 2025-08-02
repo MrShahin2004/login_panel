@@ -1,7 +1,8 @@
 <template>
-  <div class="w-[100vw] h-[100vh] flex justify-center items-center">
-    <div class="w-[95%] h-[90%] bg-[var(--body-bg)]">
-      <h1>Welcome to the sign in page through Vue Router!</h1>
+  <div class="w-[100vw] h-[100vh] flex flex-col justify-evenly items-center">
+    <h1 class="text-[24px]">ساخت حساب کاربری</h1>
+    <div class="main-body w-[95%] h-[85%] bg-[var(--body-bg)]">
+      <button @click="ReturnLogIn">بازگشت به صفحه ورود</button>
     </div>
   </div>
 </template>
