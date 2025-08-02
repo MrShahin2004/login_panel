@@ -14,7 +14,7 @@
         <FirmName/>
       </div>
       <div class="w-[100%] flex justify-center items-center">
-        <div class="w-[50%] flex justify-evenly items-center">
+        <div class="w-[50%] flex justify-evenly items-center translate-y-[20px]">
           <button @click="ReturnLogIn">بازگشت به صفحه ورود</button>
           <button>ثبت نام</button>
         </div>
