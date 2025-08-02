@@ -12,8 +12,11 @@
         <TypeSelect/>
         <FirmName/>
       </div>
-      <div class="flex justify-center items-center">
-        <button @click="ReturnLogIn">بازگشت به صفحه ورود</button>
+      <div class="w-[100%] flex justify-center items-center">
+        <div class="w-[50%] flex justify-evenly items-center">
+          <button @click="ReturnLogIn">بازگشت به صفحه ورود</button>
+          <button>ثبت نام</button>
+        </div>
       </div>
     </div>
   </div>
