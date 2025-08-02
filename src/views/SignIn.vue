@@ -5,8 +5,8 @@
       <div class="fields-container grid grid-cols-[1fr_1fr]">
         <LastName/>
         <FirstName/>
-        <NationalID/>
         <EmailAddress/>
+        <NationalID/>
         <PassWord/>
         <UserName/>
         <TypeSelect/>

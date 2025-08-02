@@ -4,7 +4,7 @@
       <input class="bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0"
              dir="rtl" type="text" id="user-input">
       <div class="flex justify-center items-center">
-        <label for="user-input">نام</label>
+        <label for="user-input">نام خانوداگی</label>
       </div>
     </div>
   </div>
