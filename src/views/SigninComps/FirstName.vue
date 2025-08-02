@@ -12,4 +12,12 @@
 
 <script></script>
 
-<style></style>
+<style scoped>
+.first-input {
+  padding: 0.5rem;
+}
+
+label {
+  font-family: "B Nazanin", cursive;
+}
+</style>
