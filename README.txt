@@ -19,3 +19,5 @@ Step 3: Generating a JSON Web Token (JWT) for the user when logged in
 
 Step 4: Redirecting to another page while the token is still valid. If the token expires,
 the user will be redirected to the login page.
+
+Step 5: Creating a panel for admins to control the users' status and activity.
