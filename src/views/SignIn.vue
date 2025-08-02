@@ -1,8 +1,9 @@
 <template>
   <div class="w-[100vw] h-[100vh] flex flex-col justify-evenly items-center">
     <h1 class="text-[24px]">ساخت حساب کاربری</h1>
-    <div class="main-body w-[95%] h-[85%] bg-[var(--body-bg)] grid grid-rows-[4fr_1fr]">
-      <div class="fields-container grid grid-cols-[1fr_1fr]">
+    <div class="main-body w-[95%] h-[85%] bg-[var(--body-bg)] grid grid-rows-[4fr_1fr] rounded-[6px]">
+      <div class="fields-container w-[80%] h-[100%] bg-[#f3f4f6]
+       grid grid-cols-[1fr_1fr] translate-x-[150px] translate-y-[20px] rounded-[6px]">
         <LastName/>
         <FirstName/>
         <EmailAddress/>
