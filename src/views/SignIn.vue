@@ -5,7 +5,7 @@
       <div class="fields-container w-[80%] h-[100%] bg-[#f3f4f6]
        grid grid-cols-[1fr_1fr] translate-x-[150px] translate-y-[20px] rounded-[6px]">
         <LastName/>
-        <FirstName/>
+        <FirstName @FirstSent="FirstAssign($event)"/>
         <EmailAddress/>
         <NationalID/>
         <PassWord/>
