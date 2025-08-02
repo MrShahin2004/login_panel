@@ -53,7 +53,7 @@ export default {
       Router.push("/");
     }
 
-    return {ReturnLogIn, Router}
+    return {ReturnLogIn, Router, FirstAssign, ReceivedFirst};
   }
 }
 </script>
