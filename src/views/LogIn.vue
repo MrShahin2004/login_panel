@@ -31,7 +31,10 @@
            w-[150px] h-[50px] rounded-[10px] hover:cursor-pointer">فراموشی گذر واژه
           </button>
         </div>
-        <p>حساب کاربری ندارید؟<a href="#" @click="OpenSignIn">ثبت نام کنید</a></p>
+        <div class="register-link w-[40%] flex justify-evenly items-center">
+          <a href="#" @click="OpenSignIn">ثبت نام کنید</a>
+          <p>حساب کاربری ندارید؟</p>
+        </div>
       </div>
     </div>
     <hr>
