@@ -209,6 +209,10 @@ a:hover {
   margin-bottom: 1rem;
 }
 
+.buttons {
+  margin-top: 1rem;
+}
+
 .register-link {
   margin-bottom: 1rem;
 }
