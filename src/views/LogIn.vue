@@ -181,6 +181,7 @@ h1 {
 .login-body {
   font-family: "B Nazanin", cursive;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .body-title {
