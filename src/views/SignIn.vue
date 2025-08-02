@@ -13,7 +13,4 @@ export default {
 </script>
 
 <style>
-h1 {
-  font-family: "JetBrains Mono", monospace;
-}
 </style>
