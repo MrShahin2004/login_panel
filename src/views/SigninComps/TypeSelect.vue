@@ -4,9 +4,9 @@
       <select id="user-input" @change="TypeSender" v-model="InsertedType"
               class="bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0"
               dir="rtl">
-        <option value="Choose">انتخاب کنید</option>
-        <option value="کاربر ثبات">کاربر ثبات</option>
-        <option value="کاربر اداره کل">کاربر اداره کل</option>
+        <option class="bg-[white]" value="Choose">انتخاب کنید</option>
+        <option class="bg-[white]" value="کاربر ثبات">کاربر ثبات</option>
+        <option class="bg-[white]" value="کاربر اداره کل">کاربر اداره کل</option>
       </select>
       <div class="flex justify-center items-center">
         <label for="user-input">انتخاب نقش</label>
