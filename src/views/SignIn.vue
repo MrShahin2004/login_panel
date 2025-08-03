@@ -54,7 +54,10 @@ export default {
     let ReceivedFirm = ref("");
     let ReceivedType = ref("");
 
-    // Defining the functions to assign
+    // An object to store the received data in to send to the server
+    let ArgObject = reactive({});
+
+    // Defining the functions to assign the variables and the properties of the object
     function FirstAssign(first) {
       ReceivedFirst.value = first;
       console.log(ReceivedFirst.value);
