@@ -92,6 +92,7 @@ async function SaveUser(obj) {
 // The endpoint to receive the data from the register panel
 App.post("/api/mariadb/register", async (req,
                                          res) => {
+    // The raw data received from the client
     let ReceivedData = req.body;
     TempUserData.first = ReceivedData.first;
     TempUserData.last = ReceivedData.last;
