@@ -50,7 +50,7 @@ async function GetRows() {
     }
 }
 
-// A function to send the data to another server
+// A function to send the data to the JWT server for tokenization
 async function ExportUser(obj) {
     let Response = await fetch("http://localhost:3100/api/jwt/post", {
         method: "POST",
@@ -63,7 +63,7 @@ async function ExportUser(obj) {
     return Data.token;
 }
 
-// Function to the new table
+// A function to store a new user in MariaDB
 async function SaveUser(obj) {
     let Conn;
     let HashedPassword = await Bcrypt.hash(obj.pass, 10);
@@ -88,7 +88,7 @@ async function SaveUser(obj) {
     }
 }
 
-// POST method
+// The endpoint to receive the data from the register panel
 App.post("/api/mariadb/register", async (req,
                                          res) => {
     let ReceivedData = req.body;
@@ -97,6 +97,7 @@ App.post("/api/mariadb/register", async (req,
     return res.json({isFine: true});
 });
 
+// The endpoint to the login panel
 App.post("/api/mariadb/check", async (req,
                                       res) => {
     // Receiving the data from the client
@@ -170,6 +171,7 @@ App.post("/api/mariadb/check", async (req,
     }
 });
 
+// Running the server
 App.listen(Port, () => {
     console.log(`Server is running on port: http://${Host}:${Port}`);
 });
