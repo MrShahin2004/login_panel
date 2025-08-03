@@ -49,8 +49,7 @@ export default {
     let ReceivedUser = ref("");
     let ReceivedPass = ref("");
     let ReceivedFirm = ref("");
-
-    // let ReceivedType = ref("");
+    let ReceivedType = ref("");
 
     function FirstAssign(first) {
       ReceivedFirst.value = first;
