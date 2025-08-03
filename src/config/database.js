@@ -94,6 +94,8 @@ App.post("/api/mariadb/register", async (req,
                                          res) => {
     // The raw data received from the client
     let ReceivedData = req.body;
+
+    // Setting the values in the specified object
     TempUserData.first = ReceivedData.first;
     TempUserData.last = ReceivedData.last;
     TempUserData.national = ReceivedData.national;
