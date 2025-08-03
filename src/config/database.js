@@ -91,7 +91,7 @@ async function SaveUser(obj) {
 // POST method
 App.post("/api/mariadb/register", async (req,
                                          res) => {
-    // Will be used later.
+    
 });
 
 App.post("/api/mariadb/check", async (req,
