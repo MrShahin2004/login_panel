@@ -41,7 +41,10 @@ export default {
     EmailAddress, FirmName, FirstName, LastName, NationalID, PassWord, TypeSelect, UserName
   },
   setup() {
+    // A variable to make it possible redirect through pages
     let Router = useRouter();
+
+    // Variables to store the data from components
     let ReceivedFirst = ref("");
     let ReceivedLast = ref("");
     let ReceivedNational = ref("");
@@ -51,6 +54,7 @@ export default {
     let ReceivedFirm = ref("");
     let ReceivedType = ref("");
 
+    // Defining the functions to assign
     function FirstAssign(first) {
       ReceivedFirst.value = first;
       console.log(ReceivedFirst.value);
