@@ -1,10 +1,12 @@
 <template>
-  <div class="admin-profile">
-    <h1>داشبورد</h1>
-    <p class="text-[white]">خوش آمدید {{ username }}! جلسه شما در {{ remainingTime }} ثانیه منقضی می‌شود.</p>
-    <p class="text-white">نوع کاربری شما: ادمین</p>
-    <button @click="logout">خروج</button>
-    <button @click="GetPendingUsers">دریافت کاربران در انتظار</button>
+  <div class="w-[100vw] h-[100vh]">
+    <div class="admin-profile w-[100%] h-[50%] translate-y-[60px]">
+      <h1>داشبورد</h1>
+      <p class="text-[white]">خوش آمدید {{ username }}! جلسه شما در {{ remainingTime }} ثانیه منقضی می‌شود.</p>
+      <p class="text-[white]">نوع کاربری شما: ادمین</p>
+      <button @click="logout">خروج</button>
+      <button @click="GetPendingUsers">دریافت کاربران در انتظار</button>
+    </div>
   </div>
 </template>
 
