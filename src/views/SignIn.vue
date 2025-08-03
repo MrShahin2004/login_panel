@@ -99,7 +99,7 @@ export default {
     return {
       ReturnLogIn, Router, FirstAssign, ReceivedFirst,
       ReceivedLast, LastAssign, ReceivedNational, NationalAssign, ReceivedEmail, EmailAssign,
-      ReceivedUser, UserAssign, ReceivedPass, PassAssign, ReceivedFirm, FirmAssign
+      ReceivedUser, UserAssign, ReceivedPass, PassAssign, ReceivedFirm, FirmAssign, ReceivedType, TypeAssign
     };
   }
 }
