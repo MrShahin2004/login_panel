@@ -81,7 +81,6 @@ export default {
 .admin-profile {
   font-family: 'B Nazanin', cursive;
   text-align: center;
-  margin-top: 60px;
   color: var(--btn-bg, #293da3);
 }
 
