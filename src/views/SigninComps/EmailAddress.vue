@@ -3,7 +3,7 @@
     <div class="email-input select-box bg-[#f3f4f6] h-fit grid grid-cols-[3fr_1fr] w-[70%]">
       <input @input="EmailSender" v-model="InsertedEmail"
              class="bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0"
-             dir="rtl" type="text" id="email-input">
+             dir="rtl" type="email" id="email-input">
       <div class="flex justify-center items-center">
         <label for="email-input">آدرس ایمیل</label>
       </div>
