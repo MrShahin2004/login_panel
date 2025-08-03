@@ -61,57 +61,41 @@ export default {
     function FirstAssign(first) {
       ReceivedFirst.value = first;
       ArgObject.first = ReceivedFirst.value;
-
-      console.log(ReceivedFirst.value);
     }
 
     function LastAssign(last) {
       ReceivedLast.value = last;
       ArgObject.last = ReceivedLast.value;
-
-      console.log(ReceivedLast.value);
     }
 
     function NationalAssign(national) {
       ReceivedNational.value = national;
       ArgObject.national = ReceivedNational.value;
-
-      console.log(ReceivedNational.value);
     }
 
     function EmailAssign(email) {
       ReceivedEmail.value = email;
       ArgObject.email = ReceivedEmail.value;
-
-      console.log(ReceivedEmail.value);
     }
 
     function UserAssign(user) {
       ReceivedUser.value = user;
       ArgObject.user = ReceivedUser.value;
-
-      console.log(ReceivedUser.value);
     }
 
     function PassAssign(pass) {
       ReceivedPass.value = pass;
       ArgObject.pass = ReceivedPass.value;
-
-      console.log(ReceivedPass.value);
     }
 
     function FirmAssign(firm) {
       ReceivedFirm.value = firm;
       ArgObject.firm = ReceivedFirm.value;
-
-      console.log(ReceivedFirm.value);
     }
 
     function TypeAssign(type) {
       ReceivedType.value = type;
       ArgObject.type = ReceivedType.value;
-
-      console.log(ReceivedType.value);
     }
 
     // A function to send the data to the server
