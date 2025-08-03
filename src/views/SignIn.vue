@@ -86,6 +86,11 @@ export default {
       console.log(ReceivedFirm.value);
     }
 
+    function TypeAssign(type) {
+      ReceivedType.value = type;
+      console.log(ReceivedType.value);
+    }
+
     // Return to the login page
     function ReturnLogIn() {
       Router.push("/");
