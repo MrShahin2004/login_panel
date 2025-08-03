@@ -2,9 +2,9 @@
   <div class="flex justify-center items-center">
     <div class="national-input select-box bg-[#f3f4f6] h-fit grid grid-cols-[3fr_1fr] w-[70%]">
       <input @input="NationalSender" v-model="InsertedNational" class="bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0"
-             dir="rtl" type="text" id="user-input">
+             dir="rtl" type="text" id="national-input">
       <div class="flex justify-center items-center">
-        <label for="user-input">کد ملی</label>
+        <label for="national-input">کد ملی</label>
       </div>
     </div>
   </div>

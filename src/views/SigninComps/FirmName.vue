@@ -2,9 +2,9 @@
   <div class="flex justify-center items-center">
     <div class="firm-input select-box bg-[#f3f4f6] h-fit grid grid-cols-[3fr_1fr] w-[70%]">
       <input @input="FirmSender" v-model="InsertedFirm" class="bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0"
-             dir="rtl" type="text" id="user-input">
+             dir="rtl" type="text" id="firm-input">
       <div class="flex justify-center items-center">
-        <label for="user-input">نام شرکت</label>
+        <label for="firm-input">نام شرکت</label>
       </div>
     </div>
   </div>

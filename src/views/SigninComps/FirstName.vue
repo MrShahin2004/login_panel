@@ -3,9 +3,9 @@
     <div class="first-input bg-[#f3f4f6] select-box h-fit grid grid-cols-[3fr_1fr] w-[70%]">
       <input @input="FirstSender"
              class="bg-[#dbeafe] w-[100%] border-0 rounded-[6px] text-[16px] focus:outline-0"
-             dir="rtl" type="text" id="user-input" v-model="InsertedFirstName">
+             dir="rtl" type="text" id="first-input" v-model="InsertedFirstName">
       <div class="flex justify-center items-center">
-        <label for="user-input">نام</label>
+        <label for="first-input">نام</label>
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center items-center">
     <div class="type-input select-box bg-[#f3f4f6] h-fit grid grid-cols-[3fr_1fr] w-[70%]">
-      <select id="user-input" @change="TypeSender" v-model="InsertedType"
+      <select id="type-input" @change="TypeSender" v-model="InsertedType"
               class="bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0"
               dir="rtl">
         <option class="bg-[white]" value="Choose">انتخاب کنید</option>
@@ -9,7 +9,7 @@
         <option class="bg-[white]" value="کاربر اداره کل">کاربر اداره کل</option>
       </select>
       <div class="flex justify-center items-center">
-        <label for="user-input">انتخاب نقش</label>
+        <label for="type-input">انتخاب نقش</label>
       </div>
     </div>
   </div>
