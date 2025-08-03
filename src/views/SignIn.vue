@@ -10,7 +10,7 @@
         <NationalID @NationalSent="NationalAssign($event)"/>
         <PassWord @PassSent="PassAssign($event)"/>
         <UserName @UserSent="UserAssign($event)"/>
-        <TypeSelect/>
+        <TypeSelect @TypeSent="TypeAssign($event)"/>
         <FirmName @FirmSent="FirmAssign($event)"/>
       </div>
       <div class="w-[100%] flex justify-center items-center">
