@@ -4,6 +4,7 @@
     <p class="text-[white]">خوش آمدید {{ username }}! جلسه شما در {{ remainingTime }} ثانیه منقضی می‌شود.</p>
     <p class="text-white">نوع کاربری شما: ادمین</p>
     <button @click="logout">خروج</button>
+    <button @click="GetPendingUsers">دریافت کاربران در انتظار</button>
   </div>
 </template>
 
@@ -32,7 +33,6 @@ export default {
         this.checkInterval = setInterval(() => {
           const now = Date.now() / 1000;
           this.remainingTime = expireTime - Math.floor(now);
-          console.log('Remaining time: ', this.remainingTime);
 
           if (this.remainingTime <= 0) {
             clearInterval(this.checkInterval);
@@ -61,7 +61,19 @@ export default {
       localStorage.removeItem('token');
       this.$router.push({name: 'Home'});
     },
-  },
+    GetPendingUsers() {
+      fetch("http://localhost:3000/api/get-pending-users")
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+    }
+  }
 };
 </script>
 
