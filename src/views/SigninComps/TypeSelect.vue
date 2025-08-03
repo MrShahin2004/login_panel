@@ -39,4 +39,13 @@ export default {
 label {
   font-family: "B Nazanin", cursive;
 }
+
+select {
+  padding: 0.5rem;
+}
+
+option {
+  font-family: "B Nazanin", cursive;
+  padding: 0.5rem;
+}
 </style>
