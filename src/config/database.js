@@ -20,6 +20,7 @@ let Host = "localhost";
 // Server objects
 let TokenObject = {};
 let NewUserObject = {};
+let ReceivedUserObject = {};
 
 // Importing the libraries of MariaDB and initialization
 let MariaDB = require("mariadb");
