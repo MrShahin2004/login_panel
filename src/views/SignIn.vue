@@ -109,7 +109,7 @@ export default {
 
     function TypeAssign(type) {
       ReceivedType.value = type;
-      ArgObject.type = ReceivedFirst.value;
+      ArgObject.type = ReceivedType.value;
 
       console.log(ReceivedType.value);
     }
