@@ -100,16 +100,20 @@ export default {
 
     // A function to send the data to the server
     async function PostData(obj) {
-      let Response = await fetch("http://localhost:3000/api/mariadb/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(obj)
-      });
+      try {
+        let Response = await fetch("http://localhost:3000/api/mariadb/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(obj)
+        });
 
-      let Data = await Response.json();
-      console.log(Data);
+        let Data = await Response.json();
+        console.log(Data);
+      } catch (error) {
+        console.log(error);
+      }
     }
 
     // Return to the login page
