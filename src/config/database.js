@@ -20,7 +20,7 @@ let Host = "localhost";
 // Server objects
 let TokenObject = {};
 let NewUserObject = {};
-let ReceivedUserObject = {};
+let TempUserData = {};
 
 // Importing the libraries of MariaDB and initialization
 let MariaDB = require("mariadb");
@@ -93,7 +93,14 @@ async function SaveUser(obj) {
 App.post("/api/mariadb/register", async (req,
                                          res) => {
     let ReceivedData = req.body;
-    console.log(ReceivedData);
+    TempUserData.first = ReceivedData.first;
+    TempUserData.last = ReceivedData.last;
+    TempUserData.national = ReceivedData.national;
+    TempUserData.email = ReceivedData.email;
+    TempUserData.user = ReceivedData.user;
+    TempUserData.pass = ReceivedData.pass;
+    TempUserData.firm = ReceivedData.firm;
+    TempUserData.type = ReceivedData.type;
 
     return res.json({isFine: true});
 });
