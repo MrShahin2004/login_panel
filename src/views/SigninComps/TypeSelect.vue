@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center items-center">
     <div class="type-input select-box bg-[#f3f4f6] h-fit grid grid-cols-[3fr_1fr] w-[70%]">
-      <select id="user-input" @input="TypeSender" v-model="InsertedType"
+      <select id="user-input" @change="TypeSender" v-model="InsertedType"
               class="bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0"
               dir="rtl">
         <option value="Choose">انتخاب کنید</option>
