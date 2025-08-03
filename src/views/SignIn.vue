@@ -33,7 +33,7 @@ import PassWord from "@/views/SigninComps/PassWord.vue";
 import TypeSelect from "@/views/SigninComps/TypeSelect.vue";
 import UserName from "@/views/SigninComps/UserName.vue";
 import {useRouter} from "vue-router";
-import {ref} from "vue";
+import {reactive, ref} from "vue";
 
 export default {
   name: "SignIn",
