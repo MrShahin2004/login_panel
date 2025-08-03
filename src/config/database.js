@@ -91,7 +91,10 @@ async function SaveUser(obj) {
 // POST method
 App.post("/api/mariadb/register", async (req,
                                          res) => {
-    
+    let ReceivedData = req.body;
+    console.log(ReceivedData);
+
+    return res.json({isFine: true});
 });
 
 App.post("/api/mariadb/check", async (req,
