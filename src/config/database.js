@@ -107,7 +107,32 @@ App.post("/api/mariadb/register", async (req,
 
         // Checking if the given username, national ID or email are already existing
         let AllRows = await GetRows();
-        console.log(AllRows);
+        let FoundUser = AllRows.find((row) => {
+            return row.username === ExtractedUser;
+        });
+
+        let FoundEmail = AllRows.find((row) => {
+            return row.email === ExtractedEmail;
+        });
+
+        let FoundNational = AllRows.find((row) => {
+            return row.nationalId === ExtractedNational;
+        });
+
+        if (FoundUser !== undefined) {
+            console.log("Username is already taken.");
+            return res.status(400).json({message: "Username is already taken, try another one."});
+        }
+
+        if (FoundEmail !== undefined) {
+            console.log("Email is already taken.");
+            return res.status(400).json({message: "Email is already taken, try another one."});
+        }
+
+        if (FoundNational !== undefined) {
+            console.log("National ID is invalid.");
+            return res.status(400).json({message: "National ID is invalid, please try again."});
+        }
 
         // await StoreUser(NewUserObject);
     } catch (error) {
