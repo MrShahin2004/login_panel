@@ -15,8 +15,8 @@
       </div>
       <div class="w-[100%] flex justify-center items-center">
         <div class="w-[50%] flex justify-evenly items-center translate-y-[20px]">
-          <button @click="ReturnLogIn">بازگشت به صفحه ورود</button>
-          <button @click="PostData(ArgObject)">ثبت نام</button>
+          <button class="rounded-[6px] text-[white]  bg-[var(--btn-bg)]" @click="ReturnLogIn">بازگشت به صفحه ورود</button>
+          <button class="rounded-[6px] text-[white]  bg-[var(--btn-bg)]" @click="PostData(ArgObject)">ثبت نام</button>
         </div>
       </div>
     </div>
