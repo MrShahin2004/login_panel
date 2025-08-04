@@ -134,7 +134,20 @@ App.post("/api/mariadb/register", async (req,
             return res.status(400).json({message: "National ID is invalid, please try again."});
         }
 
-        // await StoreUser(NewUserObject);
+        // Setting the values in the specified object
+        NewUserObject.first = ReceivedData.first;
+        NewUserObject.last = ReceivedData.last;
+        NewUserObject.national = ReceivedData.national;
+        NewUserObject.email = ReceivedData.email;
+        NewUserObject.user = ReceivedData.user;
+        NewUserObject.pass = ReceivedData.pass;
+        NewUserObject.firm = ReceivedData.firm;
+        NewUserObject.type = ReceivedData.type;
+
+        // Storing the new user in the database
+        let NewUser = await StoreUser(NewUserObject);
+        console.log(NewUser);
+        return res.json({isFine: true, message: "Your account has been registered successfully."});
     } catch (error) {
         console.log(error);
     }
