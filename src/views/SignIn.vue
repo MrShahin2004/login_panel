@@ -134,5 +134,7 @@ export default {
 <style scoped>
 button {
   font-family: "B Nazanin", cursive;
+  cursor: pointer;
+  padding: 0.5rem;
 }
 </style>
