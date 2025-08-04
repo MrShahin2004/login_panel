@@ -131,7 +131,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 button {
   font-family: "B Nazanin", cursive;
 }
