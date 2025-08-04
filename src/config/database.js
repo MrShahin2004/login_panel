@@ -94,14 +94,6 @@ App.post("/api/mariadb/register", async (req,
     let ReceivedData = req.body;
 
     // Setting the values in the specified object
-    TempUserData.first = ReceivedData.first;
-    TempUserData.last = ReceivedData.last;
-    TempUserData.national = ReceivedData.national;
-    TempUserData.email = ReceivedData.email;
-    TempUserData.user = ReceivedData.user;
-    TempUserData.pass = ReceivedData.pass;
-    TempUserData.firm = ReceivedData.firm;
-    TempUserData.type = ReceivedData.type;
 
     return res.json({isFine: true});
 });
