@@ -66,14 +66,14 @@ async function ExportUser(obj) {
 // A function to store a new user in MariaDB
 async function StoreUser(obj) {
     let Conn;
-    let HashedPassword = await Bcrypt.hash(obj.pass, 10);
+    let HashedPass = await Bcrypt.hash(obj.pass, 10);
 
     try {
         Conn = await Pool.getConnection();
         let Query = await Conn.query(`insert into users
                                       (username, password, firstName, lastName, firm, nationalId, email, type)
                                       values (?, ?, ?, ?, ?, ?, ?, ?);`,
-            [obj.user, HashedPassword, obj.first, obj.last, obj.firm, obj.national,
+            [obj.user, HashedPass, obj.first, obj.last, obj.firm, obj.national,
                 obj.email, obj.type]);
         return Query;
     } catch (error) {
