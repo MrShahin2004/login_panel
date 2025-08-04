@@ -94,14 +94,14 @@ App.post("/api/mariadb/register", async (req,
     let ReceivedData = req.body;
 
     // Setting the values in the specified object
-    NewUserObject.first = ReceivedData.first;
-    NewUserObject.last = ReceivedData.last;
-    NewUserObject.national = ReceivedData.national;
-    NewUserObject.email = ReceivedData.email;
-    NewUserObject.user = ReceivedData.user;
-    NewUserObject.pass = ReceivedData.pass;
-    NewUserObject.firm = ReceivedData.firm;
-    NewUserObject.type = ReceivedData.type;
+    // NewUserObject.first = ReceivedData.first;
+    // NewUserObject.last = ReceivedData.last;
+    // NewUserObject.national = ReceivedData.national;
+    // NewUserObject.email = ReceivedData.email;
+    // NewUserObject.user = ReceivedData.user;
+    // NewUserObject.pass = ReceivedData.pass;
+    // NewUserObject.firm = ReceivedData.firm;
+    // NewUserObject.type = ReceivedData.type;
 
     return res.json({isFine: true, message: "Your account has been registered successfully."});
 });
