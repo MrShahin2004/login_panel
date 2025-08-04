@@ -74,7 +74,7 @@ async function StoreUser(obj) {
                                       (username, password, firstName, lastName, firm, nationalId, email, type)
                                       values (?, ?, ?, ?, ?, ?, ?, ?);`,
             [obj.user, HashedPassword, obj.first, obj.last, obj.firm, obj.national,
-                obj.email, obj.role, obj.type]);
+                obj.email, obj.type]);
         return Query;
     } catch (error) {
         console.log(error);
