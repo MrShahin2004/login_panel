@@ -34,6 +34,12 @@ export default {
     };
   },
   mounted() {
+    let StoredUsers = localStorage.getItem("userData");
+    if (StoredUsers) {
+      this.PendingUsersArray = JSON.parse(StoredUsers);
+    }
+    this.GetPendingUsers();
+
     const token = this.token || localStorage.getItem('token');
     if (token) {
       try {
@@ -77,17 +83,50 @@ export default {
             return response.json();
           })
           .then((data) => {
-            console.log(data);
+            if (Object.keys(data.info).length === 0) {
+              console.log("This object is empty.");
+            } else {
+              this.PendingUsersArray.push(data.info);
+              localStorage.setItem("userData", JSON.stringify(this.PendingUsersArray));
+
+              console.log("Updated pending users array: ", this.PendingUsersArray);
+            }
           })
           .catch((error) => {
             console.log(error);
           });
+    },
+    ShowUsers() {
+      this.ParsedArray = JSON.parse(localStorage.getItem("userData")) || [];
+      let MainContentDiv = document.querySelector(".main-content");
+
+      this.ParsedArray.forEach((item) => {
+        let ItemElement = document.createElement("div");
+        ItemElement.innerHTML = `
+            <div class="w-[100%] h-[100%] flex flex-col justify-evenly items-center">
+                <p>${item.first} :نام</p>
+                <p>${item.last}</p>نام خانوادگی:
+                <p>${item.national}</p>کد ملی:
+                 <p>${item.email}</p>آدرس ایمیل:
+            </div>
+            <div class="w-[100%] h-[100%] flex flex-col justify-evenly items-center">
+                <p>${item.user}</p>نام کاربری:
+                <p>${item.pass}</p>رمز عبور:
+                <p>${item.firm}</p>نام شرکت:
+                <p>${item.type}</p>نقش:
+            </div>
+        `;
+        ItemElement.setAttribute("class", "w-[80%] h-[200px] bg-[white]" +
+            " flex justify-evenly items-center overflow");
+        ItemElement.setAttribute("style", "margin-bottom: 1rem");
+        MainContentDiv.append(ItemElement);
+      });
     }
   }
 };
 </script>
 
-<style>
+<style scoped>
 .admin-profile {
   font-family: 'B Nazanin', cursive;
   text-align: center;
@@ -97,6 +136,11 @@ export default {
 h1 {
   font-family: 'B Titr', cursive;
   color: var(--main-title, #dcb417);
+  margin-bottom: 1rem;
+}
+
+.btns {
+  margin-top: 1rem;
 }
 
 button {
