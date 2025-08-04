@@ -161,7 +161,7 @@ App.get("/api/mariadb/get-pending-users", async (req,
         res.json({isFine: true, message: "All users retrieved from the database.", users: AllUsers});
     } catch (error) {
         console.log(error);
-        res.status(400).json({message: "Something went wrong."});
+        res.json({isFine: false, message: "Something went wrong."});
     }
 });
 
