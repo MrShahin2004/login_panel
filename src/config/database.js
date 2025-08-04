@@ -195,6 +195,14 @@ App.post("/api/mariadb/check", async (req,
             return res.status(400).json({message: "Wrong password, try again."});
         }
 
+        // Checking if the user is verified
+        if (FoundUser.verify === 0) {
+            console.log("User is not verified.");
+            return res.status(400).json({
+                message: "You are not verified yet, contact an administrator to fix it."
+            });
+        }
+
         // Generating the token based on the role
         TokenObject.verify = FoundUser.verify;
         TokenObject.role = FoundUser.role;
