@@ -92,6 +92,27 @@ App.post("/api/mariadb/register", async (req,
                                          res) => {
     // The raw data received from the client
     let ReceivedData = req.body;
+    let {
+        first: ExtractedFirst, last: ExtractedLast, national: ExtractedNational, email: ExtractedEmail,
+        user: ExtractedUser, pass: ExtractedPass, firm: ExtractedFirm, type: ExtractedType
+    } = ReceivedData;
+
+    try {
+        // Checking if all fields are provided
+        if (!ExtractedFirst || !ExtractedLast || !ExtractedNational || !ExtractedEmail || !ExtractedUser
+            || !ExtractedPass || !ExtractedFirm || !ExtractedType) {
+            console.log("Some field is missing in at the client.");
+            return res.status(400).json({message: "Some field is missing, please fill in all fields."});
+        }
+
+        // Checking if the given username is already existing
+        let AllRows = await GetRows();
+        console.log(AllRows);
+
+        // await StoreUser(NewUserObject);
+    } catch (error) {
+        console.log(error);
+    }
 
     // Setting the values in the specified object
     // NewUserObject.first = ReceivedData.first;
