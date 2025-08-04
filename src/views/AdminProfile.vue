@@ -108,6 +108,7 @@ export default {
                 <p>${item.type}</p>نقش:
             </div>
         `;
+
         ItemElement.setAttribute("class", "w-[80%] h-[200px] bg-[white]" +
             " flex justify-evenly items-center overflow");
         ItemElement.setAttribute("style", "margin-bottom: 1rem");
