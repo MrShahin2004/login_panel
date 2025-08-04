@@ -94,17 +94,19 @@ export default {
       this.NotVerifiedUsers.forEach((item) => {
         let ItemElement = document.createElement("div");
         ItemElement.innerHTML = `
-            <div class="w-[100%] h-[100%] flex flex-col justify-evenly items-center">
-                <p>${item.first} :نام</p>
-                <p>${item.last}</p>نام خانوادگی:
-                <p>${item.national}</p>کد ملی:
-                 <p>${item.email}</p>آدرس ایمیل:
-            </div>
-            <div class="w-[100%] h-[100%] flex flex-col justify-evenly items-center">
-                <p>${item.user}</p>نام کاربری:
-                <p>${item.pass}</p>رمز عبور:
-                <p>${item.firm}</p>نام شرکت:
-                <p>${item.type}</p>نقش:
+            <div>
+                <p>${item.id}</p>
+                <p>${item.username}</p>
+                <p>${item.password}</p>
+                <p>${item.firstName}</p>
+                <p>${item.lastName}</p>
+                <p>${item.firm}</p>
+                <p>${item.role}</p>
+                <p>${item.type}</p>
+                <p>${item.createdAt}</p>
+                <p>${item.email}</p>
+                <p>${item.nationalId}</p>
+                <p>${item.verify}</p>
             </div>
         `;
 
