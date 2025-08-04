@@ -65,7 +65,7 @@ async function ExportUser(obj) {
 }
 
 // A function to store a new user in MariaDB
-async function SaveUser(obj) {
+async function StoreUser(obj) {
     let Conn;
     let HashedPassword = await Bcrypt.hash(obj.pass, 10);
 
