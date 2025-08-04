@@ -1,11 +1,17 @@
 <template>
-  <div class="w-[100vw] h-[100vh]">
-    <div class="admin-profile w-[100%] h-[50%] translate-y-[60px]">
-      <h1>داشبورد</h1>
-      <p class="text-[white]">خوش آمدید {{ username }}! جلسه شما در {{ remainingTime }} ثانیه منقضی می‌شود.</p>
-      <p class="text-[white]">نوع کاربری شما: ادمین</p>
-      <button @click="logout">خروج</button>
-      <button @click="GetPendingUsers">دریافت کاربران در انتظار</button>
+  <div class="w-[100vw] min-h-screen overflow-hidden flex justify-center">
+    <div class="admin-profile w-[85%] h-[100%] translate-y-[60px]">
+      <h1 class="text-[24px]">داشبورد ادمین</h1>
+      <div class="main-content w-[100%] h-[100%] rounded-[6px] bg-[var(--body-bg)]
+       flex flex-col justify-center items-center">
+        <br>
+        <h2 class="text-[black] text-[18px]">{{ username }} خوش آمدید</h2>
+        <h2 class="text-[black] text-[18px]">نوع کاربری شما: ادمین</h2>
+        <div class="btns w-[40%] flex justify-evenly items-center">
+          <button @click="logout">خروج</button>
+          <button @click="ShowUsers">نمایش کاربران در انتظار</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
