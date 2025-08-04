@@ -71,7 +71,7 @@ export default {
       localStorage.removeItem('token');
       this.$router.push({name: 'Home'});
     },
-    GetPendingUsers() {
+    GetUnverifiedUsers() {
       fetch("http://localhost:3000/api/mariadb/get-pending-users")
           .then((response) => {
             return response.json();
