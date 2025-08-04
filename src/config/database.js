@@ -103,7 +103,7 @@ App.post("/api/mariadb/register", async (req,
     NewUserObject.firm = ReceivedData.firm;
     NewUserObject.type = ReceivedData.type;
 
-    return res.json({isFine: true});
+    return res.json({isFine: true, message: "Your account has been registered successfully."});
 });
 
 // The endpoint to send the specified object to the admin
