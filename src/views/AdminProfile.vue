@@ -89,7 +89,7 @@ export default {
           });
     },
     ShowUsers() {
-      this.ParsedArray = JSON.parse(localStorage.getItem("userData")) || [];
+      this.GetUnverifiedUsers();
       let MainContentDiv = document.querySelector(".main-content");
 
       this.ParsedArray.forEach((item) => {
