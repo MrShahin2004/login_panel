@@ -34,12 +34,6 @@ export default {
     };
   },
   mounted() {
-    let StoredUsers = localStorage.getItem("userData");
-    if (StoredUsers) {
-      this.PendingUsersArray = JSON.parse(StoredUsers);
-    }
-    this.GetPendingUsers();
-
     const token = this.token || localStorage.getItem('token');
     if (token) {
       try {
