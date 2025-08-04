@@ -91,8 +91,7 @@ export default {
     ShowUsers() {
       this.GetUnverifiedUsers();
       let MainContentDiv = document.querySelector(".main-content");
-
-      this.ParsedArray.forEach((item) => {
+      this.NotVerifiedUsers.forEach((item) => {
         let ItemElement = document.createElement("div");
         ItemElement.innerHTML = `
             <div class="w-[100%] h-[100%] flex flex-col justify-evenly items-center">
