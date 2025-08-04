@@ -72,9 +72,8 @@ async function StoreUser(obj) {
     try {
         Conn = await Pool.getConnection();
         let Query = await Conn.query(`insert into users
-                                      (username, password, firstName, lastName, firm, nationalId, email, role, type,
-                                       status)
-                                      values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`,
+                                      (username, password, firstName, lastName, firm, nationalId, email, role, type)
+                                      values (?, ?, ?, ?, ?, ?, ?, ?, ?);`,
             [obj.user, HashedPassword, obj.first, obj.last, obj.firm, obj.national,
                 obj.email, obj.role, obj.type, obj.status]);
         return Query;
