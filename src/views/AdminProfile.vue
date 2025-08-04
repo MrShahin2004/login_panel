@@ -78,23 +78,6 @@ export default {
       this.$router.push({name: 'Home'});
     },
     GetPendingUsers() {
-      fetch("http://localhost:3000/api/get-pending-users")
-          .then((response) => {
-            return response.json();
-          })
-          .then((data) => {
-            if (Object.keys(data.info).length === 0) {
-              console.log("This object is empty.");
-            } else {
-              this.PendingUsersArray.push(data.info);
-              localStorage.setItem("userData", JSON.stringify(this.PendingUsersArray));
-
-              console.log("Updated pending users array: ", this.PendingUsersArray);
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-          });
     },
     ShowUsers() {
       this.ParsedArray = JSON.parse(localStorage.getItem("userData")) || [];
