@@ -72,6 +72,22 @@ export default {
       this.$router.push({name: 'Home'});
     },
     GetPendingUsers() {
+      fetch("http://localhost:3000/api/mariadb/get-pending-users")
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            let AllUsers = data.users;
+            AllUsers.forEach((user) => {
+              if (user.verify === 0) {
+                this.NotVerifiedUsers.push(user);
+                console.log(this.NotVerifiedUsers);
+              }
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
     },
     ShowUsers() {
       this.ParsedArray = JSON.parse(localStorage.getItem("userData")) || [];
