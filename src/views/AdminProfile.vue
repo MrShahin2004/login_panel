@@ -81,7 +81,6 @@ export default {
             AllUsers.forEach((user) => {
               if (user.verify === 0) {
                 this.NotVerifiedUsers.push(user);
-                console.log(this.NotVerifiedUsers);
               }
             });
           })
