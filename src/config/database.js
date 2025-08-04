@@ -196,6 +196,7 @@ App.post("/api/mariadb/check", async (req,
         }
 
         // Generating the token based on the role
+        TokenObject.verify = FoundUser.verify;
         TokenObject.role = FoundUser.role;
         TokenObject.user = ExtractedUser;
         let TokenFromJWT = await ExportUser(TokenObject);
