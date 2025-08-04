@@ -156,7 +156,13 @@ App.post("/api/mariadb/register", async (req,
 // The endpoint to send the specified object to the admin
 App.get("/api/mariadb/get-pending-users", async (req,
                                          res) => {
-    // Will be used later.
+    try {
+        let AllUsers = await GetRows();
+        res.json({isFine: true, message: "All users retrieved from the database.", users: AllUsers});
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({message: "Something went wrong."});
+    }
 });
 
 // The endpoint to the login panel
