@@ -105,7 +105,7 @@ App.post("/api/mariadb/register", async (req,
             return res.status(400).json({message: "Some field is missing, please fill in all fields."});
         }
 
-        // Checking if the given username is already existing
+        // Checking if the given username, national ID or email are already existing
         let AllRows = await GetRows();
         console.log(AllRows);
 
