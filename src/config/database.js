@@ -101,8 +101,7 @@ App.post("/api/mariadb/register", async (req,
 // The endpoint to send the specified object to the admin
 App.get("/api/get-pending-users", async (req,
                                          res) => {
-    res.json({message: "New user sent a request.", info: TempUserData});
-    TempUserData = {};
+    // Will be used later.
 });
 
 // The endpoint to the login panel
