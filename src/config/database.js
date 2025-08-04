@@ -101,7 +101,7 @@ App.post("/api/mariadb/register", async (req,
         // Checking if all fields are provided
         if (!ExtractedFirst || !ExtractedLast || !ExtractedNational || !ExtractedEmail || !ExtractedUser
             || !ExtractedPass || !ExtractedFirm || !ExtractedType) {
-            console.log("Some field is missing in at the client.");
+            console.log("Some field is missing at the client.");
             return res.status(400).json({message: "Some field is missing, please fill in all fields."});
         }
 
