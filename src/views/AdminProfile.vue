@@ -2,8 +2,7 @@
   <div class="w-[100vw] min-h-screen overflow-auto flex justify-center">
     <div class="admin-profile w-[85%] h-[100%] translate-y-[60px]">
       <h1 class="text-[24px]">داشبورد ادمین</h1>
-      <div class="main-content w-[100%] h-[100%] rounded-[6px] bg-[var(--body-bg)]
-       flex flex-col justify-center items-center">
+      <div class="main-content w-[100%] h-[100%] rounded-[6px] bg-[var(--body-bg)] flex flex-col items-center">
         <br>
         <h2 class="text-[black] text-[18px]">{{ username }} خوش آمدید</h2>
         <h2 class="text-[black] text-[18px]">نوع کاربری شما: ادمین</h2>
