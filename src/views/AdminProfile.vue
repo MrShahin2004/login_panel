@@ -31,6 +31,10 @@
         </div>
       </div>
     </div>
+    <div
+        style="background-color: rgba(0, 0, 0, 0.3); display: none"
+        class="modal-container z-[10] absolute top-[0] left-[0] w-[100%] h-[100%]">
+    </div>
   </div>
 </template>
 
