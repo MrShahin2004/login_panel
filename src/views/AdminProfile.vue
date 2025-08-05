@@ -8,7 +8,26 @@
         <h2 class="text-[black] text-[18px]">نوع کاربری شما: ادمین</h2>
         <div class="btns w-[40%] flex justify-evenly items-center">
           <button @click="logout">خروج</button>
-          <button @click="ShowUsers">نمایش کاربران در انتظار</button>
+          <button @click="ShowUnverifiedUsers">نمایش کاربران در انتظار</button>
+        </div>
+        <div class="data-container w-[80%] h-[400px] overflow-auto">
+          <div
+              v-for="user in NotVerifiedUsers"
+              :key="user.username"
+              class="w-[50%] h-[150px] rounded-[6px] bg-[white] grid grid-cols-[3fr_1fr] translate-x-[50%]"
+              style="margin-bottom: 1rem;">
+            <div class="flex justify-center items-center">
+              <h2>{{ user.username }}</h2>
+            </div>
+            <div class="flex justify-center items-center">
+              <button
+                  @click="EditUser(user)"
+                  class="cursor-pointer w-[80%] h-fit"
+                  style="margin-top: 1.5rem;">
+                <i class="fas fa-edit"></i> ویرایش کاربر
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
