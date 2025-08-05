@@ -10,7 +10,7 @@
           <button class="outline-[0]" @click="logout">خروج</button>
           <button class="outline-[0]" @click="ShowUnverifiedUsers">نمایش کاربران در انتظار</button>
         </div>
-        <div class="data-container w-[80%] h-[400px] overflow-auto">
+        <div class="data-container w-[80%] h-[400px] overflow-auto relative">
           <div
               v-for="user in NotVerifiedUsers"
               :key="user.username"
