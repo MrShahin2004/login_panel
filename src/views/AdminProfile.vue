@@ -22,7 +22,7 @@
             <div class="flex justify-center items-center">
               <button
                   @click="EditUser(user)"
-                  class="cursor-pointer w-[80%] h-fit"
+                  class="cursor-pointer w-[80%] h-fit outline-[0]"
                   style="margin-top: 1.5rem;">
                 <i class="fas fa-edit"></i> ویرایش کاربر
               </button>
