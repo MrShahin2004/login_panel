@@ -1,5 +1,5 @@
 <template>
-  <div class="w-[100vw] min-h-screen overflow-hidden flex justify-center">
+  <div class="w-[100vw] min-h-screen overflow-auto flex justify-center">
     <div class="admin-profile w-[85%] h-[100%] translate-y-[60px]">
       <h1 class="text-[24px]">داشبورد ادمین</h1>
       <div class="main-content w-[100%] h-[100%] rounded-[6px] bg-[var(--body-bg)]
