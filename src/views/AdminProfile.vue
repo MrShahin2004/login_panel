@@ -7,8 +7,8 @@
         <h2 class="text-[black] text-[18px]">{{ username }} خوش آمدید</h2>
         <h2 class="text-[black] text-[18px]">نوع کاربری شما: ادمین</h2>
         <div class="btns w-[40%] flex justify-evenly items-center">
-          <button @click="logout">خروج</button>
-          <button @click="ShowUnverifiedUsers">نمایش کاربران در انتظار</button>
+          <button class="outline-[0]" @click="logout">خروج</button>
+          <button class="outline-[0]" @click="ShowUnverifiedUsers">نمایش کاربران در انتظار</button>
         </div>
         <div class="data-container w-[80%] h-[400px] overflow-auto">
           <div
