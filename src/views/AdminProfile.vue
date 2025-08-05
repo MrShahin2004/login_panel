@@ -92,50 +92,100 @@ export default {
       localStorage.removeItem('token');
       this.$router.push({name: 'Home'});
     },
-    GetUnverifiedUsers() {
-      fetch("http://localhost:3000/api/mariadb/get-pending-users")
-          .then((response) => {
-            return response.json();
-          })
-          .then((data) => {
-            let AllUsers = data.users;
-            AllUsers.forEach((user) => {
-              if (user.verify === 0) {
-                this.NotVerifiedUsers.push(user);
-              }
-            });
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-    },
-    ShowUsers() {
-      this.GetUnverifiedUsers();
-      let MainContentDiv = document.querySelector(".main-content");
-      this.NotVerifiedUsers.forEach((item) => {
-        let ItemElement = document.createElement("div");
-        ItemElement.innerHTML = `
-            <div>
-                <p>${item.id}</p>
-                <p>${item.username}</p>
-                <p>${item.password}</p>
-                <p>${item.firstName}</p>
-                <p>${item.lastName}</p>
-                <p>${item.firm}</p>
-                <p>${item.role}</p>
-                <p>${item.type}</p>
-                <p>${item.createdAt}</p>
-                <p>${item.email}</p>
-                <p>${item.nationalId}</p>
-                <p>${item.verify}</p>
-            </div>
-        `;
+    async ShowUnverifiedUsers() {
+      // Fetch data
+      let Response = await fetch('http://localhost:3000/api/mariadb/get-pending-users');
+      let Data = await Response.json();
 
-        ItemElement.setAttribute("class", "w-[80%] h-[200px] bg-[white]" +
-            " flex justify-evenly items-center overflow");
-        ItemElement.setAttribute("style", "margin-bottom: 1rem");
-        MainContentDiv.append(ItemElement);
+      // Filter unverified users
+      this.NotVerifiedUsers = Data.users.filter((user) => {
+        return user.verify === 0
       });
+    },
+    EditUser(user) {
+      // Selecting the modal element
+      let ModalContainerEl = document.querySelector(".modal-container");
+
+      // Creating the modal content
+      let ModalContent = document.createElement("div");
+      ModalContent.innerHTML = `
+          <div style="margin-right: 1rem" class="w-[40%] h-[50%] flex flex-col justify-evenly items-center rounded-[6px] border-[1px]">
+              <div class="w-[80%] h-fit flex justify-between items-center">
+                  <p>${user.id}</p> ID
+              </div>
+              <div class="w-[80%] h-fit flex justify-between items-center">
+                  <p>${user.username}</p> نام کاربری
+              </div>
+              <div class="w-[80%] h-fit flex justify-between items-center">
+                  <p>${user.firstName}</p> نام
+              </div>
+              <div class="w-[80%] h-fit flex justify-between items-center">
+                  <p>${user.lastName}</p> نام خانوادگی
+              </div>
+              <div class="w-[80%] h-fit flex justify-between items-center">
+                  <p>${user.firm}</p> نام شرکت
+              </div>
+              <div class="w-[80%] h-fit flex justify-between items-center">
+                  <p>${user.role}</p> نوع کاربری
+              </div>
+          </div>
+          <div style="margin-left: 1rem" class="w-[40%] h-[50%] flex flex-col justify-evenly items-center rounded-[6px] border-[1px]">
+              <div class="w-[80%] h-fit flex justify-between items-center">
+                  <p>${user.type}</p> نقش
+              </div>
+              <div class="w-[80%] h-fit flex justify-between items-center">
+                  <p>${user.createdAt}</p> تاریخ ثبت
+              </div>
+              <div class="w-[80%] h-fit flex justify-between items-center">
+                  <p>${user.email}</p> آدرس ایمیل
+              </div>
+              <div class="w-[80%] h-fit flex justify-between items-center">
+                  <p>${user.nationalId}</p> کد ملی
+              </div>
+              <div class="w-[80%] h-fit flex justify-between items-center">
+                  <p>${user.verify === 0 ? "تأیید نشده" : "تأیید شده"}</p> وضعیت
+              </div>
+          </div>
+          <button
+          style="padding: 1rem"
+          class="close-modal text-[24px] absolute top-[6px] right-[20px] cursor-pointer">&times;</button>
+      `;
+      ModalContent.className = `w-[80%] h-[80%] bg-[white]
+       flex justify-center items-center rounded-[6px] z-[20] relative`;
+      ModalContent.style.marginBottom = "1rem";
+      ModalContainerEl.style.display = "flex";
+      ModalContainerEl.classList.add("justify-center", "items-center");
+      ModalContainerEl.append(ModalContent);
+
+      // Function to close the modal
+      const CloseModal = () => {
+        ModalContainerEl.innerHTML = "";
+        ModalContainerEl.style.display = "none";
+        ModalContainerEl.classList.remove("justify-center", "items-center");
+        // Remove event listeners to avoid duplicates
+        ModalContainerEl.removeEventListener("click", outsideClickHandler);
+        window.removeEventListener("keydown", escapeKeyHandler);
+      };
+
+      // Handle click on close button
+      let CloseModalBtn = ModalContent.querySelector(".close-modal");
+      CloseModalBtn.addEventListener("click", CloseModal);
+
+      // Handle click outside modal
+      const outsideClickHandler = (event) => {
+        if (event.target === ModalContainerEl) {
+          CloseModal();
+        }
+      };
+      ModalContainerEl.addEventListener("click", outsideClickHandler);
+
+      // Handle Escape key press
+      const escapeKeyHandler = (event) => {
+        if (event.key === "Escape") {
+          CloseModal();
+        }
+      };
+      window.addEventListener("keydown", escapeKeyHandler);
     }
   }
 };
