@@ -29,8 +29,7 @@ export default {
     return {
       remainingTime: null,
       checkInterval: null,
-      PendingUsersArray: [],
-      ParsedArray: null
+      NotVerifiedUsers: []
     };
   },
   mounted() {
