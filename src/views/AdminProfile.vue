@@ -175,8 +175,8 @@ export default {
         ModalContainerEl.style.display = "none";
         ModalContainerEl.classList.remove("justify-center", "items-center");
         // Remove event listeners to avoid duplicates
-        ModalContainerEl.removeEventListener("click", outsideClickHandler);
-        window.removeEventListener("keydown", escapeKeyHandler);
+        ModalContainerEl.removeEventListener("click", OutsideClickHandler);
+        window.removeEventListener("keydown", EscapeKeyHandler);
       };
 
       // Handle click on close button
@@ -184,20 +184,20 @@ export default {
       CloseModalBtn.addEventListener("click", CloseModal);
 
       // Handle click outside modal
-      const outsideClickHandler = (event) => {
+      const OutsideClickHandler = (event) => {
         if (event.target === ModalContainerEl) {
           CloseModal();
         }
       };
-      ModalContainerEl.addEventListener("click", outsideClickHandler);
+      ModalContainerEl.addEventListener("click", OutsideClickHandler);
 
       // Handle Escape key press
-      const escapeKeyHandler = (event) => {
+      const EscapeKeyHandler = (event) => {
         if (event.key === "Escape") {
           CloseModal();
         }
       };
-      window.addEventListener("keydown", escapeKeyHandler);
+      window.addEventListener("keydown", EscapeKeyHandler);
     }
   }
 };
