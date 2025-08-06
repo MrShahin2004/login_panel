@@ -179,7 +179,7 @@ h1 {
 }
 
 .login-body {
-  font-family: "B Nazanin", cursive;
+  font-family: YekanBakh, sans-serif;
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
