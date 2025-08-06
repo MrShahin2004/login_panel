@@ -206,6 +206,32 @@ export default {
         }
       };
       window.addEventListener("keydown", EscapeKeyHandler);
+
+      // Actions to be done to the checkboxes with the save button
+      let SaveBtnEl = document.querySelector(".save-btn");
+      let VerifyCheck = document.querySelector("#verify-check");
+      let PromoteCheck = document.querySelector("#promote-check");
+
+      SaveBtnEl.addEventListener("click", () => {
+        if (!VerifyCheck.checked && !PromoteCheck.checked) {
+          console.log("Both are not checked.");
+          CloseModal();
+        }
+
+        if (!VerifyCheck.checked && PromoteCheck.checked) {
+          console.log("User must be verified as well to be promoted to an admin.");
+        }
+
+        if (VerifyCheck.checked && !PromoteCheck.checked) {
+          console.log('The new user is verified as "User".');
+          CloseModal();
+        }
+
+        if (VerifyCheck.checked && PromoteCheck.checked) {
+          console.log('The new user is verified as "Admin".');
+          CloseModal();
+        }
+      });
     }
   }
 };
