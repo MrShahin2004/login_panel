@@ -159,7 +159,7 @@ export default {
             </li>
           </ul>
           <button
-            class="close-modal btn btn-circle btn-ghost absolute top-2 right-2"
+            class="close-modal btn btn-circle btn-ghost absolute top-2 right-2 outline-none"
             style="padding: 0.5rem">&times;</button>
         </div>
       `;
