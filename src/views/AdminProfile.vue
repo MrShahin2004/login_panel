@@ -213,10 +213,10 @@ export default {
       let PromoteCheck = document.querySelector("#promote-check");
 
       SaveBtnEl.addEventListener("click", () => {
-        this.SendModifiedData(VerifyCheck, PromoteCheck);
+        this.SendModifiedData(user.username, VerifyCheck, PromoteCheck);
       });
     },
-    async SendModifiedData(verify, promote) {
+    async SendModifiedData(username, verify, promote) {
       let VerifyStatus = null;
       let PromoteStatus = null;
 
@@ -254,7 +254,7 @@ export default {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({verify: VerifyStatus, promote: PromoteStatus})
+          body: JSON.stringify({username: username, verify: VerifyStatus, promote: PromoteStatus})
         });
         let Data = await Response.json();
         console.log(Data);
