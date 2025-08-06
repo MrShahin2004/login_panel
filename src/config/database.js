@@ -166,7 +166,7 @@ App.get("/api/mariadb/get-pending-users", async (req,
 });
 
 // The endpoint to the login panel
-App.post("/api/mariadb/check", async (req,
+App.post("/api/mariadb/login", async (req,
                                       res) => {
     // Receiving the data from the client
     let ReceivedData = req.body;
