@@ -256,7 +256,6 @@ export default {
           },
           body: JSON.stringify({verify: VerifyStatus, promote: PromoteStatus})
         });
-
         let Data = await Response.json();
         console.log(Data);
 
