@@ -37,9 +37,7 @@ async function GetRows() {
     let Conn;
     try {
         Conn = await Pool.getConnection();
-        let Query = await Conn.query("select * from users");
-        console.log(Query);
-        return Query;
+        return await Conn.query("select * from users");
     } catch (error) {
         console.log(error);
     } finally {
