@@ -167,7 +167,7 @@ App.get("/api/mariadb/get-pending-users", async (req,
 
 // The endpoint to send the data of verified or promoted users
 App.post("/api/mariadb/edit-pending-users", async (req,
-                                      res) => {
+                                                   res) => {
     // Will be used.
 });
 
