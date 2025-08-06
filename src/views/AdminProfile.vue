@@ -171,7 +171,7 @@ export default {
             <input class="outline-none" id="promote-check" type="checkbox">
         </div>
       `;
-      ModalContent.className = `w-[80%] h-[80%] bg-base-100 flex justify-center items-center rounded-lg z-[20] relative`;
+      ModalContent.className = `w-[80%] h-[80%] bg-base-100 flex flex-col justify-evenly items-center rounded-lg z-[20] relative`;
       ModalContent.style.marginBottom = "1rem";
       ModalContainerEl.style.display = "flex";
       ModalContainerEl.classList.add("justify-center", "items-center");
