@@ -92,7 +92,6 @@ async function StoreUser(obj) {
 // A function to modify the role and verify status of user
 async function ModifyUser(obj) {
     let Conn;
-
     try {
         Conn = await Pool.getConnection();
         if (!obj.verify && !obj.promote) {
