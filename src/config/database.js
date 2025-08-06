@@ -168,7 +168,10 @@ App.get("/api/mariadb/get-pending-users", async (req,
 // The endpoint to send the data of verified or promoted users
 App.post("/api/mariadb/edit-pending-users", async (req,
                                                    res) => {
-    // Will be used.
+    let ReceivedData = req.body;
+    console.log(ReceivedData);
+
+    res.json({isFine: true, message: "Data has been modified."});
 });
 
 // The endpoint to the login panel
