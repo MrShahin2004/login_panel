@@ -24,7 +24,7 @@
           <p>به زبان صفحه کلید خود دقت کنید تا روی زبان درست تنظیم شده باشد</p>
         </div>
         <div class="buttons flex flex-col md:flex-row justify-center items-center gap-4">
-          <button @click="PostData" class="bg-[var(--btn-bg)] text-[white]
+          <button @click="SendRequest" class="bg-[var(--btn-bg)] text-[white]
           w-[150px] h-[50px] rounded-[10px] hover:cursor-pointer">ورود به سامانه
           </button>
           <button class="bg-[var(--btn-bg)] text-[white]
@@ -90,7 +90,7 @@ export default {
     AssignCode(code) {
       this.ReceivedCode = code;
     },
-    async PostData() {
+    async SendRequest() {
       try {
         const Response = await fetch("http://localhost:3000/api/mariadb/login", {
           method: "POST",
