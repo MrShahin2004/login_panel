@@ -109,7 +109,8 @@ export default {
       // Creating the modal content
       let ModalContent = document.createElement("div");
       ModalContent.innerHTML = `
-          <div style="margin-right: 1rem" class="w-[40%] h-[50%] flex flex-col justify-evenly items-center rounded-[6px] border-[1px]">
+          <div class="w-[40%] h-[50%] flex flex-col justify-evenly items-center rounded-[6px] border-[1px]"
+           style="margin-right: 1rem">
               <div class="w-[80%] h-fit flex justify-between items-center">
                   <p>${user.id}</p> ID
               </div>
@@ -129,7 +130,8 @@ export default {
                   <p>${user.role}</p> نوع کاربری
               </div>
           </div>
-          <div style="margin-left: 1rem" class="w-[40%] h-[50%] flex flex-col justify-evenly items-center rounded-[6px] border-[1px]">
+          <div class="w-[40%] h-[50%] flex flex-col justify-evenly items-center rounded-[6px] border-[1px]"
+           style="margin-left: 1rem">
               <div class="w-[80%] h-fit flex justify-between items-center">
                   <p>${user.type}</p> نقش
               </div>
@@ -147,8 +149,8 @@ export default {
               </div>
           </div>
           <button
-          style="padding: 1rem"
-          class="close-modal text-[24px] absolute top-[6px] right-[20px] cursor-pointer">&times;</button>
+          class="close-modal text-[24px] absolute top-[6px] right-[20px] cursor-pointer"
+          style="padding: 1rem">&times;</button>
       `;
       ModalContent.className = `w-[80%] h-[80%] bg-[white]
        flex justify-center items-center rounded-[6px] z-[20] relative`;
