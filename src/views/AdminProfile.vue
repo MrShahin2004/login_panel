@@ -213,10 +213,10 @@ export default {
       let PromoteCheck = document.querySelector("#promote-check");
 
       SaveBtnEl.addEventListener("click", () => {
-        this.SendEditedData(VerifyCheck, PromoteCheck);
+        this.SendModifiedData(VerifyCheck, PromoteCheck);
       });
     },
-    async SendEditedData(verify, promote) {
+    async SendModifiedData(verify, promote) {
       let VerifyStatus = null;
       let PromoteStatus = null;
 
