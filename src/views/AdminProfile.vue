@@ -259,6 +259,11 @@ export default {
 
         let Data = await Response.json();
         console.log(Data);
+
+        let ModalContainerEl = document.querySelector(".modal-container");
+        ModalContainerEl.innerHTML = "";
+        ModalContainerEl.style.display = "none";
+        ModalContainerEl.classList.remove("justify-center", "items-center");
       } catch (error) {
         console.log(error);
       }
