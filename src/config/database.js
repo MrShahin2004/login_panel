@@ -110,6 +110,15 @@ async function ModifyUser(obj) {
             console.log(Query);
             return Query;
         }
+
+        if (obj.verify && obj.promote) {
+            let Query = await Conn.query(`update users
+                                          set verify = 1,
+                                              role   = 'Admin'
+                                          where username = ?`, [obj.username]);
+            console.log(Query);
+            return Query;
+        }
     } catch (error) {
         console.log(error);
     } finally {
