@@ -92,7 +92,7 @@ export default {
     },
     async PostData() {
       try {
-        const Response = await fetch("http://localhost:3000/api/mariadb/check", {
+        const Response = await fetch("http://localhost:3000/api/mariadb/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
