@@ -109,51 +109,51 @@ export default {
       // Creating the modal content (with daisyUI list components)
       let ModalContent = document.createElement("div");
       ModalContent.innerHTML = `
-        <div class="flex justify-center items-center gap-4 w-full h-full">
+        <div class="flex justify-center items-center gap-4 w-[70%] h-[70%] border-[1px] rounded-[6px]">
           <ul class="list-none w-[40%] bg-base-100 rounded-lg shadow p-4">
-            <li class="flex justify-between items-center p-2 border-b">
+            <li class="flex justify-between items-center p-2 border-b h-[40px]">
               <span class="font-semibold">${user.id}</span>
               <span>ID</span>
             </li>
-            <li class="flex justify-between items-center p-2 border-b">
+            <li class="flex justify-between items-center p-2 border-b h-[40px]">
               <span class="font-semibold">${user.username}</span>
               <span>نام کاربری</span>
             </li>
-            <li class="flex justify-between items-center p-2 border-b">
+            <li class="flex justify-between items-center p-2 border-b h-[40px]">
               <span class="font-semibold">${user.firstName}</span>
               <span>نام</span>
             </li>
-            <li class="flex justify-between items-center p-2 border-b">
+            <li class="flex justify-between items-center p-2 border-b h-[40px]">
               <span class="font-semibold">${user.lastName}</span>
               <span>نام خانوادگی</span>
             </li>
-            <li class="flex justify-between items-center p-2 border-b">
+            <li class="flex justify-between items-center p-2 border-b h-[40px]">
               <span class="font-semibold">${user.firm}</span>
               <span>نام شرکت</span>
             </li>
-            <li class="flex justify-between items-center p-2">
+            <li class="flex justify-between items-center p-2 h-[40px]">
               <span class="font-semibold">${user.role}</span>
               <span>نوع کاربری</span>
             </li>
           </ul>
           <ul class="list-none w-[40%] bg-base-100 rounded-lg shadow p-4">
-            <li class="flex justify-between items-center p-2 border-b">
+            <li class="flex justify-between items-center p-2 border-b h-[40px]">
               <span class="font-semibold">${user.type}</span>
               <span>نقش</span>
             </li>
-            <li class="flex justify-between items-center p-2 border-b">
+            <li class="flex justify-between items-center p-2 border-b h-[40px]">
               <span class="font-semibold">${user.createdAt}</span>
               <span>تاریخ ثبت</span>
             </li>
-            <li class="flex justify-between items-center p-2 border-b">
+            <li class="flex justify-between items-center p-2 border-b h-[40px]">
               <span class="font-semibold">${user.email}</span>
               <span>آدرس ایمیل</span>
             </li>
-            <li class="flex justify-between items-center p-2 border-b">
+            <li class="flex justify-between items-center p-2 border-b h-[40px]">
               <span class="font-semibold">${user.nationalId}</span>
               <span>کد ملی</span>
             </li>
-            <li class="flex justify-between items-center p-2">
+            <li class="flex justify-between items-center p-2 h-[40px]">
               <span class="font-semibold">${user.verify === 0 ? "تأیید نشده" : "تأیید شده"}</span>
               <span>وضعیت</span>
             </li>
