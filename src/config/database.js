@@ -89,6 +89,39 @@ async function StoreUser(obj) {
     }
 }
 
+// A function to modify the role and verify status of user
+async function ModifyUser(obj) {
+    let Conn;
+
+    try {
+        Conn = await Pool.getConnection();
+        if (!obj.verify && !obj.promote) {
+            console.log("Both values stayed unchanged, moving on.");
+        }
+
+        if (!obj.verify && obj.promote) {
+            console.log("User still not verified, cannot be promoted.");
+        }
+
+        if (obj.verify && !obj.promote) {
+            let Query = await Conn.query(`update users
+                                          set verify = 1
+                                          where username = ?`, [obj.username]);
+            console.log(Query);
+            return Query;
+        }
+    } catch (error) {
+        console.log(error);
+    } finally {
+        if (Conn) {
+            Conn.release()
+                .then((response) => {
+                    console.log(response);
+                });
+        }
+    }
+}
+
 // The endpoint to receive the data from the register panel
 App.post("/api/mariadb/register", async (req,
                                          res) => {
