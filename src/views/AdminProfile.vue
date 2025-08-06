@@ -109,51 +109,61 @@ export default {
       // Creating the modal content
       let ModalContent = document.createElement("div");
       ModalContent.innerHTML = `
-          <div class="w-[40%] h-[50%] flex flex-col justify-evenly items-center rounded-[6px] border-[1px]"
-           style="margin-right: 1rem">
-              <div class="w-[80%] h-fit flex justify-between items-center">
-                  <p>${user.id}</p> ID
-              </div>
-              <div class="w-[80%] h-fit flex justify-between items-center">
-                  <p>${user.username}</p> نام کاربری
-              </div>
-              <div class="w-[80%] h-fit flex justify-between items-center">
-                  <p>${user.firstName}</p> نام
-              </div>
-              <div class="w-[80%] h-fit flex justify-between items-center">
-                  <p>${user.lastName}</p> نام خانوادگی
-              </div>
-              <div class="w-[80%] h-fit flex justify-between items-center">
-                  <p>${user.firm}</p> نام شرکت
-              </div>
-              <div class="w-[80%] h-fit flex justify-between items-center">
-                  <p>${user.role}</p> نوع کاربری
-              </div>
-          </div>
-          <div class="w-[40%] h-[50%] flex flex-col justify-evenly items-center rounded-[6px] border-[1px]"
-           style="margin-left: 1rem">
-              <div class="w-[80%] h-fit flex justify-between items-center">
-                  <p>${user.type}</p> نقش
-              </div>
-              <div class="w-[80%] h-fit flex justify-between items-center">
-                  <p>${user.createdAt}</p> تاریخ ثبت
-              </div>
-              <div class="w-[80%] h-fit flex justify-between items-center">
-                  <p>${user.email}</p> آدرس ایمیل
-              </div>
-              <div class="w-[80%] h-fit flex justify-between items-center">
-                  <p>${user.nationalId}</p> کد ملی
-              </div>
-              <div class="w-[80%] h-fit flex justify-between items-center">
-                  <p>${user.verify === 0 ? "تأیید نشده" : "تأیید شده"}</p> وضعیت
-              </div>
-          </div>
+        <div class="flex justify-center items-center gap-4 w-full h-full">
+          <ul class="list-none w-[40%] bg-base-100 rounded-lg shadow p-4">
+            <li class="flex justify-between items-center p-2 border-b">
+              <span class="font-semibold">${user.id}</span>
+              <span>ID</span>
+            </li>
+            <li class="flex justify-between items-center p-2 border-b">
+              <span class="font-semibold">${user.username}</span>
+              <span>نام کاربری</span>
+            </li>
+            <li class="flex justify-between items-center p-2 border-b">
+              <span class="font-semibold">${user.firstName}</span>
+              <span>نام</span>
+            </li>
+            <li class="flex justify-between items-center p-2 border-b">
+              <span class="font-semibold">${user.lastName}</span>
+              <span>نام خانوادگی</span>
+            </li>
+            <li class="flex justify-between items-center p-2 border-b">
+              <span class="font-semibold">${user.firm}</span>
+              <span>نام شرکت</span>
+            </li>
+            <li class="flex justify-between items-center p-2">
+              <span class="font-semibold">${user.role}</span>
+              <span>نوع کاربری</span>
+            </li>
+          </ul>
+          <ul class="list-none w-[40%] bg-base-100 rounded-lg shadow p-4">
+            <li class="flex justify-between items-center p-2 border-b">
+              <span class="font-semibold">${user.type}</span>
+              <span>نقش</span>
+            </li>
+            <li class="flex justify-between items-center p-2 border-b">
+              <span class="font-semibold">${user.createdAt}</span>
+              <span>تاریخ ثبت</span>
+            </li>
+            <li class="flex justify-between items-center p-2 border-b">
+              <span class="font-semibold">${user.email}</span>
+              <span>آدرس ایمیل</span>
+            </li>
+            <li class="flex justify-between items-center p-2 border-b">
+              <span class="font-semibold">${user.nationalId}</span>
+              <span>کد ملی</span>
+            </li>
+            <li class="flex justify-between items-center p-2">
+              <span class="font-semibold">${user.verify === 0 ? "تأیید نشده" : "تأیید شده"}</span>
+              <span>وضعیت</span>
+            </li>
+          </ul>
           <button
-          class="close-modal text-[24px] absolute top-[6px] right-[20px] cursor-pointer"
-          style="padding: 1rem">&times;</button>
+            class="close-modal btn btn-circle btn-ghost absolute top-2 right-2"
+            style="padding: 0.5rem">&times;</button>
+        </div>
       `;
-      ModalContent.className = `w-[80%] h-[80%] bg-[white]
-       flex justify-center items-center rounded-[6px] z-[20] relative`;
+      ModalContent.className = `w-[80%] h-[80%] bg-base-100 flex justify-center items-center rounded-lg z-[20] relative`;
       ModalContent.style.marginBottom = "1rem";
       ModalContainerEl.style.display = "flex";
       ModalContainerEl.classList.add("justify-center", "items-center");
