@@ -38,6 +38,7 @@ async function GetRows() {
     try {
         Conn = await Pool.getConnection();
         let Query = await Conn.query("select * from users");
+        console.log(Query);
         return Query;
     } catch (error) {
         console.log(error);
@@ -76,6 +77,7 @@ async function StoreUser(obj) {
                                       values (?, ?, ?, ?, ?, ?, ?, ?);`,
             [obj.user, HashedPass, obj.first, obj.last, obj.firm, obj.national,
                 obj.email, obj.type]);
+        console.log(Query);
         return Query;
     } catch (error) {
         console.log(error);
