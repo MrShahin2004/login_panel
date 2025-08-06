@@ -232,6 +232,53 @@ export default {
           CloseModal();
         }
       });
+    },
+    async SendEditedData(verify, promote) {
+      let VerifyStatus = null;
+      let PromoteStatus = null;
+
+      if (!verify.checked && !promote.checked) {
+        console.log("Both are not checked.");
+
+        VerifyStatus = verify.checked;
+        PromoteStatus = promote.checked;
+      }
+
+      if (!verify.checked && promote.checked) {
+        console.log("User must be verified to be promoted to an admin.");
+
+        VerifyStatus = verify.checked;
+        PromoteStatus = promote.checked;
+      }
+
+      if (verify.checked && !promote.checked) {
+        console.log('User is verified as a "User".');
+
+        VerifyStatus = verify.checked;
+        PromoteStatus = promote.checked;
+      }
+
+      if (verify.checked && promote.checked) {
+        console.log('User is verified as an "Admin".');
+
+        VerifyStatus = verify.checked;
+        PromoteStatus = promote.checked;
+      }
+
+      try {
+        let Response = await fetch("http://localhost:3000/api/mariadb/edit-pending-users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({verify: VerifyStatus, promote: PromoteStatus})
+        });
+
+        let Data = await Response.json();
+        console.log(Data);
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 };
