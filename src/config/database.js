@@ -43,9 +43,10 @@ async function GetRows() {
         console.log(error);
     } finally {
         if (Conn) {
-            Conn.release().then((response) => {
-                return response;
-            });
+            Conn.release()
+                .then((response) => {
+                    return response;
+                });
         }
     }
 }
