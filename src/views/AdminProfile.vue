@@ -106,7 +106,7 @@ export default {
       // Selecting the modal element
       let ModalContainerEl = document.querySelector(".modal-container");
 
-      // Creating the modal content
+      // Creating the modal content (with daisyUI list components)
       let ModalContent = document.createElement("div");
       ModalContent.innerHTML = `
         <div class="flex justify-center items-center gap-4 w-full h-full">
