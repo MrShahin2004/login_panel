@@ -213,24 +213,7 @@ export default {
       let PromoteCheck = document.querySelector("#promote-check");
 
       SaveBtnEl.addEventListener("click", () => {
-        if (!VerifyCheck.checked && !PromoteCheck.checked) {
-          console.log("Both are not checked.");
-          CloseModal();
-        }
-
-        if (!VerifyCheck.checked && PromoteCheck.checked) {
-          console.log("User must be verified as well to be promoted to an admin.");
-        }
-
-        if (VerifyCheck.checked && !PromoteCheck.checked) {
-          console.log('The new user is verified as "User".');
-          CloseModal();
-        }
-
-        if (VerifyCheck.checked && PromoteCheck.checked) {
-          console.log('The new user is verified as "Admin".');
-          CloseModal();
-        }
+        this.SendEditedData(VerifyCheck, PromoteCheck);
       });
     },
     async SendEditedData(verify, promote) {
