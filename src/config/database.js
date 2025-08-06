@@ -206,6 +206,9 @@ App.post("/api/mariadb/edit-pending-users", async (req,
     let ReceivedData = req.body;
     console.log(ReceivedData);
 
+    let Queried = await ModifyUser(ReceivedData);
+    console.log(Queried);
+
     res.json({isFine: true, message: "Data has been modified."});
 });
 
