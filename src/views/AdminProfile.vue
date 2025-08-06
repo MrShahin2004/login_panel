@@ -162,6 +162,14 @@ export default {
             class="close-modal btn btn-circle btn-ghost absolute top-2 right-2 outline-none"
             style="padding: 0.5rem">&times;</button>
         </div>
+        <div class="buttons-div flex justify-evenly items-center gap-3">
+            <button class="save-btn text-[white] bg-[var(--btn-bg)] rounded-[6px] outline-none translate-y-[25%] cursor-pointer"
+                    style="padding: 0.5rem">ذخیره تغییرات</button>
+            <label for="check-input">تأیید کاربر</label>
+            <input class="outline-none" id="verify-check" type="checkbox">
+            <label for="">ارتقاء به ادمین</label>
+            <input class="outline-none" id="promote-check" type="checkbox">
+        </div>
       `;
       ModalContent.className = `w-[80%] h-[80%] bg-base-100 flex justify-center items-center rounded-lg z-[20] relative`;
       ModalContent.style.marginBottom = "1rem";
