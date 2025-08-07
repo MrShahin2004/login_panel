@@ -212,12 +212,15 @@ App.get("/api/mariadb/get-pending-users", async (req,
 App.post("/api/mariadb/edit-pending-users", async (req,
                                                    res) => {
     let ReceivedData = req.body;
-    console.log(ReceivedData);
 
-    let Queried = await ModifyUser(ReceivedData);
-    console.log(Queried);
+    try {
+        let Queried = await ModifyUser(ReceivedData);
+        console.log(Queried);
 
-    res.json({isFine: true, message: "Data has been modified."});
+        res.json({isFine: true, message: "Data has been modified."});
+    } catch (error) {
+        console.log(error);
+    }
 });
 
 // The endpoint to the login panel
