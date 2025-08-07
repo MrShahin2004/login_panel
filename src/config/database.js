@@ -289,6 +289,12 @@ App.post("/api/mariadb/login", async (req,
         // Deleting CAPTCHA from Redis
         await Redis.del("captcha");
 
+        // If the owner wants to log in...
+        if (FoundUser.role === "Owner") {
+            console.log("Owner is logged in.");
+            return res.json({token: TokenFromJWT, message: "Welcome MrShahin2004!"});
+        }
+
         // If the user is an "Admin"...
         if (FoundUser.role === "Admin") {
             console.log("Admin is logged in.");
