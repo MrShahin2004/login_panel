@@ -37,4 +37,8 @@ select {
   font-family: "B Nazanin", sans-serif;
   padding: 0.5rem;
 }
+
+option {
+  font-family: YekanBakh, sans-serif;
+}
 </style>
