@@ -67,7 +67,7 @@ export default {
 
 <style scoped>
 .user-profile {
-  font-family: 'B Nazanin', cursive;
+  font-family: YekanBakh, sans-serif;
   text-align: center;
   margin-top: 60px;
   color: var(--btn-bg, #293da3);

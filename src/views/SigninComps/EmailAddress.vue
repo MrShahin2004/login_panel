@@ -33,6 +33,6 @@ export default {
 }
 
 label {
-  font-family: "B Nazanin", cursive;
+  font-family: YekanBakh, sans-serif;
 }
 </style>

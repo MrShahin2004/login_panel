@@ -273,9 +273,9 @@ export default {
 
 <style scoped>
 .admin-profile {
-  font-family: 'B Nazanin', cursive;
   text-align: center;
   color: var(--btn-bg, #293da3);
+  font-family: YekanBakh, sans-serif;
 }
 
 h1 {

@@ -37,7 +37,7 @@ export default {
 }
 
 label {
-  font-family: "B Nazanin", cursive;
+  font-family: YekanBakh, sans-serif;
 }
 
 select {
@@ -45,7 +45,7 @@ select {
 }
 
 option {
-  font-family: "B Nazanin", cursive;
+  font-family: YekanBakh, sans-serif;
   padding: 0.5rem;
 }
 </style>

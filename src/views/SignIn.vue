@@ -1,5 +1,5 @@
 <template>
-  <div class="w-[100vw] h-[100vh] flex flex-col justify-evenly items-center">
+  <div class="user-profile w-[100vw] h-[100vh] flex flex-col justify-evenly items-center">
     <h1 class="text-[24px]">ساخت حساب کاربری</h1>
     <div class="main-body w-[95%] h-[85%] bg-[var(--body-bg)] grid grid-rows-[4fr_1fr] rounded-[6px]">
       <div class="fields-container w-[80%] h-[100%] bg-[#f3f4f6]
@@ -133,7 +133,7 @@ export default {
 
 <style scoped>
 button {
-  font-family: "B Nazanin", cursive;
+  font-family: YekanBakh, sans-serif;
   cursor: pointer;
   padding: 0.5rem;
 }

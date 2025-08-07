@@ -171,6 +171,7 @@ export default {
   background: radial-gradient(circle,
   rgba(0, 89, 231, 1) 0%,
   rgba(43, 16, 88, 1) 100%);
+  font-family: YekanBakh, sans-serif;
 }
 
 h1 {
@@ -179,7 +180,6 @@ h1 {
 }
 
 .login-body {
-  font-family: YekanBakh, sans-serif;
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
