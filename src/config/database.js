@@ -234,7 +234,10 @@ App.post("/api/mariadb/login", async (req,
         // Checking if all fields are provided
         if (!ExtractedType || !ExtractedUser || !ExtractedPass || !ExtractedCode) {
             console.log("Some field is missing at the client.");
-            return res.status(400).json({message: "لطفاً همه فیلدها را پر کنید."});
+            return res.status(400).json({
+                issue: "Empty field(s)",
+                message: "لطفاً همه فیلدها را پر کنید."
+            });
         }
 
         // Checking the CAPTCHA status in Redis
@@ -242,6 +245,7 @@ App.post("/api/mariadb/login", async (req,
         if (IsExisting !== 1) {
             console.log("The CAPTCHA is expired.");
             return res.status(400).json({
+                issue: "Expired CAPTCHA",
                 message: "کد امنیتی منقضی شده است، صفحه را رفرش کنید یا بر روی عکس کد امنیتی کلیک کنید تا یک کد جدید دریافت کنید."
             });
         }
@@ -250,7 +254,10 @@ App.post("/api/mariadb/login", async (req,
         let ExistingCaptcha = await Redis.get("captcha");
         if (+ExtractedCode !== +ExistingCaptcha) {
             console.log("Wrong CAPTCHA from the client");
-            return res.json({message: "کد امنیتی وارد شده نادرست است، دوباره تلاش کنید."});
+            return res.json({
+                issue: "Wrong CAPTCHA",
+                message: "کد امنیتی وارد شده نادرست است، دوباره تلاش کنید."
+            });
         }
 
 
@@ -262,20 +269,29 @@ App.post("/api/mariadb/login", async (req,
         // Checking if the username is in the database
         if (!FoundUser) {
             console.log("Username from the client not found.");
-            return res.status(404).send({message: "نام کاربری وارد شده یافت نشد، دوباره تلاش کنید."});
+            return res.status(404).send({
+                issue: "Username not found",
+                message: "نام کاربری وارد شده یافت نشد، دوباره تلاش کنید."
+            });
         }
 
         // Checking if the received type is correct
         if (ExtractedType !== FoundUser.type) {
             console.log("Selected from the client is not correct.");
-            return res.status(400).json({message: "لطفاً نقش خود را به درستی انتخاب کنید"});
+            return res.status(400).json({
+                issue: "Wrong type",
+                message: "لطفاً نقش خود را به درستی انتخاب کنید"
+            });
         }
 
         // Checking if the password is correct
         let IsMatch = await Bcrypt.compare(ExtractedPass, FoundUser.password);
         if (!IsMatch) {
             console.log("Wrong password from the client");
-            return res.status(400).json({message: "گذرواژه نادرست است، دوباره تلاش کنید."});
+            return res.status(400).json({
+                issue: "Wrong password",
+                message: "گذرواژه نادرست است، دوباره تلاش کنید."
+            });
         }
 
         // Checking if the user is verified
