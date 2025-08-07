@@ -234,7 +234,7 @@ App.post("/api/mariadb/login", async (req,
         // Checking if all fields are provided
         if (!ExtractedType || !ExtractedUser || !ExtractedPass || !ExtractedCode) {
             console.log("Some field is missing at the client.");
-            return res.status(400).json({message: "Some field is missing, please fill all of them."});
+            return res.status(400).json({message: "لطفاً همه فیلدها را پر کنید."});
         }
 
         // Checking the CAPTCHA status in Redis
@@ -242,7 +242,7 @@ App.post("/api/mariadb/login", async (req,
         if (IsExisting !== 1) {
             console.log("The CAPTCHA is expired.");
             return res.status(400).json({
-                message: "The CAPTCHA is expired, click on the CAPTCHA image or reload the page for a new one."
+                message: "کد امنیتی منقضی شده است، صفحه را رفرش کنید یا بر روی عکس کد امنیتی کلیک کنید تا یک کد جدید دریافت کنید."
             });
         }
 
@@ -250,7 +250,7 @@ App.post("/api/mariadb/login", async (req,
         let ExistingCaptcha = await Redis.get("captcha");
         if (+ExtractedCode !== +ExistingCaptcha) {
             console.log("Wrong CAPTCHA from the client");
-            return res.json({message: "Wrong CAPTCHA, try again."});
+            return res.json({message: "کد امنیتی وارد شده نادرست است، دوباره تلاش کنید."});
         }
 
 
@@ -262,21 +262,21 @@ App.post("/api/mariadb/login", async (req,
         // Checking if the username is in the database
         if (!FoundUser) {
             console.log("Username from the client not found.");
-            return res.status(404).send({message: "Username not found, try again."});
+            return res.status(404).send({message: "نام کاربری وارد شده یافت نشد، دوباره تلاش کنید."});
         }
 
         let IsMatch = await Bcrypt.compare(ExtractedPass, FoundUser.password);
         // Checking if the password is correct
         if (!IsMatch) {
             console.log("Wrong password from the client");
-            return res.status(400).json({message: "Wrong password, try again."});
+            return res.status(400).json({message: "گذرواژه نادرست است، دوباره تلاش کنید."});
         }
 
         // Checking if the user is verified
         if (FoundUser.verify === 0) {
             console.log("User is not verified.");
             return res.status(400).json({
-                message: "You are not verified yet, contact an administrator to fix it."
+                message: "کاربری شما هنوز تأیید نشده است، به یک کارشناس اطلاع دهید."
             });
         }
 
@@ -298,13 +298,13 @@ App.post("/api/mariadb/login", async (req,
         // If the user is an "Admin"...
         if (FoundUser.role === "Admin") {
             console.log("Admin is logged in.");
-            return res.json({token: TokenFromJWT, message: "You are logged in as an admin."});
+            return res.json({token: TokenFromJWT, message: "شما به عنوان یک ادمین وارد شدید."});
         }
 
         // If the user is a "User"...
         if (FoundUser.role === "User") {
             console.log("User is logged in.");
-            return res.json({token: TokenFromJWT, message: "You are logged in as a user."});
+            return res.json({token: TokenFromJWT, message: "شما به عنوان یک کاربر عادی وارد شدید."});
         }
     } catch (error) {
         console.log(error);
