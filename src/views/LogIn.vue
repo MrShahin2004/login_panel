@@ -12,7 +12,7 @@
         <p class="body-title text-[15px] bg-[var(--title-bg)]
                   w-[90%] box-border h-fit rounded-[6px]" dir="rtl">ورود به سامانه کشوری برون سپاری</p>
         <div class="body-inputs w-full flex flex-col justify-center items-center">
-          <RoleSelect @SendRole="AssignRole($event)"/>
+          <TypeSelect @SendType="AssignType($event)"/>
           <UserName @SendUser="AssignUser($event)"/>
           <PassWord @SendPass="AssignPass($event)"/>
           <SecurityCode @SendCode="AssignCode($event)"/>
@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import RoleSelect from "@/components/RoleSelect.vue";
+import TypeSelect from "@/components/TypeSelect.vue";
 import UserName from "@/components/UserName.vue";
 import PassWord from "@/components/PassWord.vue";
 import SecurityCode from "@/components/SecurityCode.vue";
@@ -64,22 +64,22 @@ import {jwtDecode} from "jwt-decode";
 export default {
   name: "LogIn",
   components: {
-    RoleSelect,
+    TypeSelect,
     UserName,
     PassWord,
-    SecurityCode,
+    SecurityCode
   },
   data() {
     return {
-      ReceivedRole: "",
+      ReceivedType: "",
       ReceivedUser: "",
       ReceivedPass: "",
       ReceivedCode: ""
     };
   },
   methods: {
-    AssignRole(role) {
-      this.ReceivedRole = role;
+    AssignType(type) {
+      this.ReceivedType = type;
     },
     AssignUser(user) {
       this.ReceivedUser = user;
@@ -98,10 +98,10 @@ export default {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            type: this.ReceivedRole,
+            type: this.ReceivedType,
             username: this.ReceivedUser,
             password: this.ReceivedPass,
-            code: this.ReceivedCode,
+            code: this.ReceivedCode
           }),
         });
         const Data = await Response.json();
