@@ -119,6 +119,15 @@ export default {
 
         localStorage.setItem("token", Token);
 
+        if (RoleFromServer === "Owner") {
+          this.$router.push({
+            name: "OwnerProfile",
+            params: {
+              username: this.ReceivedUser
+            }
+          });
+        }
+
         if (RoleFromServer === "Admin") {
           this.$router.push({
             name: 'AdminProfile',
