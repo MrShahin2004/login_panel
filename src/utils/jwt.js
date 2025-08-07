@@ -20,8 +20,17 @@ App.post("/api/jwt/post", async (req,
     let ReceivedData = req.body;
     let UserObject = ReceivedData.obj;
 
-    let Token = await JWT.sign({UserObject}, JwtSecret, {expiresIn: "3600s"});
-    res.json({token: Token});
+    try {
+        if (UserObject.role === "Owner") {
+            let Token = await JWT.sign({UserObject}, JwtSecret);
+            return res.json({token: Token});
+        } else {
+            let Token = await JWT.sign({UserObject}, JwtSecret, {expiresIn: "3600s"});
+            return res.json({token: Token});
+        }
+    } catch (error) {
+        console.log(error);
+    }
 });
 
 App.listen(Port, () => {
