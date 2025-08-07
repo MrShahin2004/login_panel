@@ -271,8 +271,8 @@ App.post("/api/mariadb/login", async (req,
             return res.status(400).json({message: "لطفاً نقش خود را به درستی انتخاب کنید"});
         }
 
-        let IsMatch = await Bcrypt.compare(ExtractedPass, FoundUser.password);
         // Checking if the password is correct
+        let IsMatch = await Bcrypt.compare(ExtractedPass, FoundUser.password);
         if (!IsMatch) {
             console.log("Wrong password from the client");
             return res.status(400).json({message: "گذرواژه نادرست است، دوباره تلاش کنید."});
