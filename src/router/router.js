@@ -10,7 +10,7 @@ const routes = [
     {path: "/user/profile/:username/:token", component: UserProfile, name: "UserProfile", props: true},
     {path: "/admin/profile/:username/:token", component: AdminProfile, name: "AdminProfile", props: true},
     {path: "/register", component: SignIn, name: "SignIn", props: true},
-    {path: "/owner/profile", component: OwnerProfile, name: "OwnerProfile", props: true}
+    {path: "/owner/profile/:username", component: OwnerProfile, name: "OwnerProfile", props: true}
 ];
 
 const router = createRouter({
