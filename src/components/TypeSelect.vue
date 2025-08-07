@@ -1,6 +1,6 @@
 <template>
   <div class="select-box bg-[#f3f4f6] h-fit grid grid-cols-[3fr_1fr] w-[90%] rounded-t-[6px_6px]">
-    <select @change="SendRole" v-model="SelectedRole"
+    <select @change="SendType" v-model="SelectedType"
             class="select-input bg-[#dbeafe] border-0 rounded-[6px] text-[16px] focus:outline-0"
             id="select-input" dir="rtl">
       <option class="bg-[white] border-0" value="انتخاب کنید">انتخاب کنید</option>
@@ -17,12 +17,12 @@
 export default {
   data() {
     return {
-      SelectedRole: ""
+      SelectedType: ""
     };
   },
   methods: {
-    SendRole() {
-      this.$emit("SendRole", this.SelectedRole);
+    SendType() {
+      this.$emit("SendType", this.SelectedType);
     }
   }
 }
