@@ -107,6 +107,9 @@ export default {
         const Data = await Response.json();
         console.log(Data);
 
+        let Issue = Data.issue;
+        let Message = Data.message;
+
         let Token = Data.token;
         let ParsedToken = jwtDecode(Token);
         let UserObject = ParsedToken.UserObject;
