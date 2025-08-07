@@ -265,6 +265,12 @@ App.post("/api/mariadb/login", async (req,
             return res.status(404).send({message: "نام کاربری وارد شده یافت نشد، دوباره تلاش کنید."});
         }
 
+        // Checking if the received type is correct
+        if (ExtractedType !== FoundUser.type) {
+            console.log("Selected from the client is not correct.");
+            return res.status(400).json({message: "لطفاً نقش خود را به درستی انتخاب کنید"});
+        }
+
         let IsMatch = await Bcrypt.compare(ExtractedPass, FoundUser.password);
         // Checking if the password is correct
         if (!IsMatch) {
