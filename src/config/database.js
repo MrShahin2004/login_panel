@@ -280,7 +280,7 @@ App.post("/api/mariadb/login", async (req,
             console.log("Selected from the client is not correct.");
             return res.status(400).json({
                 issue: "Wrong type",
-                message: "لطفاً نقش خود را به درستی انتخاب کنید"
+                message: "لطفاً نقش خود را به درستی انتخاب کنید."
             });
         }
 
