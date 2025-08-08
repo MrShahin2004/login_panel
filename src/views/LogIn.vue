@@ -163,6 +163,50 @@ export default {
       this.$router.push({
         name: "SignIn"
       });
+    },
+    ShowPopup(issue, message) {
+      let MsgArg = "";
+      if (issue === "Empty field(s)") {
+        MsgArg = message;
+      }
+
+      if (issue === "Expired CAPTCHA") {
+        MsgArg = message;
+      }
+
+      if (issue === "Wrong CAPTCHA") {
+        MsgArg = message;
+      }
+
+      if (issue === "Username not found") {
+        MsgArg = message;
+      }
+
+      if (issue === "Wrong type") {
+        MsgArg = message;
+      }
+
+      if (issue === "Wrong password") {
+        MsgArg = message;
+      }
+
+      if (issue === "Not verified") {
+        MsgArg = message;
+      }
+
+      let PopupEl = document.querySelector(".popup");
+      PopupEl.classList.remove("translate-x-[100%]");
+      PopupEl.style.display = "block";
+      PopupEl.innerHTML = `
+          <div class="w-[100%] h-[100%] flex justify-center items-center">
+              <h1 class="text-[white]">${MsgArg}</h1>
+          </div>
+      `;
+
+      setTimeout(() => {
+        PopupEl.classList.add("translate-x-[100%]");
+        PopupEl.style.display = "none";
+      }, 5000);
     }
   },
 };
