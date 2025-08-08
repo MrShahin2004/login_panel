@@ -51,6 +51,10 @@
         <p class="text-[white]">© کلیه حقوق این پایگاه به سپهر داده تعلق دارد</p>
       </div>
     </div>
+    <div
+        class="popup w-[400px] h-[300px] bg-[black] z-10 absolute top-[0] right-[0] translate-x-[100%]"
+        style="display: none;"
+    ></div>
   </div>
 </template>
 
