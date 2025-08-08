@@ -115,45 +115,49 @@ export default {
         this.Issue = Data.issue;
         this.Message = Data.message;
 
-        let Token = Data.token;
-        let ParsedToken = jwtDecode(Token);
-        let UserObject = ParsedToken.UserObject;
-        let RoleFromServer = UserObject.role;
+        if ("issue" in Data) {
+          this.ShowPopup(this.Issue, this.Message);
+        } else {
+          let Token = Data.token;
+          let ParsedToken = jwtDecode(Token);
+          let UserObject = ParsedToken.UserObject;
+          let RoleFromServer = UserObject.role;
 
-        if (!Token || typeof Token !== "string") {
-          console.error("Invalid or missing token: ", Data.message || "No token provided.");
-          return;
-        }
+          if (!Token || typeof Token !== "string") {
+            console.error("Invalid or missing token: ", Data.message || "No token provided.");
+            return;
+          }
 
-        localStorage.setItem("token", Token);
+          localStorage.setItem("token", Token);
 
-        if (RoleFromServer === "Owner") {
-          this.$router.push({
-            name: "OwnerProfile",
-            params: {
-              username: this.ReceivedUser
-            }
-          });
-        }
+          if (RoleFromServer === "Owner") {
+            this.$router.push({
+              name: "OwnerProfile",
+              params: {
+                username: this.ReceivedUser
+              }
+            });
+          }
 
-        if (RoleFromServer === "Admin") {
-          this.$router.push({
-            name: 'AdminProfile',
-            params: {
-              username: this.ReceivedUser,
-              token: Token
-            }
-          });
-        }
+          if (RoleFromServer === "Admin") {
+            this.$router.push({
+              name: 'AdminProfile',
+              params: {
+                username: this.ReceivedUser,
+                token: Token
+              }
+            });
+          }
 
-        if (RoleFromServer === "User") {
-          this.$router.push({
-            name: 'UserProfile',
-            params: {
-              username: this.ReceivedUser,
-              token: Token
-            }
-          });
+          if (RoleFromServer === "User") {
+            this.$router.push({
+              name: 'UserProfile',
+              params: {
+                username: this.ReceivedUser,
+                token: Token
+              }
+            });
+          }
         }
       } catch (error) {
         console.error(error);
