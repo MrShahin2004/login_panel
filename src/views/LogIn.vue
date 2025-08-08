@@ -112,10 +112,8 @@ export default {
           }),
         });
         const Data = await Response.json();
-        console.log(Data);
-
-        let Issue = Data.issue;
-        let Message = Data.message;
+        this.Issue = Data.issue;
+        this.Message = Data.message;
 
         let Token = Data.token;
         let ParsedToken = jwtDecode(Token);
