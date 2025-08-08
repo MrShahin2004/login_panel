@@ -79,7 +79,9 @@ export default {
       ReceivedType: "",
       ReceivedUser: "",
       ReceivedPass: "",
-      ReceivedCode: ""
+      ReceivedCode: "",
+      Issue: "",
+      Message: ""
     };
   },
   methods: {
