@@ -202,6 +202,7 @@ export default {
 
       let PopupEl = document.querySelector(".popup");
       PopupEl.classList.remove("translate-x-[100%]");
+      PopupEl.classList.add("top-[10px]", "right-[10px]");
       PopupEl.style.display = "block";
       PopupEl.innerHTML = `
           <div class="w-[100%] h-[100%] flex justify-center items-center">
@@ -210,6 +211,7 @@ export default {
       `;
 
       setTimeout(() => {
+        PopupEl.classList.remove("top-[10px]", "right-[10px]");
         PopupEl.classList.add("translate-x-[100%]");
         PopupEl.style.display = "none";
       }, 5000);
@@ -242,7 +244,6 @@ export default {
 }
 
 h1 {
-  font-family: "B Titr", cursive;
   color: var(--main-title);
 }
 
