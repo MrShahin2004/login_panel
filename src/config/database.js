@@ -298,6 +298,7 @@ App.post("/api/mariadb/login", async (req,
         if (FoundUser.verify === 0) {
             console.log("User is not verified.");
             return res.status(400).json({
+                issue: "Not verified",
                 message: "کاربری شما هنوز تأیید نشده است، به یک کارشناس اطلاع دهید."
             });
         }
