@@ -52,7 +52,7 @@
       </div>
     </div>
     <div
-        class="popup w-[400px] h-[300px] bg-[black] z-10 absolute top-[0] right-[0] translate-x-[100%]"
+        class="popup w-[400px] h-[300px] bg-[black] rounded-[6px] z-10 absolute top-[0] right-[0] translate-x-[100%]"
         style="display: none;"
     ></div>
   </div>
