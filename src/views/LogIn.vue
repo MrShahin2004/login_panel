@@ -205,7 +205,7 @@ export default {
       PopupEl.style.display = "block";
       PopupEl.innerHTML = `
           <div class="w-[100%] h-[100%] flex justify-center items-center">
-              <h1 class="text-[white]">${MsgArg}</h1>
+              <h1 style="font-family: YekanBakh, sans-serif; color: white">${MsgArg}</h1>
           </div>
       `;
 
