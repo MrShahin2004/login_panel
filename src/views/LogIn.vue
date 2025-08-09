@@ -219,6 +219,28 @@ export default {
           PopupEl.classList.remove("popup-hide", "top-[10px]", "right-[10px]", "bg-[#9c2b2e]");
         }, 500);
       }, 3000);
+    },
+    SuccessPopup(message) {
+      let PopupEl = document.querySelector(".popup");
+      PopupEl.style.display = "block";
+      PopupEl.style.transform = "translateX(0)";
+      PopupEl.classList.remove("top-[0]", "right-[0]");
+      PopupEl.classList.add("popup-show", "top-[10px]", "right-[10px]", "bg-[#4caf50]");
+      PopupEl.innerHTML = `
+          <div class="w-[100%] h-[100%] flex justify-center items-center">
+              <p style="font-family: YekanBakh, sans-serif; color: white">${message}</p>
+          </div>
+      `;
+
+      setTimeout(() => {
+        PopupEl.classList.remove("popup-show");
+        PopupEl.classList.add("popup-hide", "top-[0]", "right-[0]");
+        setTimeout(() => {
+          PopupEl.style.transform = "translateX(100%)";
+          PopupEl.style.display = "none";
+          PopupEl.classList.remove("popup-hide", "top-[10px]", "right-[10px]", "bg-[#4caf50]");
+        }, 500);
+      }, 3000);
     }
   },
 };
