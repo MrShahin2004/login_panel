@@ -36,7 +36,7 @@ App.get("/api/captcha/get", async (req,
         }
     });
 
-    // Making 3 lines
+    // Making 5 lines
     for (let i = 0; i < 5; i++) {
         let x1 = Math.random() * 100;
         let y1 = Math.random() * 50;
