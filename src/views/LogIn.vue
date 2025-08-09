@@ -55,8 +55,7 @@
     </div>
     <div
         class="popup w-[400px] h-[150px] bg-[#9c2b2e] rounded-[6px] z-10
-         absolute top-[0] right-[0] translate-x-[100%]"
-        style="display: none;"
+         absolute top-[0] right-[0]"
     ></div>
   </div>
 </template>
