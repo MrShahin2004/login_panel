@@ -25,7 +25,7 @@ export default {
       Router.push({name: "Home"});
     }
 
-    return {ReturnToLogin};
+    return {ReturnToLogin, Router};
   }
 };
 </script>
