@@ -236,7 +236,7 @@ App.post("/api/mariadb/login", async (req,
             console.log("Some field is missing at the client.");
             return res.status(400).json({
                 issue: "Empty field(s)",
-                message: "لطفاً همه فیلدها را پر کنید."
+                message: ".لطفاً همه فیلدها را پر کنید"
             });
         }
 
@@ -246,7 +246,7 @@ App.post("/api/mariadb/login", async (req,
             console.log("The CAPTCHA is expired.");
             return res.status(400).json({
                 issue: "Expired CAPTCHA",
-                message: "کد امنیتی منقضی شده است، صفحه را رفرش کنید یا بر روی عکس کد امنیتی کلیک کنید تا یک کد جدید دریافت کنید."
+                message: ".کد امنیتی منقضی شده است، صفحه را رفرش کنید یا بر روی عکس کد امنیتی کلیک کنید تا یک کد جدید دریافت کنید"
             });
         }
 
@@ -256,7 +256,7 @@ App.post("/api/mariadb/login", async (req,
             console.log("Wrong CAPTCHA from the client");
             return res.json({
                 issue: "Wrong CAPTCHA",
-                message: "کد امنیتی وارد شده نادرست است، دوباره تلاش کنید."
+                message: ".کد امنیتی وارد شده نادرست است، دوباره تلاش کنید"
             });
         }
 
@@ -271,7 +271,7 @@ App.post("/api/mariadb/login", async (req,
             console.log("Username from the client not found.");
             return res.status(404).send({
                 issue: "Username not found",
-                message: "نام کاربری وارد شده یافت نشد، دوباره تلاش کنید."
+                message: ".نام کاربری وارد شده یافت نشد، دوباره تلاش کنید"
             });
         }
 
@@ -280,7 +280,7 @@ App.post("/api/mariadb/login", async (req,
             console.log("Selected from the client is not correct.");
             return res.status(400).json({
                 issue: "Wrong type",
-                message: "لطفاً نقش خود را به درستی انتخاب کنید."
+                message: ".لطفاً نقش خود را به درستی انتخاب کنید"
             });
         }
 
@@ -290,7 +290,7 @@ App.post("/api/mariadb/login", async (req,
             console.log("Wrong password from the client");
             return res.status(400).json({
                 issue: "Wrong password",
-                message: "گذرواژه نادرست است، دوباره تلاش کنید."
+                message: ".گذرواژه نادرست است، دوباره تلاش کنید"
             });
         }
 
@@ -299,7 +299,7 @@ App.post("/api/mariadb/login", async (req,
             console.log("User is not verified.");
             return res.status(400).json({
                 issue: "Not verified",
-                message: "کاربری شما هنوز تأیید نشده است، به یک کارشناس اطلاع دهید."
+                message: ".کاربری شما هنوز تأیید نشده است، به یک کارشناس اطلاع دهید"
             });
         }
 
@@ -321,13 +321,13 @@ App.post("/api/mariadb/login", async (req,
         // If the user is an "Admin"...
         if (FoundUser.role === "Admin") {
             console.log("Admin is logged in.");
-            return res.json({token: TokenFromJWT, message: "شما به عنوان یک ادمین وارد شدید."});
+            return res.json({token: TokenFromJWT, message: ".شما به عنوان یک ادمین وارد شدید"});
         }
 
         // If the user is a "User"...
         if (FoundUser.role === "User") {
             console.log("User is logged in.");
-            return res.json({token: TokenFromJWT, message: "شما به عنوان یک کاربر عادی وارد شدید."});
+            return res.json({token: TokenFromJWT, message: ".شما به عنوان یک کاربر عادی وارد شدید"});
         }
     } catch (error) {
         console.log(error);
