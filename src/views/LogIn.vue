@@ -289,4 +289,41 @@ a:hover {
 .register-link {
   margin-bottom: 1rem;
 }
+
+.popup {
+  transform: translateX(100%);
+  display: none;
+}
+
+.popup-show {
+  animation-name: ShowPopup;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+
+.popup-hide {
+  animation-name: HidePopup;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes ShowPopup {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes HidePopup {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
 </style>
