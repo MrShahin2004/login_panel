@@ -130,35 +130,38 @@ export default {
           }
 
           localStorage.setItem("token", Token);
+          this.SuccessPopup(Data.message);
 
-          if (RoleFromServer === "Owner") {
-            this.$router.push({
-              name: "OwnerProfile",
-              params: {
-                username: this.ReceivedUser
-              }
-            });
-          }
+          setTimeout(() => {
+            if (RoleFromServer === "Owner") {
+              this.$router.push({
+                name: "OwnerProfile",
+                params: {
+                  username: this.ReceivedUser
+                }
+              });
+            }
 
-          if (RoleFromServer === "Admin") {
-            this.$router.push({
-              name: 'AdminProfile',
-              params: {
-                username: this.ReceivedUser,
-                token: Token
-              }
-            });
-          }
+            if (RoleFromServer === "Admin") {
+              this.$router.push({
+                name: 'AdminProfile',
+                params: {
+                  username: this.ReceivedUser,
+                  token: Token
+                }
+              });
+            }
 
-          if (RoleFromServer === "User") {
-            this.$router.push({
-              name: 'UserProfile',
-              params: {
-                username: this.ReceivedUser,
-                token: Token
-              }
-            });
-          }
+            if (RoleFromServer === "User") {
+              this.$router.push({
+                name: 'UserProfile',
+                params: {
+                  username: this.ReceivedUser,
+                  token: Token
+                }
+              });
+            }
+          }, 3000);
         }
       } catch (error) {
         console.error(error);
