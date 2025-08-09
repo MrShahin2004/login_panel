@@ -203,7 +203,7 @@ export default {
       PopupEl.style.display = "block";
       PopupEl.style.transform = "translateX(0)";
       PopupEl.classList.remove("top-[0]", "right-[0]");
-      PopupEl.classList.add("popup-show", "top-[10px]", "right-[10px]");
+      PopupEl.classList.add("popup-show", "top-[10px]", "right-[10px]", "bg-[#9c2b2e]");
       PopupEl.innerHTML = `
           <div class="w-[100%] h-[100%] flex justify-center items-center">
               <p style="font-family: YekanBakh, sans-serif; color: white">${MsgArg}</p>
