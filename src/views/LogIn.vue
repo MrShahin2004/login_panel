@@ -243,7 +243,7 @@ export default {
           PopupEl.style.display = "none";
           PopupEl.classList.remove("popup-hide", "top-[10px]", "right-[10px]", "bg-[#4caf50]");
         }, 500);
-      }, 3000);
+      }, 2000);
     }
   },
 };
