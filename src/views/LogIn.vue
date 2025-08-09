@@ -200,8 +200,6 @@ export default {
       }
 
       let PopupEl = document.querySelector(".popup");
-      PopupEl.classList.remove("translate-x-[100%]");
-      PopupEl.classList.add("top-[10px]", "right-[10px]");
       PopupEl.style.display = "block";
       PopupEl.innerHTML = `
           <div class="w-[100%] h-[100%] flex justify-center items-center">
