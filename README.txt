@@ -21,3 +21,5 @@ Step 4: Redirecting to another page while the token is still valid. If the token
 the user will be redirected to the login page.
 
 Step 5: Creating a panel for admins to control the users' status and activity.
+
+Step 6: Creating a panel for the owner of the app to have access to all admins and users (both verified and unverified)
