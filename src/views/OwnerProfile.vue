@@ -33,4 +33,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+hr {
+  border: none;
+  border-top: 1px solid black;
+}
+</style>
