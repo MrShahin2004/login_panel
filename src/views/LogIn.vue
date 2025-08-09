@@ -117,7 +117,7 @@ export default {
         this.Message = Data.message;
 
         if ("issue" in Data) {
-          this.ShowPopup(this.Issue, this.Message);
+          this.ErrorPopup(this.Issue, this.Message);
         } else {
           let Token = Data.token;
           let ParsedToken = jwtDecode(Token);
@@ -169,7 +169,7 @@ export default {
         name: "SignIn"
       });
     },
-    ShowPopup(issue, message) {
+    ErrorPopup(issue, message) {
       let MsgArg = "";
       if (issue === "Empty field(s)") {
         MsgArg = message;
