@@ -23,3 +23,4 @@ the user will be redirected to the login page.
 Step 5: Creating a panel for admins to control the users' status and activity.
 
 (LOL, test stuff)
+(More stuff XD)
