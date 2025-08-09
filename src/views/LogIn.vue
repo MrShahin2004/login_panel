@@ -211,10 +211,14 @@ export default {
       `;
 
       setTimeout(() => {
-        PopupEl.classList.remove("top-[10px]", "right-[10px]");
-        PopupEl.classList.add("translate-x-[100%]");
-        PopupEl.style.display = "none";
-      }, 5000);
+        PopupEl.classList.remove("popup-show");
+        PopupEl.classList.add("popup-hide", "top-[0]", "right-[0]");
+        setTimeout(() => {
+          PopupEl.style.transform = "translateX(100%)";
+          PopupEl.style.display = "none";
+          PopupEl.classList.remove("popup-hide", "top-[10px]", "right-[10px]");
+        }, 500);
+      }, 3000);
     }
   },
 };
