@@ -1,14 +1,16 @@
 <template>
-  <div class="w-[100vw] h-[100vh] flex justify-center items-center">
-    <div class="side-panel w-[20%] h-[100%]"></div>
-    <div class="main-content w-[80%] h-[100%]">
-      <h1>Welcome to your own panel, {{ username }}!</h1>
-      <h1>You are the owner of this app.</h1>
-      <button
-          @click="ReturnToLogin"
-          class="text-[white] bg-[var(--btn-bg)] rounded-[6px] cursor-pointer"
-          style="padding: 0.5rem">Back to login
-      </button>
+  <div class="w-[100vw] h-[100vh] overflow-hidden flex justify-center items-center">
+    <div class="side-panel w-[20%] h-[100%] relative flex justify-center items-center">
+      <div class="w-[80%] h-[92%] bg-[var(--body-bg)] rounded-[6px]">
+        <div class="title-section text-[20px] font-bold w-[100%] h-[10%] flex justify-center items-center">
+          <h2>{{ username }}</h2>
+        </div>
+        <hr>
+        <div class="info-section w-[100%] h-[90%]"></div>
+      </div>
+    </div>
+    <div class="main-content w-[80%] h-[100%] relative flex justify-center items-center">
+      <div class="w-[95%] h-[92%] bg-[var(--body-bg)] rounded-[6px]"></div>
     </div>
   </div>
 </template>
