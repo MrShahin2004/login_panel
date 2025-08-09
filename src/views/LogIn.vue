@@ -216,7 +216,7 @@ export default {
         setTimeout(() => {
           PopupEl.style.transform = "translateX(100%)";
           PopupEl.style.display = "none";
-          PopupEl.classList.remove("popup-hide", "top-[10px]", "right-[10px]");
+          PopupEl.classList.remove("popup-hide", "top-[10px]", "right-[10px]", "bg-[#9c2b2e]");
         }, 500);
       }, 3000);
     }
