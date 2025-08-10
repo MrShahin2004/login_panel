@@ -66,6 +66,8 @@
 
 <script>
 import {useRouter} from "vue-router";
+import AdminsSection from "@/views/OwnerComps/AdminsSection.vue";
+import UsersSection from "@/views/OwnerComps/UsersSection.vue";
 
 export default {
   name: "OwnerProfile",
