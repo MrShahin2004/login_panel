@@ -52,15 +52,19 @@ async function GetRows() {
 
 // A function to send the data to the JWT server for tokenization
 async function ExportUser(obj) {
-    let Response = await fetch("http://localhost:3100/api/jwt/post", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({obj})
-    });
-    let Data = await Response.json();
-    return Data.token;
+    try {
+        let Response = await fetch("http://localhost:3100/api/jwt/post", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({obj})
+        });
+        let Data = await Response.json();
+        return Data.token;
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 // A function to store a new user in MariaDB
