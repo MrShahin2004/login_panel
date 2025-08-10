@@ -54,10 +54,10 @@
     <div class="main-content w-4/5 h-full relative flex justify-center items-center">
       <div class="w-[95%] h-[92%] bg-base-100 shadow-xl rounded-lg flex justify-center items-center">
         <div class="users-section w-[50%] h-[100%]">
-          <h2 class="text-[24px]">فهرست کاربران <i class="fas fa-user"></i></h2>
+          <UsersSection/>
         </div>
         <div class="admins-section w-[50%] h-[100%]">
-          <h2 class="text-[24px]">فهرست ادمین ها <i class="fas fa-user-shield"></i></h2>
+          <AdminsSection/>
         </div>
       </div>
     </div>
