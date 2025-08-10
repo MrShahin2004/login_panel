@@ -2,7 +2,7 @@
   <div class="w-screen h-screen overflow-hidden flex justify-center items-center">
     <div class="side-panel w-1/5 h-full relative flex justify-center items-center">
       <div class="card w-4/5 h-[92%] bg-base-100 shadow-xl rounded-lg">
-        <div class="card-title rounded-t-[6px] h-[5%] text-2xl font-bold text-center
+        <div class="card-title rounded-t-[6px] h-[10%] text-2xl font-bold text-center
          py-4 bg-primary text-primary-content flex justify-center items-center">
           <h2 class="h-fit">{{ username }}</h2>
         </div>
