@@ -26,7 +26,7 @@
             </div>
             <div class="flex w-4/5 justify-between">
               <p class="text-right font-bold">آدرس ایمیل</p>
-              <p class="text-left w-1/2 break-all">shahin.hashsh@gmail.com</p>
+              <p class="text-left w-1/2 break-all">shahin.hash@gmail.com</p>
             </div>
             <div class="flex w-4/5 justify-between">
               <p class="text-right font-bold">تاریخ ثبت</p>
