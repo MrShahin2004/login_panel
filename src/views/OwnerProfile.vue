@@ -71,6 +71,9 @@ import UsersSection from "@/views/OwnerComps/UsersSection.vue";
 
 export default {
   name: "OwnerProfile",
+  components: {
+    AdminsSection, UsersSection
+  },
   props: {
     username: String
   },
