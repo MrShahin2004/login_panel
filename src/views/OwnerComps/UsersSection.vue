@@ -29,7 +29,17 @@ export default {
       // Getting the data from the server
       let Response = await fetch("http://localhost:3000/api/mariadb/get-all-users");
       let Data = await Response.json();
-      console.log(Data);
+      let UsersKey = Data.users;
+
+      // Pushing each user in the array above
+      if (AllUsersFromServer.length === 0) {
+        UsersKey.forEach((user) => {
+          AllUsersFromServer.push(user);
+        });
+        console.log(AllUsersFromServer);
+      } else {
+        console.log("Users are already stored in the array.");
+      }
     }
 
     return {AllUsersFromServer, GetAllUsers};
