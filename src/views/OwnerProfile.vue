@@ -71,12 +71,18 @@
         </div>
         <!-- Tab content area -->
         <div class="w-full h-full flex justify-center items-center">
-          <div v-if="ActiveTab === 'admins'" class="w-full h-full flex justify-center items-center">
-            <AdminsSection/>
-          </div>
-          <div v-if="ActiveTab === 'users'" class="w-full h-full flex justify-center items-center">
-            <UsersSection/>
-          </div>
+          <AdminsSection
+              v-if="ActiveTab === 'admins'"
+              :admins="allAdminsFromServer"
+              :has-run="adminsHasRun"
+              @fetch-admins="fetchAllUsers('Admin')"
+          />
+          <UsersSection
+              v-else
+              :users="allUsersFromServer"
+              :has-run="usersHasRun"
+              @fetch-users="fetchAllUsers('User')"
+          />
         </div>
       </div>
     </div>
@@ -84,7 +90,7 @@
 </template>
 
 <script>
-import {ref} from "vue";
+import {reactive, ref} from "vue";
 import {useRouter} from "vue-router";
 import AdminsSection from "@/views/OwnerComps/AdminsSection.vue";
 import UsersSection from "@/views/OwnerComps/UsersSection.vue";
@@ -92,22 +98,73 @@ import UsersSection from "@/views/OwnerComps/UsersSection.vue";
 export default {
   name: "OwnerProfile",
   components: {
-    AdminsSection, UsersSection
+    AdminsSection,
+    UsersSection,
   },
   props: {
-    username: String
+    username: String,
   },
   setup() {
-    const Router = useRouter()
-    const ActiveTab = ref('users');
+    const Router = useRouter();
+    const ActiveTab = ref("users");
+
+    // Centralized state
+    const allUsersFromServer = reactive([]);
+    const allAdminsFromServer = reactive([]);
+    const usersHasRun = ref(false);
+    const adminsHasRun = ref(false);
+
+    // Fetch and filter users/admins
+    async function fetchAllUsers(role) {
+      if (role === "User" && !usersHasRun.value) {
+        try {
+          let response = await fetch("http://localhost:3000/api/mariadb/get-all-users");
+          let data = await response.json();
+          let usersKey = data.users;
+
+          usersKey.forEach((user) => {
+            if (user.role === "User") {
+              allUsersFromServer.push(user);
+            }
+          });
+          usersHasRun.value = true;
+        } catch (error) {
+          console.error("Error fetching users:", error);
+        }
+      } else if (role === "Admin" && !adminsHasRun.value) {
+        try {
+          let response = await fetch("http://localhost:3000/api/mariadb/get-all-users");
+          let data = await response.json();
+          let usersKey = data.users;
+
+          usersKey.forEach((user) => {
+            if (user.role === "Admin") {
+              allAdminsFromServer.push(user);
+            }
+          });
+          adminsHasRun.value = true;
+        } catch (error) {
+          console.error("Error fetching admins:", error);
+        }
+      }
+    }
 
     function ReturnToLogin() {
       Router.push({name: "Home"});
     }
 
-    return {Router, ActiveTab, ReturnToLogin};
-  }
-}
+    return {
+      Router,
+      ActiveTab,
+      ReturnToLogin,
+      allUsersFromServer,
+      allAdminsFromServer,
+      usersHasRun,
+      adminsHasRun,
+      fetchAllUsers,
+    };
+  },
+};
 </script>
 
 <style scoped>
