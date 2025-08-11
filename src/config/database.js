@@ -238,6 +238,26 @@ App.post("/api/mariadb/edit-pending-users", async (req,
     }
 });
 
+// The endpoint to get all existing users (to the owner panel)
+App.get("/api/mariadb/get-all-users", async (req,
+                                             res) => {
+    try {
+        let AllUsers = await GetRows();
+        console.log(AllUsers);
+        return res.json({
+            isFine: true,
+            message: "All users retrieved from the database.",
+            users: AllUsers
+        });
+    } catch (error) {
+        console.log(error);
+        return res.json({
+            isFine: false,
+            message: "Something went wrong at the server."
+        });
+    }
+});
+
 // The endpoint to the login panel
 App.post("/api/mariadb/login", async (req,
                                       res) => {
