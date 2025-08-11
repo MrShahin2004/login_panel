@@ -21,6 +21,7 @@ import {reactive} from "vue";
 
 export default {
   setup() {
+    // A variable to store all users retrieved from the server
     let AllUsersFromServer = reactive([]);
 
     return {AllUsersFromServer};
