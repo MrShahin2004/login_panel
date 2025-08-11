@@ -59,7 +59,9 @@ export default {
 
           // Populate the array
           usersKey.forEach((user) => {
-            AllUsersFromServer.push(user);
+            if (user.role === "User") {
+              AllUsersFromServer.push(user);
+            }
           });
 
           // Set flag to prevent further runs
