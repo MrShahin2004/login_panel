@@ -21,7 +21,7 @@ import {reactive} from "vue";
 
 export default {
   setup() {
-    let AllUsersFromServer = reactive(["Yo", "This"]);
+    let AllUsersFromServer = reactive([]);
 
     return {AllUsersFromServer};
   }
