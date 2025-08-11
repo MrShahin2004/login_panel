@@ -24,7 +24,14 @@ export default {
     // A variable to store all users retrieved from the server
     let AllUsersFromServer = reactive([]);
 
-    return {AllUsersFromServer};
+    // The main function to catch all users
+    async function GetAllUsers() {
+      let Response = await fetch("http://localhost:3000/api/mariadb/get-all-users");
+      let Data = await Response.json();
+      console.log(Data);
+    }
+
+    return {AllUsersFromServer, GetAllUsers};
   }
 }
 </script>
