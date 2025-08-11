@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import {reactive} from "vue";
+import {computed, reactive, ref} from "vue";
 
 export default {
   setup() {
