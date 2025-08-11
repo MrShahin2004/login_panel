@@ -149,7 +149,9 @@ App.post("/api/mariadb/register", async (req,
         if (!ExtractedFirst || !ExtractedLast || !ExtractedNational || !ExtractedEmail || !ExtractedUser
             || !ExtractedPass || !ExtractedFirm || !ExtractedType) {
             console.log("Some field is missing at the client.");
-            return res.status(400).json({message: "Some field is missing, please fill in all fields."});
+            return res.status(400).json({
+                message: "Some field is missing, please fill in all fields."
+            });
         }
 
         // Checking if the given username, national ID or email are already existing
@@ -168,17 +170,23 @@ App.post("/api/mariadb/register", async (req,
 
         if (FoundUser !== undefined) {
             console.log("Username is already taken.");
-            return res.status(400).json({message: "Username is already taken, try another one."});
+            return res.status(400).json({
+                message: "Username is already taken, try another one."
+            });
         }
 
         if (FoundEmail !== undefined) {
             console.log("Email is already taken.");
-            return res.status(400).json({message: "Email is already taken, try another one."});
+            return res.status(400).json({
+                message: "Email is already taken, try another one."
+            });
         }
 
         if (FoundNational !== undefined) {
             console.log("National ID is invalid.");
-            return res.status(400).json({message: "National ID is invalid, please try again."});
+            return res.status(400).json({
+                message: "National ID is invalid, please try again."
+            });
         }
 
         // Setting the values in the specified object
@@ -194,7 +202,10 @@ App.post("/api/mariadb/register", async (req,
         // Storing the new user in the database
         let NewUser = await StoreUser(NewUserObject);
         console.log(NewUser);
-        return res.json({isFine: true, message: "Your account has been registered successfully."});
+        return res.json({
+            isFine: true,
+            message: "Your account has been registered successfully."
+        });
     } catch (error) {
         console.log(error);
     }
