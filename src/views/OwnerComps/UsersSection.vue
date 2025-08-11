@@ -6,9 +6,12 @@
       </div>
       <div class="button-div w-[100%] h-[10%] flex justify-center items-center">
         <button class="h-fit bg-[var(--btn-bg)] rounded-[6px]"
-                style="color: white; padding: 0.5rem">نمایش همه</button>
+                style="color: white; padding: 0.5rem">نمایش همه
+        </button>
       </div>
-      <div class="content-div w-[100%] h-[80%]"></div>
+      <div class="content-div w-[100%] h-[80%] flex justify-center items-center">
+        <p class="big-placeholder text-[40px] opacity-50">.فعالیتی انجام نشده است</p>
+      </div>
     </div>
   </div>
 </template>
