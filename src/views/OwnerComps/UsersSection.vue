@@ -36,7 +36,6 @@ export default {
         UsersKey.forEach((user) => {
           AllUsersFromServer.push(user);
         });
-        console.log(AllUsersFromServer);
       } else {
         console.log("Users are already stored in the array.");
       }
