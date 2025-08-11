@@ -17,6 +17,15 @@
 </template>
 
 <script>
+import {reactive} from "vue";
+
+export default {
+  setup() {
+    let AllUsersFromServer = reactive(["Yo", "This"]);
+
+    return {AllUsersFromServer};
+  }
+}
 </script>
 
 <style scoped></style>
