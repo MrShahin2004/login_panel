@@ -70,9 +70,9 @@ export default {
       }
     }
 
-    return {AllUsersFromServer, GetAllUsers};
-  }
-}
+    return {AllUsersFromServer, ShowAllUsers, ButtonText, ButtonDisabled};
+  },
+};
 </script>
 
 <style scoped></style>
