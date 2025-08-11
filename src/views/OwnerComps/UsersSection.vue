@@ -5,7 +5,7 @@
         <h2 class="text-[24px]">فهرست کاربران عادی <i class="fas fa-user"></i></h2>
       </div>
       <div class="button-div w-[100%] h-[10%] flex justify-center items-center">
-        <button class="h-fit bg-[var(--btn-bg)] rounded-[6px]"
+        <button @click="GetAllUsers" class="h-fit bg-[var(--btn-bg)] rounded-[6px] cursor-pointer"
                 style="color: white; padding: 0.5rem">نمایش همه
         </button>
       </div>
