@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="card-actions flex flex-col justify-center items-center p-4">
-          <button @click="ReturnToLogin" class="btn btn-primary rounded-[6px]" style="padding: 1rem">قراردادها</button>
+          <button class="btn btn-primary rounded-[6px]" style="padding: 1rem">قراردادها</button>
         </div>
         <div class="card-actions flex flex-col justify-center items-center p-4">
           <button class="btn btn-primary rounded-[6px]" style="padding: 1rem">تماس با پشتیبانی</button>
