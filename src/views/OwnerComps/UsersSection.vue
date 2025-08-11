@@ -26,6 +26,7 @@ export default {
 
     // The main function to catch all users
     async function GetAllUsers() {
+      // Getting the data from the server
       let Response = await fetch("http://localhost:3000/api/mariadb/get-all-users");
       let Data = await Response.json();
       console.log(Data);
