@@ -35,6 +35,8 @@ export default {
   setup() {
     // A variable to store all users retrieved from the server
     let AllUsersFromServer = reactive([]);
+    // A flag to track if ShowAllUsers has been called
+    let HasRun = ref(false);
 
     // The main function to catch all users
     async function GetAllUsers() {
