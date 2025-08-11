@@ -14,8 +14,15 @@
           {{ ButtonText }}
         </button>
       </div>
-      <div class="content-div w-[100%] h-[80%] flex justify-center items-center">
-        <p class="big-placeholder text-[40px] opacity-50">.فعالیتی انجام نشده است</p>
+      <div class="content-div w-[100%] h-[80%] flex justify-center items-center overflow-auto">
+        <p v-if="AllUsersFromServer.length === 0" class="big-placeholder text-[40px] opacity-50">
+          .فعالیتی انجام نشده است
+        </p>
+        <ul v-else class="w-[90%] text-[20px]">
+          <li v-for="user in AllUsersFromServer" :key="user.id" class="py-2">
+            {{ user.username || 'کاربر بدون نام' }}
+          </li>
+        </ul>
       </div>
     </div>
   </div>
