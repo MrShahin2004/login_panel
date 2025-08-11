@@ -40,7 +40,7 @@ export default {
 
     // Computed property for button text
     const ButtonText = computed(() => {
-      return HasRun.value ? 'نمایش انجام شد' : 'نمایش همه';
+      return HasRun.value ? '.نمایش انجام شد' : 'نمایش همه';
     });
 
     // Computed property for button disabled state
