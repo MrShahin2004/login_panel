@@ -38,20 +38,35 @@ export default {
     // A flag to track if ShowAllUsers has been called
     let HasRun = ref(false);
 
-    // The main function to catch all users
-    async function GetAllUsers() {
-      // Getting the data from the server
-      let Response = await fetch("http://localhost:3000/api/mariadb/get-all-users");
-      let Data = await Response.json();
-      let UsersKey = Data.users;
+    // Computed property for button text
+    const ButtonText = computed(() => {
+      return HasRun.value ? 'نمایش انجام شد' : 'نمایش همه';
+    });
 
-      // Pushing each user in the array above
-      if (AllUsersFromServer.length === 0) {
-        UsersKey.forEach((user) => {
-          AllUsersFromServer.push(user);
-        });
-      } else {
-        console.log("Users are already stored in the array.");
+    // Computed property for button disabled state
+    const ButtonDisabled = computed(() => {
+      return HasRun.value;
+    });
+
+    // Function to fetch and log users, runs only once
+    async function ShowAllUsers() {
+      if (!HasRun.value) {
+        try {
+          // Fetch data from the server
+          let response = await fetch("http://localhost:3000/api/mariadb/get-all-users");
+          let data = await response.json();
+          let usersKey = data.users;
+
+          // Populate the array
+          usersKey.forEach((user) => {
+            AllUsersFromServer.push(user);
+          });
+
+          // Set flag to prevent further runs
+          HasRun.value = true;
+        } catch (error) {
+          console.error("Error fetching users:", error);
+        }
       }
     }
 
