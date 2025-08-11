@@ -84,6 +84,7 @@
 </template>
 
 <script>
+import {ref} from "vue";
 import {useRouter} from "vue-router";
 import AdminsSection from "@/views/OwnerComps/AdminsSection.vue";
 import UsersSection from "@/views/OwnerComps/UsersSection.vue";
@@ -97,18 +98,19 @@ export default {
     username: String
   },
   setup() {
-    let Router = useRouter()
+    const Router = useRouter()
+    const ActiveTab = ref('users');
 
     function ReturnToLogin() {
       Router.push({name: "Home"});
     }
 
-    return {ReturnToLogin, Router};
+    return {Router, ActiveTab, ReturnToLogin};
   }
-};
+}
 </script>
 
-<style>
+<style scoped>
 .side-panel {
   margin-left: 1rem;
 }
