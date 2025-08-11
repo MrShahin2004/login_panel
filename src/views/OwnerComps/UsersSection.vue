@@ -75,4 +75,20 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+/* Optional: Style the disabled button */
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  border-bottom: 1px solid #ccc;
+}
+</style>
