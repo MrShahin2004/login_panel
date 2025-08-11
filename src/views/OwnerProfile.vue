@@ -51,13 +51,32 @@
         </div>
       </div>
     </div>
+    <!-- Main content area -->
     <div class="main-content w-4/5 h-full relative flex justify-center items-center">
-      <div class="w-[95%] h-[92%] bg-base-100 shadow-xl rounded-lg flex justify-center items-center">
-        <div class="users-section w-[50%] h-[100%]">
-          <UsersSection/>
+      <div class="w-[95%] h-[92%] bg-base-100 shadow-xl rounded-lg flex flex-col justify-start items-center p-4">
+        <!-- Tabs at the top -->
+        <div class="w-full flex justify-center items-center border-b-2 border-gray-200 mb-4">
+          <button
+              :class="{'text-primary border-b-2 border-primary': ActiveTab === 'admins'}"
+              class="cursor-pointer flex-1 py-3 text-center text-gray-500 font-bold focus:outline-none transition-colors duration-200"
+              @click="ActiveTab = 'admins'">
+            ادمین ها
+          </button>
+          <button
+              :class="{'text-primary border-b-2 border-primary': ActiveTab === 'users'}"
+              class="cursor-pointer flex-1 py-3 text-center text-gray-500 font-bold focus:outline-none transition-colors duration-200"
+              @click="ActiveTab = 'users'">
+            کاربران عادی
+          </button>
         </div>
-        <div class="admins-section w-[50%] h-[100%]">
-          <AdminsSection/>
+        <!-- Tab content area -->
+        <div class="w-full h-full flex justify-center items-center">
+          <div v-if="ActiveTab === 'admins'" class="w-full h-full flex justify-center items-center">
+            <AdminsSection/>
+          </div>
+          <div v-if="ActiveTab === 'users'" class="w-full h-full flex justify-center items-center">
+            <UsersSection/>
+          </div>
         </div>
       </div>
     </div>
