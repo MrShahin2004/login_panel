@@ -51,37 +51,36 @@
         </div>
       </div>
     </div>
-    <!-- Main content area -->
     <div class="main-content w-4/5 h-full relative flex justify-center items-center">
       <div class="w-[95%] h-[92%] bg-base-100 shadow-xl rounded-lg flex flex-col justify-start items-center p-4">
-        <!-- Tabs at the top -->
         <div class="w-full flex justify-center items-center border-b-2 border-gray-200 mb-4">
           <button
               :class="{'text-primary border-b-2 border-primary': ActiveTab === 'admins'}"
-              class="cursor-pointer flex-1 py-3 text-center text-gray-500 font-bold focus:outline-none transition-colors duration-200"
+              class="cursor-pointer flex-1 py-3 text-center
+               text-gray-500 font-bold focus:outline-none transition-colors duration-200"
               @click="ActiveTab = 'admins'">
             ادمین ها
           </button>
           <button
               :class="{'text-primary border-b-2 border-primary': ActiveTab === 'users'}"
-              class="cursor-pointer flex-1 py-3 text-center text-gray-500 font-bold focus:outline-none transition-colors duration-200"
+              class="cursor-pointer flex-1 py-3 text-center
+               text-gray-500 font-bold focus:outline-none transition-colors duration-200"
               @click="ActiveTab = 'users'">
             کاربران عادی
           </button>
         </div>
-        <!-- Tab content area -->
         <div class="w-full h-full flex justify-center items-center">
           <AdminsSection
               v-if="ActiveTab === 'admins'"
-              :admins="allAdminsFromServer"
-              :has-run="adminsHasRun"
-              @fetch-admins="fetchAllUsers('Admin')"
+              :admins="AllAdminsFromServer"
+              :has-run="IsDataFetched"
+              @fetch-admins="fetchAllUsers"
           />
           <UsersSection
               v-else
-              :users="allUsersFromServer"
-              :has-run="usersHasRun"
-              @fetch-users="fetchAllUsers('User')"
+              :users="AllUsersFromServer"
+              :has-run="IsDataFetched"
+              @fetch-users="fetchAllUsers"
           />
         </div>
       </div>
@@ -109,42 +108,34 @@ export default {
     const ActiveTab = ref("users");
 
     // Centralized state
-    const allUsersFromServer = reactive([]);
-    const allAdminsFromServer = reactive([]);
-    const usersHasRun = ref(false);
-    const adminsHasRun = ref(false);
+    const AllUsersFromServer = reactive([]);
+    const AllAdminsFromServer = reactive([]);
+    const IsDataFetched = ref(false); // New flag to track if data has been fetched
 
     // Fetch and filter users/admins
-    async function fetchAllUsers(role) {
-      if (role === "User" && !usersHasRun.value) {
+    async function fetchAllUsers() {
+      // Only fetch if data hasn't been fetched yet
+      if (!IsDataFetched.value) {
         try {
-          let response = await fetch("http://localhost:3000/api/mariadb/get-all-users");
-          let data = await response.json();
-          let usersKey = data.users;
+          let Response = await fetch("http://localhost:3000/api/mariadb/get-all-users");
+          let Data = await Response.json();
+          let UsersKey = Data.users;
 
-          usersKey.forEach((user) => {
+          // Clear existing arrays to prevent duplicates
+          AllUsersFromServer.splice(0, AllUsersFromServer.length);
+          AllAdminsFromServer.splice(0, AllAdminsFromServer.length);
+
+          // Filter and populate the correct arrays
+          UsersKey.forEach((user) => {
             if (user.role === "User") {
-              allUsersFromServer.push(user);
+              AllUsersFromServer.push(user);
+            } else if (user.role === "Admin") {
+              AllAdminsFromServer.push(user);
             }
           });
-          usersHasRun.value = true;
+          IsDataFetched.value = true;
         } catch (error) {
           console.error("Error fetching users:", error);
-        }
-      } else if (role === "Admin" && !adminsHasRun.value) {
-        try {
-          let response = await fetch("http://localhost:3000/api/mariadb/get-all-users");
-          let data = await response.json();
-          let usersKey = data.users;
-
-          usersKey.forEach((user) => {
-            if (user.role === "Admin") {
-              allAdminsFromServer.push(user);
-            }
-          });
-          adminsHasRun.value = true;
-        } catch (error) {
-          console.error("Error fetching admins:", error);
         }
       }
     }
@@ -157,10 +148,9 @@ export default {
       Router,
       ActiveTab,
       ReturnToLogin,
-      allUsersFromServer,
-      allAdminsFromServer,
-      usersHasRun,
-      adminsHasRun,
+      AllUsersFromServer,
+      AllAdminsFromServer,
+      IsDataFetched,
       fetchAllUsers
     };
   },
